@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Style 리스트</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel='stylesheet' type='text/css' href='css/join.css'>
+<!-- Bootstrap Core CSS -->
+<link rel='stylesheet' href='css/bootstrap.min.css'>
+<link rel='stylesheet' href='css/bootstrap-theme.min.css'>
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style-list.css">
+<!-- 별점 CSS -->
+<link rel="stylesheet" href="css/starrr.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+<script type='text/javascript'
+	src='http://code.jquery.com/jquery-1.7.2.js'></script>
+
+</head>
+
+
+<body>
+	<div id='wrap'>
+
+		<section class='login-content'>
+			<div class='login-area'>
+				<button class='btn-login-close' type='button'
+					onclick="close('.login-content')">닫기</button>
+				<!-- onclick='closeLayer('login-content'); return false;' -->
+				<fieldset class='login'>
+					<legend class='sr-only'>로그인</legend>
+
+					<form name='formLogin' id='formLogin' method='post'>
+						<div class='row'>
+							<div id='login-base'>
+								<div class='form-group'>
+									<label id='idpw-base' class='sr-only' for='login_id'> 아
+										이 디 </label> <input name='login_id' class='form-control' id='login_id'
+										style='-ms-ime-mode: disabled;'
+										onkeyup='GJF_Only_Email(this);' type='text'
+										placeholder='아이디 또는 이메일 '> <input name='refurl'
+										id='refurl' type='hidden' value=''> <input
+										name='Cururl' id='Cururl' type='hidden' value=''>
+								</div>
+								<div class='form-group'>
+									<label id='idpw-base' class='sr-only' for='login_pwd'>비밀번호</label>
+									<input name='login_pwd' class='form-control' id='login_pwd'
+										onkeypress='loginiKeyPress(event)' type='password'
+										maxlength='20' placeholder='비밀번호'>
+								</div>
+								<div class='login-button'>
+									<button id='btnlogin' type='button'>
+										<span class='btn-login'>로그인</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<!-- 아이디저장 / 비밀번호찾기 : S -->
+						<!-- <ul class='idpw list-unstyled list-inline'> -->
+						<div id='clear'></div>
+						<div class='idpw-box'>
+							<ul class='idpw-search'>
+								<li>
+									<div class='checkbox'>
+										<label> <input name='save_id'
+											onclick='fn_confirm_save(this);' type='checkbox'>
+											아이디저장
+										</label> <em>|</em>
+									</div>
+								</li>
+								<li class='cur'
+									onclick="openLayer('find-pw-area');return false;">비밀번호 찾기</li>
+							</ul>
+						</div>
+						<!--/.idpw -->
+						<blockquote class='alarm text-primary'></blockquote>
+						<!-- 아이디저장 메시지 알람 -->
+						<input name='user_id' id='user_id' type='hidden'> <input
+							name='pwd' id='pwd' type='hidden'> <input name='date'
+							id='date' type='hidden'> <input name='req_Url'
+							id='req_Url' type='hidden' value='/'>
+					</form>
+
+				</fieldset>
+				<!--/.login -->
+			</div>
+			<!--/.login-area -->
+
+			<div class='signup-area'>
+				<div class='signup'>
+					<a class='btn btn-block btn-default' href='#'> <span
+						class='btn-signup'>회원가입</span></a>
+				</div>
+			</div>
+
+		</section>
+
+		<section class='signup-content'>
+			<div class='page-header'>
+				<button class='btn-signup-close'
+					onclick="closeLayer('signup-content');return false;" type='button'>닫기</button>
+				<h2 class='join'>회원가입</h2>
+			</div>
+			<!--/.page-header -->
+			<!-- 회원가입 폼 : S -->
+			<form name='frm' class='form-horizontal join' role='form'
+				method='post'>
+				<input name='chk_email' id='chk_email' type='hidden'> <input
+					name='chk_mobile' id='chk_mobile' type='hidden'> <input
+					name='mobile_cert' id='mobile_cert' type='hidden' value='N'>
+				<input name='email_done_chk' id='email_done_chk' type='hidden'
+					value='N'> <input name='cert_done_chk' id='cert_done_chk'
+					type='hidden' value='N'>
+				<!-- 이메일 : S -->
+				<div class='form-group'>
+					<label class='col-lg-2 control-label' for='inputEmail1'> <strong
+						class='email'>이메일</strong>
+					</label>
+					<div class='col-lg-10'>
+						<div class='row'>
+							<div class='col-lg-8 col-md-8 col-xs-12 prnarw'>
+								<input name='user_email' class='form-control' id='user_email'
+									onkeyup='GJF_Only_Email(this);' type='email' maxlength='100'
+									placeholder='appchu@beautychu.com'>
+								<!-- 이메일입력 -->
+							</div>
+							<div class='col-lg-2 col-md-2 col-xs-6 pl0 prnarw'>
+								<button class='btn btn-default btn-block' id='email_done_chk'
+									onclick='fn_email_chk();' type='button' value='Y'>
+									<span class='btn-check-email'>중복확인</span>
+								</button>
+								<!-- 중복확인 -->
+							</div>
+							<div class='col-lg-2 col-md-2 col-xs-6 pl0'>
+								<button class='btn btn-default btn-block' id='email_ok'
+									type='button'>
+									<span class='btn-agree-recv'>√ 수신동의</span>
+								</button>
+								<!-- 이메일수신동의 // 동의체크되었을 경우 클래스가 btn-default 에서 btn-info로 바뀜 체크해제시 다시 btn-default -->
+							</div>
+						</div>
+						<!--/.row -->
+						<blockquote class='alarm text-primary'></blockquote>
+						<!-- 이메일체크 메시지 알람 -->
+					</div>
+				</div>
+				<!--/.form-group -->
+
+				<!-- 닉네임 : S -->
+				<div class='form-group'>
+					<label class='col-lg-2 control-label' for='inputNickname1'>
+						<strong class='nick'>닉네임</strong>
+					</label>
+					<div class='col-lg-10'>
+						<input name='user_nickname' class='form-control'
+							id='user_nickname' type='text' maxlength='50' placeholder=' '>
+						<!-- 닉네임 -->
+					</div>
+				</div>
+				<!--/.form-group -->
+
+				<!-- 비밀번호 : S -->
+				<div class='form-group'>
+					<label class='col-lg-2 control-label' for='inputPassword1'>
+						<strong class='pw'>비밀번호</strong>
+					</label>
+					<div class='col-lg-10'>
+						<input name='user_pw' class='form-control' id='user_pw'
+							type='password' maxlength='20' placeholder='4~20자로 입력해주세요.'>
+						<!-- 비밀번호 -->
+					</div>
+				</div>
+				<!--/.form-group -->
+
+				<!-- 비밀번호확인 : S -->
+				<div class='form-group'>
+					<label class='col-lg-2 control-label' for='inputPassword2'>
+						<strong class='pwr'>비밀번호 확인</strong>
+					</label>
+					<div class='col-lg-10'>
+						<input name='confirm_pw' class='form-control' id='confirm_pw'
+							type='password' maxlength='20' placeholder='비밀번호를 재입력 해주세요.'>
+						<!-- 비밀번호확인 -->
+					</div>
+				</div>
+				<!--/.form-group -->
+
+				<!-- 휴대폰 : S -->
+				<div class='form-group'>
+					<label class='col-lg-2 control-label' for='inputPhone1'> <strong
+						class='phone'>휴대폰</strong></label>
+					<div class='col-lg-10'>
+						<div class='row'>
+							<div class='col-lg-8 col-md-8 col-xs-12 prnarw'>
+								<input name='user_hp' class='form-control' id='user_hp'
+									onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
+									onkeypress="this.value=this.value.replace(/[^0-9]/g,'');"
+									onchange='fn_resert_cert();' type='text' maxlength='12'
+									placeholder="'-'를 제외하고 입력해주세요.">
+								<!-- 휴대폰번호입력 -->
+							</div>
+							<div class='col-lg-2 col-md-2 col-xs-6 pl0 prnarw'>
+								<button class='btn btn-default btn-block' id='send_sms'
+									onclick='fn_callsms();' type='button'>
+									<span class='btn-send-certnum'>인증번호전송</span>
+								</button>
+								<!-- 인증번호전송 // 한번 전송 후 재전송 버튼으로 바뀜: span태그에 resend클래스 추가 -->
+							</div>
+							<div class='col-lg-2 col-md-2 col-xs-6 pl0'>
+								<button class='btn btn-default btn-block' id='mobile_ok'
+									type='button' value='N'>
+									<span class='btn-agree-recv'>√ 수신동의</span>
+								</button>
+								<!-- 휴대폰 정보수신동의 -->
+							</div>
+						</div>
+						<!--/.row -->
+						<div class='row secondrow'>
+							<div class='col-lg-10 col-md-10 col-xs-8 prnarw'>
+								<input name='sms_num' class='form-control' id='sms_num'
+									onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
+									onkeypress="this.value=this.value.replace(/[^0-9]/g,'');"
+									type='text' maxlength='4' placeholder='인증번호를 입력해주세요.'>
+								<!-- 인증번호입력 -->
+							</div>
+							<div class='col-lg-2 col-md-2 col-xs-4 pls0'>
+								<button class='btn btn-default btn-block' onclick='fn_chksms();'
+									type='button'>
+									<span class='btn-cert-ok'>확인</span>
+								</button>
+							</div>
+						</div>
+						<!--/.row -->
+					</div>
+				</div>
+				<!--/.form-group -->
+
+				<div class='btn-area'>
+					<button class='btn btn-success btn-lg btn-block'
+						onclick='fn_form_chk();' type='button'>
+						<span class='btn-join'>완료</span>
+					</button>
+					<!-- 회원가입 완료 -->
+				</div>
+			</form>
+
+		</section>
+
+		<script type='text/javascript'>
+			$(document).ready(function() {
+				$('.login-content').hide();
+				$('.signup-content').hide();
+				//$('.show-login').show();
+				//$('.show-signup').show();
+
+				$('.show-login').click(function() {
+					$('.login-content').slideDown();
+					$('.signup-content').hide();
+					//$('.signup-content').slideUp();
+				});
+
+				$('.show-signup').click(function() {
+					//$('.signup-content').slideToggle();
+					$('.signup-content').slideDown();
+					$('.login-content').hide();
+					//$('.login-content').slideUp();
+				});
+			});
+		</script>
+
+		<header>
+			<nav>
+				<ul>
+					<li><a href='#' class='show-login'>로그인</a></li>
+					<li><a href='#' class='show-signup'>회원가입</a></li>
+					<li><a href='#'>문의하기</a></li>
+				</ul>
+			</nav>
+			<div id='clear'></div>
+			<div id='site-title'>Beauty Chu♥</div>
+			<div id='searchbar'>
+				<form>
+					<input id='input-search' placeholder="search" />
+					<button>search</button>
+				</form>
+			</div>
+		</header>
+
+	<div class="style-container">
+		<section id='style-main'>
+		
+			<!-- Title -->
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>Style List</h2>
+				</div>
+			</div>
+			<!-- /.row -->
+
+			<!-- Page Features -->
+			<div class="text-center">
+
+				<div class="col-md-3 col-sm-6 hero-feature">
+					<div class="thumbnail">
+						<a href='StyleDetail.html' >
+						<img src="images/style-list/s1.png" alt=""></a>
+						<div class="caption">
+							<h3>Feature Label</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							    <div class='starrr'></div>  
+									<!-- <span class="pull-right">15 days ago</span> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6 hero-feature">
+					<div class="thumbnail">
+						<img src="images/style-list/s2.png" alt="">
+						<div class="caption">
+							<h3>Feature Label</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+									<div class='starrr'></div>   
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6 hero-feature">
+					<div class="thumbnail">
+						<img src="images/style-list/s3.jpg" alt="">
+						<div class="caption">
+							<h3>Feature Label</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+								<div class='starrr'></div>   
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6 hero-feature">
+					<div class="thumbnail">
+						<img src="images/style-list/s4.jpg" alt="">
+						<div class="caption">
+							<h3>Feature Label</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							    <div class='starrr'></div>   
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- /.row -->
+			<div class="text-center">
+
+				<div class="col-md-3 col-sm-6 hero-feature">
+					<div class="thumbnail">
+						<img src="images/style-list/s5.jpg" alt="">
+						<div class="caption">
+							<h3>Feature Label</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+									<div class='starrr'></div>  
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6 hero-feature">
+					<div class="thumbnail">
+						<img src="images/style-list/s6.jpg" alt="">
+						<div class="caption">
+							<h3>Feature Label</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+								<div class='starrr'></div>  
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6 hero-feature">
+					<div class="thumbnail">
+						<img src="images/style-list/s7.jpg" alt="">
+						<div class="caption">
+							<h3>Feature Label</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+								<div class='starrr'></div>    
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6 hero-feature">
+					<div class="thumbnail">
+						<img src="images/style-list/s8.jpg" alt="">
+						<div class="caption">
+							<h3>Feature Label</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							    <div class='starrr'></div>  
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- /.row -->
+		</section>
+		<section id='shop-main'></section>
+
+	</div>
+		<footer>
+			Yoon Yong Sik, Kang Da Hyun, Kim Ki Hyun, Kim Ji Yeong <br>
+			copyright @AppChu 2015
+		</footer>
+	</div>
+	<script type="text/javascript">
+		//window.setTimeout('window.location.reload()', 5000); //60초마다 새로고침
+	</script>
+
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+	
+	    <!-- 별점 -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <script src="js/starrr.js"></script>
+	
+</body>
+</html>
+
