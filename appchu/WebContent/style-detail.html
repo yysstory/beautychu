@@ -7,13 +7,16 @@
 <link rel="stylesheet" type="text/css" href="css/common.css">
 <link rel='stylesheet' type='text/css' href='css/join.css'>
 <!-- Bootstrap Core CSS -->
-<link rel='stylesheet' href='css/bootstrap.min.css'>
-<link rel='stylesheet' href='css/bootstrap-theme.min.css'>
+<link rel='stylesheet' href='css/resources/bootstrap.min.css'>
+<link rel='stylesheet' href='css/resources/bootstrap-theme.min.css'>
 <!-- Custom CSS -->
 <link rel="stylesheet" href="css/style-detail.css">
-<link rel="stylesheet" href="css/comment.css">
+<link rel="stylesheet" href="css/resources/button.css" type="text/css" >
+<link rel="stylesheet" href="css/resources/input.css" type="text/css" >
+<link rel="stylesheet" href="css/resources/icon.css" type="text/css" >
+<link rel="stylesheet" href="css/resources/comment.css">
 <!-- 별점 CSS -->
-<link rel="stylesheet" href="css/starrr.css">
+<link rel="stylesheet" href="css/resources/starrr.css">
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
 <script type='text/javascript'
 	src='http://code.jquery.com/jquery-1.7.2.js'></script>
@@ -271,7 +274,7 @@
 		</script>
 
 		<header>
-			<nav>
+			<nav id='loginnav'>
 				<ul>
 					<li><a href='#' class='show-login'>로그인</a></li>
 					<li><a href='#' class='show-signup'>회원가입</a></li>
@@ -281,10 +284,12 @@
 			<div id='clear'></div>
 			<div id='site-title'>Beauty Chu♥</div>
 			<div id='searchbar'>
-				<form>
-					<input id='input-search' placeholder="search" />
-					<button>search</button>
-				</form>
+				<div class="ui action input" style="margin:20px auto; width: 500px;">
+				<input type="text" placeholder="Search...">
+				<div class="ui icon button">
+					<i class="search icon"></i>
+				</div>
+			</div>
 			</div>
 		</header>
 
@@ -471,13 +476,13 @@
  	</script>
 
 	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
+	<script src="js/resources/jquery.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="js/resources/bootstrap.min.js"></script>
 		    <!-- 별점 -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
-    <script src="js/starrr.js"></script>
+    <script src="js/resources/starrr.js"></script>
 
 </body>
 </html>
