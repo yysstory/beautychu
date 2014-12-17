@@ -15,9 +15,8 @@
 .hero-feature {
     margin-bottom: 30px;
 }
-
-.style-main {
-	width: 1000px;
+.style-container {
+	width: 90%;
 	height: 100%;
 	margin: 0 auto;
 }
@@ -31,10 +30,12 @@
 	margin-left:30px;
 }
 
-.text-center {
+.list-container {
 	width: 100%;
 	text-align: center;
 }
-/* footer {
-    margin: 50px 0;
-} */
+footer {
+	display: inline-block;
+	width: 100%;
+	
+}

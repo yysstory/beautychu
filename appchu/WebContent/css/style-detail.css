@@ -31,24 +31,23 @@
     color: #333;
 }
 
-#style-main {
-	width: 1000px;
-	height: 1800px;
+#style-body {
+	height: 2050px;
 	margin: 0 auto;
 }
 
-.text-center {
+.detail-container {
 	width: 100%;
 	height: 100%;
 	height: 0 auto;
 }
 
-.detail-container {
-	/* width: 1000px; */
-	/* height: 80px; */
+/* .detail-container {
+	width: 1000px;
+	height: 80px;
 	width: 100%;
 	height: 100%;
-}
+} */
 
 .col-md-9 {
 	width: 90%;
@@ -56,11 +55,24 @@
 	margin-left: 50px;
 }
 
-.detail-content {
-	padding : 60px;
-	height: 100%;
+.shop-info {
+	/* height: 100%; */
+	height: 220px;
+	padding: 10px 0px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	box-shadow:0px 1px 2px rgba(0,0,0,0.075);
 }
 
+.detail-title {
+	width: 90%;
+	margin: 0px 50px;
+}
+
+.shop-img {
+	margin: 30px 0px;
+}
 /* footer {
     margin: 50px 0;
 } */
