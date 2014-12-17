@@ -8,6 +8,11 @@
     padding-top: 70px; Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes.
 } */
 
+*{
+	/* border: 1px solid red; */
+}
+
+
 .hero-spacer {
     margin-top: 50px;
 }
@@ -24,6 +29,7 @@
 .col-md-3 {
 	width: 25%;
 /* 	border: 1px solid orange;		 */
+	height: 430px;
 } 
 
 .col-lg-12 {
@@ -39,3 +45,17 @@ footer {
 	width: 100%;
 	
 }
+/*  팡업 스타일 */
+
+.modal-dialog {
+width: 940px;
+}
+
+.col-md-9 {
+width: 100%;
+}
+
+.modal-body {
+	text-align: left;
+}
+
