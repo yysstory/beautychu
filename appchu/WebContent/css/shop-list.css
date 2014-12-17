@@ -28,6 +28,8 @@ footer{
 
 ul{
 	list-style: none;
+	padding-left: 7px;
+	padding-right: 7px;
 }
 
 nav li{
@@ -82,6 +84,7 @@ nav{
 	height: 100%;
  	text-align: left; 
 	padding: 10px 15px;
+	width: 100%;
 }
 
 /*-------------------*/
@@ -164,6 +167,12 @@ nav{
  section {
  	background-color: Beige;
  }
+ 
  p {
  	margin: 0 0 0px;
  }
+ 
+.col-md-8 {
+	padding: 0px;
+}
+ 
