@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-
 <title>Beauty Chu~</title>
+
 <link rel="stylesheet" type="text/css" href="css/common.css">
 <link rel="stylesheet" type="text/css" href="css/resources/style.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -15,64 +15,69 @@
 <script src="js/resources/modernizr.custom.63321.js"></script>
 <script src="js/resources/jquery.catslider.js"></script>
 <script src="js/resources/jquery.flexisel.js"></script>
+<script src="js/resources/flat-menu-script.js"></script>
+<script src="js/main.js"></script>
 </head>
 
-
 <body>
+	<header>
+		<!-- 상단 고정 메뉴 -->
+		<div id='cssmenu'>
+			<!-- <div id='menu-home'><a href='#'>Beauty Chu♥</a></div> -->
+			<ul>
+				<li id='menu-icon'><a href='#'>Beauty Chu♥</a></li>
+				<li><a href='#'>Shop</a>
+				<li><a href='#'>Man</a></li>
+				<li><a href='#'>Woman</a></li>
+				<li><a href='#'>celebrity</a></li>
+
+				<li><form method="get" action="/search" id="search">
+						<input name="q" id="search-bar" type="text" placeholder="Search..." />
+					</form>
+				</li>
+
+				<li class='user-menu active has-sub'><a href='#'>User</a>
+					<ul>
+						<li class='has-sub'><a href='#'>Login</a></li>
+						<li class='has-sub'><a href='#'>Join</a></li>
+						<li class='has-sub'><a href='#'>QnA</a></li>
+					</ul></li>
+
+			</ul>
+		</div>
+	</header>
+	<!-- 상단 고정 메뉴 끝-->
+
+	<div id='header-container'>
+			<h1>Beauty Chu♥</h1>
+		</div>
+
 	<div id='wrap'>
-		<header>
-			<nav id='loginnav'>
-				<ul>
-					<li><a href='#'>로그인</a></li>
-					<li><a href='#'>회원가입</a></li>
-					<li><a href='#'>문의하기</a></li>
-				</ul>
-			</nav>
-			<div id='clear'></div>
-			<div id='site-title'>Beauty Chu♥</div>
-			<div id='searchbar'>
-			<div class="ui action input" style="margin:20px auto; width: 500px;">
-				<input type="text" placeholder="Search...">
-				<div class="ui icon button">
-					<i class="search icon"></i>
-				</div>
-			</div>
-			</div>
-		</header>
-
-
-
 		<!--슬라이드 메뉴 ******************************************************************* -->
 		<section id='style-main'>
 
-
-
 			<div class="container">
-
 				<div class="main">
 					<div id="mi-slider" class="mi-slider">
 						<ul>
-							<li><a href="StyleList.html"><img src="images/main/111.jpg"
-									alt="img01">
-									<h4>CUT</h4></a></li>
-							<li><a href="#"><img src="images/main/man (2).png"
-									alt="img02">
-									<h4>PERM</h4></a></li>
-							<li><a href="#"><img src="images/main/man (3).png"
-									alt="img03">
-									<h4>TINT</h4></a></li>
-							<li><a href="#"><img src="images/main/man (8).png"
-									alt="img04">
-									<h4>straight</h4></a></li>
+							<li>
+								<a href="StyleList.html"><img src="images/main/111.jpg" alt="img01">
+									<h4>Cut</h4></a></li>
+							<li><a href="#"><img src="images/main/111.jpg" alt="img02">
+									<h4>Perm</h4></a></li>
+							<li><a href="#"><img src="images/main/111.jpg" alt="img03">
+									<h4>Color</h4></a></li>
+							<li><a href="#"><img src="images/main/111.jpg" alt="img04">
+									<h4>Straight</h4></a></li>
 						</ul>
 						<ul>
-							<li><a href="#"><img src="images/main/woman (1).png"
+							<li><a href="#"><img src="images/main/woman (4).png"
 									alt="img05">
 									<h4>CUT</h4></a></li>
-							<li><a href="#"><img src="images/main/woman (2).png"
+							<li><a href="#"><img src="images/main/woman (4).png"
 									alt="img06">
 									<h4>PERM</h4></a></li>
-							<li><a href="#"><img src="images/main/woman (3).png"
+							<li><a href="#"><img src="images/main/woman (4).png"
 									alt="img07">
 									<h4>TINT</h4></a></li>
 							<li><a href="#"><img src="images/main/woman (4).png"
@@ -95,50 +100,33 @@
 				</div>
 			</div>
 			<!-- /container -->
-
-
-
-
-
-
-
-
-
-
-
 		</section>
-
-
-
-
 
 
 
 		<!--이미지 슬라이드******************************************************************* -->
 		<section id='shop-main'>
-			<div class="ui small icon input">
-				<input type="text" placeholder="위치검색.."> <i
-					class="map icon"></i>
+			<div id="shop-search" class="ui small icon input">
+				<input type="text" placeholder="위치검색.."> <i class="map icon"></i>
 			</div>
 
-
 			<ul id="flexiselDemo3">
-				<li><a href="ShopListGrid.html"><img src="images/main/shop (1).jpg" /></a></li>
-				<li><a href="ShopListGrid.html"><img src="images/main/shop (2).jpg" /></a></li>
-				<li><a href="ShopListGrid.html"><img src="images/main/shop (3).jpg" /></a></li>
-				<li><a href="ShopListGrid.html"><img src="images/main/shop (4).jpg" /></a></li>
-				<li><a href="ShopListGrid.html"><img src="images/main/shop (5).jpg" /></a></li>
-				<li><a href="ShopListGrid.html"><img src="images/main/shop (7).jpg" /></a></li>
-				<li><a href="ShopListGrid.html"><img src="images/main/shop (8).jpg" /></a></li>
+				<li><a href="ShopListGrid.html"><img
+						src="images/main/shop (1).jpg" /></a></li>
+				<li><a href="ShopListGrid.html"><img
+						src="images/main/shop (2).jpg" /></a></li>
+				<li><a href="ShopListGrid.html"><img
+						src="images/main/shop (3).jpg" /></a></li>
+				<li><a href="ShopListGrid.html"><img
+						src="images/main/shop (4).jpg" /></a></li>
+				<li><a href="ShopListGrid.html"><img
+						src="images/main/shop (5).jpg" /></a></li>
+				<li><a href="ShopListGrid.html"><img
+						src="images/main/shop (7).jpg" /></a></li>
+				<li><a href="ShopListGrid.html"><img
+						src="images/main/shop (8).jpg" /></a></li>
 			</ul>
-
-
-
-
-
 		</section>
-
-
 
 
 		<footer>
@@ -154,34 +142,7 @@
 
 
 	<script>
-		$(function() {
-
-			$('#mi-slider').catslider();
-
-			$("#flexiselDemo3").flexisel({
-				visibleItems : 5,
-				animationSpeed : 1000,
-				autoPlay : true,
-				autoPlaySpeed : 3000,
-				pauseOnHover : true,
-				enableResponsiveBreakpoints : true,
-				responsiveBreakpoints : {
-					portrait : {
-						changePoint : 480,
-						visibleItems : 1
-					},
-					landscape : {
-						changePoint : 1200,
-						visibleItems : 2
-					},
-					tablet : {
-						changePoint : 768,
-						visibleItems : 3
-					}
-				}
-			});
-
-		});
+		
 
 		/* 
 		window.setTimeout('window.location.reload()', 7000); //60초마다 새로고침
