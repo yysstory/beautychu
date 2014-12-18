@@ -403,17 +403,3 @@
 /* -- 서치바 끝 -- */
 
 
-
-#header-container {
-	top: 50px;
-	left: 0px;
-	width: 100%;
-	text-align: center;
-	background-color: #fff;
-}
-
-#header-container>h1 {
-	position: relative;
-	font-size: 3.0em;
-	font-weight: bold;
-}
