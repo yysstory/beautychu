@@ -1,16 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="../js/resources/jquery-2.1.1.min.js"></script>
+<script src="../js/resources/modernizr.custom.63321.js"></script>
+<script src="../js/resources/jquery.catslider.js"></script>
+<script src="../js/resources/jquery.flexisel.js"></script>
 <script src="../js/resources/flat-menu-script.js"></script>
-<script type='text/javascript'
-	src='http://code.jquery.com/jquery-1.7.2.js'></script>
+<script src="../js/resources/bootstrap.js"></script>
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.7.2.js'></script>
 <link rel="stylesheet" type="text/css" href="../css/loginjoin.css">
 <link rel="stylesheet" type="text/css" href="../css/header.css">
-
+<link rel='stylesheet' href='../css/resources/bootstrap.min.css'>
+<link rel='stylesheet' href='../css/resources/bootstrap-theme.min.css'>
 <!-- 상단 고정 메뉴 -->
 <div id='cssmenu'>
 	<ul>
-		<li id='menu-icon'><a href='main.html'>Beauty Chu♥</a></li>
-		<li><a href='shop-list.html'>Shop</a></li>
-		<li><a href='style-list.html'>Man</a></li>
-		<li><a href='style-list.html'>Woman</a></li>
+		<li id='menu-icon'><a href='#'>Beauty Chu♥</a></li>
+		<li><a href='#'>Shop</a></li>
+		<li><a href='#'>Man</a></li>
+		<li><a href='#'>Woman</a></li>
 		<li><a href='#'>celebrity</a></li>
 
 		<li><form method="get" action="/search" id="search">
@@ -19,30 +28,33 @@
 
 		<li class='user-menu active has-sub'><a href='#'>User</a>
 			<ul>
-				<li class='has-sub show-login'><a href='#'>Login</a></li>
-				<li class='has-sub'><a href='#' class='show-signup'>Join</a></li>
+			 
+  				<li class='has-sub show-login' data-toggle='modal' data-target='#exampleModal1'
+				data-whatever='@login'><a href='#exampleModal1'>Login</a></li>
+				
+				<li class='has-sub' data-toggle='modal' data-target='#exampleModal2'
+				data-whatever='@join'><a href='#exampleModal2'>Join</a></li>  
+				
 				<li class='has-sub'><a href='#'>QnA</a></li>
 			</ul></li>
 
 	</ul>
 </div>
 <!-- 상단 고정 메뉴 끝-->
-
-
-<!-- 로그인/회원가입 폼 -->
-<div id='login-wrap' class='slide-wrap'>
-
-	<div class='login-slide-page'>
-		<!-- LOGIN POPUP PAGE -->
-		<section class='login-content' id='login-content'>
-
+	
+<!-- pop up -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">login</h4>
+      </div>
 			<!-- login area -->
 			<div class='login-area'>
 
 				<form class="form-signin" role="form">
 					<div class='page-header'>
-						<button id='btn-login-close'
-							class=' btn btn-login-close btn-inverse' type='button'>닫기</button>
 						<h2 class="form-signin-heading">로그인</h2>
 					</div>
 					<label for="inputEmail" class="sr-only">Email address</label> <input
@@ -61,19 +73,30 @@
 
 			</div>
 			<!--/ login area -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- pop up -->	
+	
+	
+	<!-- pop up -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">join</h4>
+      </div>
+			<!-- login area -->
+			<div class='login-area'>
 
-		</section>
-		<!-- / LOGIN POPUP PAGE -->
-	</div>
-
-
-	<div class='signup-slide-page'>
-		<section class='signup-content' id='signup-content'>
+<div class='signup-content' id='signup-content'>
 
 			<!--page-header -->
 			<div class='page-header'>
-				<button id='btn-signup-close'
-					class='btn btn-signup-close btn-inverse' type='button'>닫기</button>
 				<h2 class='form-signup-heading'>회원가입</h2>
 			</div>
 			<!--/.page-header -->
@@ -234,45 +257,43 @@
 				</div>
 			</form>
 
-		</section>
-	</div>
+		</div>
+
+			</div>
+			<!--/ login area -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- 로그인 폼 끝!!!! -->
-
-
-
-
-
-
-
-
+<!-- pop up -->	
+	
 
 <!-- login 스크립트 -->
 <script type='text/javascript'>
-		$(document).ready(function() {
-			$('.login-content').hide();
-			$('.signup-content').hide();
-
-			//$('.show-login').show();
-			//$('.show-signup').show();
-
-			$('.show-login').click(function() {
-				$('.login-content').slideDown();
-				$('.signup-content').hide();
-			});
-
-			$('.show-signup').click(function() {
-				$('.signup-content').slideDown();
-				$('.login-content').hide();
-			});
-
-			$('#btn-login-close').click(function() {
-				$('.login-content').slideUp();
-			});
-
-			$('#btn-signup-close').click(function() {
-				$('.signup-content').slideUp();
-			});
-
-		});
+$('#exampleModal1').on('show.bs.modal', function (event) {
+	  var button = $(event.relatedTarget) // Button that triggered the modal
+	  var recipient = button.data('whatever') // Extract info from data-* attributes
+	  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+	  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+	  var modal = $(this)
+	  modal.find('.modal-title').text('New message to ' + recipient)
+	  modal.find('.modal-body input').val(recipient)
+	});
+	
+$('#exampleModal2').on('show.bs.modal', function (event) {
+	  var button = $(event.relatedTarget) // Button that triggered the modal
+	  var recipient = button.data('whatever') // Extract info from data-* attributes
+	  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+	  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+	  var modal = $(this)
+	  modal.find('.modal-title').text('New message to ' + recipient)
+	  modal.find('.modal-body input').val(recipient)
+	});
 	</script>
+	
+	
+</body>
+</html>
+	
