@@ -1,22 +1,14 @@
 @CHARSET "EUC-KR";
 
 * {
-    	 /* border: 1px solid red;    */ 
+    	/* border: 1px solid red;    */
 }
 
-header{
-/* 	border: 1px solid red; */
-	height: 180px;
-/* 	text-align: right;
- */}
-
 #style-main{
-	
 	height: 400px;
 }
 
 #shop-main{
-	
 	height: 350px;
 }
 
@@ -48,45 +40,6 @@ nav{
 	clear: both;
 }
 
-#site-title {
-	
-	font-size: 2.5em;
-	text-align: center;
-}
-
-#searchbar {
-	text-align: center;
-	padding: 20px 0;
-}
-
-#input-search {
-	width: 300px;
-	height: 20px;
-}
-
-#menubar{
-/* 	border: 1px solid red; */
-	height: 80px;
-}
-
-
-.style-div{
-	width: 230px;
-	height: 400px;
-	/* background-color: aqua; */
-	float: left;
-	margin: 5px;
-}
-
-.style-list{
-	position: relative;
-	/* 堪檜 熱薑 */
-	height: 100%;
- 	text-align: left; 
-	padding: 10px 15px;
-	width: 100%;
-}
-
 /*-------------------*/
 .well-sm {
 	text-align: right;
@@ -114,12 +67,10 @@ nav{
 	margin-left: 10px;
 	margin-right: 10px;
 	height: 100%;
-	
 }
 
 .thumbnail {
 	border-radius: 5px;
-/* 	line-height: 1; */
 }
 
 .row {
@@ -131,14 +82,13 @@ nav{
 }
 
 .list-group-item-text {
-/* 	height: 40px;
-	margin: 0 0 0px; */
 	width: 70%;
 }
 
 .thumbnail a > img {
 	height: 165px;
 }
+
 /* で機 */
 /* で機 創檜 */
 .modal-dialog {
@@ -164,11 +114,6 @@ nav{
  	padding: 5px 10px;
  }
  
- 
- section {
- /* 	background-color: Beige; */
- }
- /* 剪葬  */
  p {
  	margin: 0 0 0px;
  	float: right;
