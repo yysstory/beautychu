@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Beauty Chu~♥</title>
+
+<link rel="shortcut icon" href="../images/favicon.ico"
+	type="image/x-icon">
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+
+<style type="text/css">
+/* 스타일 적용 공간! */
+.yun-container {
+	/* width: 1200px; */
+	margin: 0 auto;
+}
+
+.yun-info-bg {
+	width: 1140px;
+	height: 600px;
+	background-color: red;
+	float: left;
+	position: relative;
+	margin: 5px;
+	margin-top: 10px;
+	display: none;
+}
+
+.yun-info-cl {
+	height: 100%;
+}
+
+.yun-box {
+	width: 280px;
+	height: 330px;
+	background-color: grey;
+	float: left;
+	margin: 5px;
+	font-size: 40px;
+}
+
+.yun-edge {
+	background-color: yellow;
+}
+
+.yun-selected {
+	background-color: red;
+}
+
+/* yun-test.html css */
+
+#changediv {
+	position: relative;
+	width: 600px;
+	height: 300px;
+}
+
+#changediv div{
+	background-size: 600px 300px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+#div1 {
+	background-image: url("../images/yun-test/shopimg.png");
+	z-index: 1;
+}
+</style>
+
+</head>
+<body>
+
+	<header>
+		<!-- header 건들지 말긔! -->
+	</header>
+
+
+
+	<div id="wrap-chu" class="wrap-chu">
+
+		<div class="yun-container">
+			<div class="yun-box">0</div>
+			<div class="yun-box">1</div>
+			<div class="yun-box">2</div>
+			<div class="yun-box">3</div>
+			<div class="yun-box">4</div>
+			<div class="yun-box">5</div>
+			<div class="yun-box">6</div>
+			<div class="yun-box">7</div>
+			<div class="yun-box">8</div>
+			<div class="yun-box">9</div>
+			<div class="yun-box">10</div>
+		</div>
+	</div>
+
+
+
+	<footer>
+		<!-- footer 건들지 말긔! -->
+	</footer>
+
+	<script type="text/javascript"
+		src='../js/resources/jquery-2.1.1.min.js'></script>
+	<script type="text/javascript">
+	<!-- header, footer 로드 스크립트!! -->
+		$('header').load('common/header.html');
+		$('footer').load('common/footer.html');
+
+		var container = $('.yun-container');
+		var elements = container.children();
+		var oldWrapPos = -1;
+
+		$('.yun-box').click(function() {
+			container.children().removeClass('yun-selected'); // 기존에 selected 된 클레스를 리셋
+			$(this).addClass('yun-selected'); //누른 div에 selected 표시
+			var selectedPos = $(this).index(); // 누른 div의 index값 저장
+			var elementsInRow = 4; // 너비 4칸으로 고정
+		 	var row = Math.floor(selectedPos / elementsInRow) + 1;
+			//floor는 버리는 함수 누른인덱스/너비 4칸 +1해서 몇번째 줄인지 구함
+			var wrapPos = (row * elementsInRow);
+			// 만약 마지막 줄을 선택했다면 마지막 엘리먼트를 이용한다. 
+			var size = elements.length; //총 div의 갯수
+			if (wrapPos >= size) {
+				wrapPos = size;
+			}
+			//wrapPos 끝인덱스를 저장한다.
+			wrapPos = wrapPos - 1;
+			//인덱스는 0부터 시작하므로 -1을 해준다.
+			if (selectedPos == oldWrapPos) {
+				$('.yun-info-bg').slideUp(function() {
+					$(this).remove();
+				});
+				oldWrapPos = 0;
+			} else {
+				oldWrapPos = selectedPos;
+				elements.removeClass('yun-edge');
+				$(elements[wrapPos]).addClass('yun-edge');
+				$('.yun-info-bg').slideUp(function() {
+					$(this).remove();
+				});
+				$('.yun-edge').after('<div class="yun-info-bg"></div>');
+				$('.yun-info-bg').load('yun-test.html');
+				$('.yun-info-bg').slideDown();
+			}
+		});
+	</script>
+
+</body>
+</html>
