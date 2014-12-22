@@ -48,16 +48,17 @@
 	background-color: red;
 }
 
+/* ============================================================== */
 /* yun-test.html css */
 
 #changediv {
 	position: relative;
-	width: 600px;
-	height: 300px;
+	width: 1000px;
+	height: 500px;
 }
 
 #changediv div{
-	background-size: 600px 300px;
+	background-size: 1000px 500px;
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -67,6 +68,8 @@
 	background-image: url("../images/yun-test/shopimg.png");
 	z-index: 1;
 }
+/* ============================================================== */\
+
 </style>
 
 </head>
@@ -132,7 +135,7 @@
 				$('.yun-info-bg').slideUp(function() {
 					$(this).remove();
 				});
-				oldWrapPos = 0;
+				oldWrapPos = -1;
 			} else {
 				oldWrapPos = selectedPos;
 				elements.removeClass('yun-edge');
