@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Beauty Chu~♥</title>
+
+<link rel="shortcut icon" href="../images/favicon.ico"
+	type="image/x-icon">
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+
+<style type="text/css">
+/* 스타일 적용 공간! */
+#changediv {
+	position: relative;
+	width: 300px;
+	height: 300px; 
+}
+
+#div1 {
+	background-color: red;
+ 	width: 100%;
+	height: 100%;
+	z-index: 5;
+	position: absolute;
+	display: none;
+}
+
+#div2 {
+	background-color: green;
+ 	width: 100%;
+	height: 100%;
+	z-index: 2;
+	position: absolute;
+}
+
+#div3 {
+	background-color: blue;
+ 	width: 100%;
+	height: 100%;
+	z-index: 3;
+	position: absolute;
+}
+</style>
+
+</head>
+
+<body>
+
+	<header>
+		<!-- header 건들지 말긔! -->
+	</header>
+
+ 
+
+	<div id="wrap-chu" class="wrap-chu">
+
+
+		<div id=changediv>
+			<div id=div1>1</div>
+			<div id=div2>2</div>
+			<div id=div3>3</div>
+		</div>
+
+
+	</div>
+
+
+
+
+	<footer>
+		<!-- footer 건들지 말긔! -->
+	</footer>
+
+
+
+
+
+	<!-- header, footer 로드 스크립트!! -->
+	<script type="text/javascript" src='../js/resources/jquery-2.1.1.min.js'></script>
+	
+	
+	
+	
+	
+	<script>
+		$('header').load('common/header.html');
+		$('footer').load('common/footer.html');
+		window.setTimeout('window.location.reload()', 7000); //60초마다 새로고침
+	</script>
+
+</body>
+</html>
