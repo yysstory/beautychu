@@ -13,33 +13,22 @@
 /* 스타일 적용 공간! */
 #changediv {
 	position: relative;
-	width: 300px;
+	width: 600px;
 	height: 300px;
 }
 
+div{
+	background-size: 600px 300px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
 #div1 {
-	background-color: red;
-	width: 100%;
-	height: 100%;
-	z-index: 5;
-	position: absolute;
+	background-image: url("../images/yun-test/shopimg.png");
+	z-index: 1;
 }
 
-#div2 {
-	background-color: green;
-	width: 100%;
-	height: 100%;
-	z-index: 2;
-	position: absolute;
-}
-
-#div3 {
-	background-color: blue;
-	width: 100%;
-	height: 100%;
-	z-index: 3;
-	position: absolute;
-}
 </style>
 
 </head>
@@ -55,19 +44,11 @@
 	<div id="wrap-chu" class="wrap-chu">
 
 
-		<div id=changediv>
-			<div id=div1>
-				1
-				<button id='btn1' type="button">x</button>
+		<div id=changediv >
+			<div id=div1>1 <button class='yun-pricelist' type="button">price list</button>
 			</div>
-			<div id=div2>2
-							<button id='btn1' type="button">x</button>
-			</div>
-			<div id=div3>3
-							<button id='btn1' type="button">x</button>
-			</div>
-		</div>
 
+		</div>
 
 	</div>
 
@@ -86,16 +67,63 @@
 	<script type="text/javascript"
 		src='../js/resources/jquery-2.1.1.min.js'></script>
 	<script>
+		
+	
+		var pagebtnnum =2;
+	
 		$('header').load('common/header.html');
 		$('footer').load('common/footer.html');
 
-		$('#btn1').click(function() {
-			$('div').fadeOut("fast");
-			//			$('#div1').css("display","none");
-		})
+		
+		$('#changediv').delegate(".yun-pricelist","click",function() {
+			$('<div>').fadeIn('fast').appendTo("#changediv").attr('id','div'+pagebtnnum)
+			.css({"z-index":pagebtnnum,"background-image":"url('../images/yun-test/shopimg2.png')"})
+ 			.append($('<button>').html('back').attr({'class':'yun-back-button','id':'yun-back-button'+pagebtnnum}))
+ 			.append($('<button>').html('style').attr({'class':'yun-style-button','id':'yun-style-button'+pagebtnnum}))
+ 			.append($('<button>').html('x').attr({'class':'yun-exit'}));
+			pagebtnnum++;
+		});
 
-		window.setTimeout('window.location.reload()', 7000); //60초마다 새로고침
-	</script>
+		
+		$('#changediv').delegate(".yun-back-button","click",function(){
+			pagebtnnum--;
+			$('#div'+pagebtnnum).fadeOut('slow').remove();
+		});
+		
+		$('#changediv').delegate(".yun-exit","click",function(){
+			pagebtnnum--;
+			for(var i=pagebtnnum; i>1 ; i--){
+				$('#div'+i).remove();
+			}
+		});
+		
+		$('#changediv').delegate(".yun-style-button","click",function() {
+			$('<div>').fadeIn('fast').appendTo("#changediv").attr('id','div'+pagebtnnum)
+			.css({"z-index":pagebtnnum,"background-image":"url('../images/yun-test/styleimg.png')"})
+ 			.append($('<button>').html('back').attr({'class':'yun-back-button','id':'yun-back-button'+pagebtnnum}))
+ 			.append($('<button>').html('shop').attr({'class':'yun-shop-button','id':'yun-shop-button'+pagebtnnum}))
+ 			.append($('<button>').html('x').attr({'class':'yun-exit'}));
+			pagebtnnum++;
+
+		});
+		
+
+		$('#changediv').delegate(".yun-shop-button","click",function() {
+			$('<div>').fadeIn('fast').appendTo("#changediv").attr('id','div'+pagebtnnum)
+			.css({"z-index":pagebtnnum,"background-image":"url('../images/yun-test/shopimg.png')"})
+ 			.append($('<button>').html('back').attr({'class':'yun-back-button','id':'yun-back-button'+pagebtnnum}))
+ 			.append($('<button>').html('price list').attr({'class':'yun-pricelist','id':'yun-back-button'+pagebtnnum}))
+ 			.append($('<button>').html('x').attr({'class':'yun-exit'}));
+			pagebtnnum++;
+
+		});
+		
+		
+		
+		
+
+/* 		window.setTimeout('window.location.reload()', 20000); //60초마다 새로고침
+ */	</script>
 
 </body>
 </html>
