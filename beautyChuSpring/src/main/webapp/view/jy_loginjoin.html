@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Beauty Chu~♥</title>
+
+<link rel="shortcut icon" href="../images/favicon.ico"
+	type="image/x-icon">
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<script type='text/javascript'
+	src='http://code.jquery.com/jquery-1.7.2.js'></script>
+
+<!-- login form css -->
+		<link rel="stylesheet" type="text/css" href="../css/resources/jy_normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../css/resources/jy_demo.css" />
+		
+		<!-- common styles -->
+		<link rel="stylesheet" type="text/css" href="../css/resources/jy_dialog.css" />
+		
+		<!-- individual effect -->
+		<link rel="stylesheet" type="text/css" href="../css/resources/jy_dialog-ken.css" />
+		<script src="../js/resources/jy/modernizr.custom.js"></script>
+<!-- /. login form css -->
+
+<style type="text/css">
+	/* 스타일 적용 공간! */
+	
+</style>
+
+</head>
+
+<body>
+
+	<header>
+		<!-- header 건들지 말긔! -->
+	</header>
+
+
+ 	<div id="wrap-chu" class="wrap-chu">
+		<!-- 작업공간 - 이파일 고치지 말고 복사해서 쓰시오...!! -->
+	
+	<div>
+		<button data-dialog1="logindialog" class="jy-btn-login trigger" type="button">login</button>
+		<button data-dialog2="joindialog" class="jy-btn-join trigger" type="button">join</button>
+	</div>
+	
+	
+<!-- (S) login form -->	
+	<div id="logindialog" class="dialog">
+    <div class="dialog__overlay"></div>
+    <!-- <div class="dialog__content"> -->
+    <div class="dialog__content">
+    
+			<div class="login-header-area">
+			<button class="action btn-login-close" data-dialog-close>
+			<img src="../images/x.jpg">
+			</button>
+			</div>
+		<form class="form-signin" role="form">
+			<div class='page-header'>
+				<!-- <button id='btn-login-close'
+					class=' btn btn-login-close btn-inverse' type='button'>닫기</button> -->
+				<h2 class="form-signin-heading">로그인</h2>
+			</div>
+			<div class="login-line">
+			<label for="inputEmail" class="sr-only">Email address</label> 
+			<input type="email" id="inputEmail" class="form-control-login"
+				placeholder="beautychu@appchu.com" required autofocus> 
+			</div>
+			<div class="login-line">	
+				<label for="inputPassword" class="sr-only">Password</label> 
+				<input type="password" id="inputPassword" class="form-control-login"
+				placeholder="Password" required>
+			</div>
+			<div class="checkbox">
+				<label class="checkbox-line"> <input type="checkbox" value="remember-me">
+					아이디 저장
+				</label>
+			</div>
+			
+			<button class="btn-login" type="submit">로그인</button>
+		
+		</form>
+			
+    </div>
+	</div>
+<!-- (E) login form -->	
+	
+<!-- (S) join form -->	
+	<div id="joindialog" class="dialog">
+    <div class="dialog__overlay"></div>
+    <!-- <div class="dialog__content"> -->
+    <div class="dialog__content" >
+
+			<div class="join-header-area">
+        <!--page-header -->
+				<div class='page-header'>
+					<h2 class='form-signup-heading'>회원가입</h2>
+				</div>
+				<!--/.page-header -->
+			<button class="action btn-join-close" data-dialog-close>
+			<img src="../images/x.jpg">
+			</button>
+			</div>
+
+				<!-- 회원가입 폼 : S -->
+				<form name='frm' class='form-horizontal join' role='form'
+					method='post'>
+
+					<input name='chk_email' id='chk_email' type='hidden'> <input
+						name='chk_mobile' id='chk_mobile' type='hidden'> <input
+						name='mobile_cert' id='mobile_cert' type='hidden' value='N'>
+					<input name='email_done_chk' id='email_done_chk' type='hidden'
+						value='N'> <input name='cert_done_chk' id='cert_done_chk'
+						type='hidden' value='N'>
+
+					<!-- 이메일 : S -->
+					<div class='form-group'>
+						<label class='control-label' for='inputEmail1'> 
+						<strong class='email'>이메일</strong>
+						</label>
+						<div class='email-total'>
+
+							<div class='email-div'>
+								<div class='input-email'>
+									<input name='user_email' class='form-control-join'
+										id='user_email' type='email' maxlength='100'
+										placeholder='appchu@beautychu.com'>
+										<!-- 이메일입력 -->
+								</div>
+								<!-- /.row -->
+								<blockquote class='alarm text-primary'></blockquote>
+								<!-- 이메일체크 메시지 알람 -->
+							</div>
+
+						</div>
+					</div>
+					<!-- /.form-group -->
+
+
+					<!-- 닉네임 : S -->
+					<div class='form-group'>
+						<label class='control-label' for='inputNickname1'>
+							<strong class='nick'>닉네임</strong>
+						</label>
+						<div class='input-nickname'>
+							<input name='user_nickname' class='form-control-join'
+								id='user_nickname' type='text' maxlength='50' placeholder=' '>
+							<!-- 닉네임 -->
+						</div>
+					</div>
+					<!-- /.form-group -->
+
+					<!-- 비밀번호 : S -->
+					<div class='form-group'>
+						<label class='control-label' for='inputPassword1'>
+							<strong class='pw'>비밀번호</strong>
+						</label>
+						<div class='input-user-pw'>
+							<input name='user_pw' class='form-control-join' id='user_pw'
+								type='password' maxlength='20' placeholder='4~20자로 입력해주세요.'>
+							<!-- 비밀번호 -->
+						</div>
+					</div>
+					<!-- /.form-group -->
+
+					<!-- 비밀번호확인 : S -->
+					<div class='form-group'>
+						<label class='control-label' for='inputPassword2'>
+							<strong class='pwr'>비밀번호 확인
+						</strong>
+						</label>
+						<div class='input-confirm-pw'>
+							<input name='confirm_pw' class='form-control-join' id='confirm_pw'
+								type='password' maxlength='20' placeholder='비밀번호를 재입력 해주세요.'>
+							<!-- 비밀번호확인 -->
+						</div>
+					</div>
+					<!-- /.form-group -->
+
+					<div class='btn-area'>
+						<button class='btn-join-fin'
+							onclick='fn_form_chk();' type='button'>
+							<span class='btn-join'>회원 가입 완료</span>
+						</button>
+						<div class="clear"></div>
+						<div class='register-alert'>
+							<p class="alert-message">
+								아래의 이메일로 사업자 등록증을 보내주시면 사업자 회원으로 등록해 드립니다.<br>
+								admin@beautychu.com
+							</p>
+						</div>
+						<!-- 회원가입 완료 -->
+					</div>
+				</form>
+        <!-- <div><button class="action" data-dialog-close>Close</button></div> -->
+    </div>
+	</div>
+<!-- (E) join form -->
+
+</div> 
+
+
+<script src="../js/resources/jy/classie.js"></script>
+<script src="../js/resources/jy/dialogFx.js"></script>		
+<script>
+
+
+(function() {
+
+	var logindlgtrigger = document.querySelector( '[data-dialog1]' ),
+		logindialog = document.getElementById( logindlgtrigger.getAttribute( 'data-dialog1' ) ),
+		logindlg = new DialogFx( logindialog );
+	
+
+	var joindlgtrigger = document.querySelector( '[data-dialog2]' ),
+		joindialog = document.getElementById( joindlgtrigger.getAttribute( 'data-dialog2' ) ),
+		joindlg = new DialogFx( joindialog );
+	
+	logindlgtrigger.addEventListener( 'click', logindlg.toggle.bind(logindlg) );
+	joindlgtrigger.addEventListener( 'click', joindlg.toggle.bind(joindlg) );
+
+})(); 
+
+</script>
+	
+	<footer>
+		<!-- footer 건들지 말긔! -->
+	</footer>
+
+
+	<!-- header, footer 로드 스크립트!! -->
+	<script>
+		$('header').load('common/header.html');
+		$('footer').load('common/footer.html');
+		
+		/* 
+		window.setTimeout('window.location.reload()', 7000); //60초마다 새로고침
+		 */
+	</script>
+
+</body>
+</html>
