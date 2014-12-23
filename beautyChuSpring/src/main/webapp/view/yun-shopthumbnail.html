@@ -11,6 +11,9 @@
 
 <style type="text/css">
 /* 스타일 적용 공간! */
+
+/* ============================================================== */
+
 .yun-container {
 	width: 100%;
 	margin: 0 auto;
@@ -19,7 +22,7 @@
 .yun-info-bg {
 	width: 1150px;
 	height: 600px;
-	background-color: red;
+	background-color: #DCDBD9;
 	float: left;
 	position: relative;
 	margin: 5px;
@@ -48,10 +51,16 @@
 	background-color: red;
 }
 
+.yun-boximage{
+
+	width: 280px;
+	height: 330px;
+}
+
 /* ============================================================== */
 /* yun-test.html css */
 
-#changediv {
+/* #changediv {
 	position: relative;
 	width: 1000px;
 	height: 500px;
@@ -67,8 +76,47 @@
 #div1 {
 	background-image: url("../images/yun-test/shopimg.png");
 	z-index: 1;
-}
+} */
 /* ============================================================== */\
+
+/* ============================================================== */
+/* yun-shoppricelist.html css */
+
+#yun-shopdetailcontainer {
+	width: 1150px;
+	height: 600px;
+}
+
+.yun-shopcontainerdiv {
+	width: 528px;
+	height: 560px;
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+.yun-shopstyle {
+	width: 168px;
+	height: 178px;
+	float: left;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+#yun-buttondiv {
+	height: 50px;
+	float: right;
+}
+
+#yun-pricelistsection {
+	height: 500px;
+}
+
+.yun-shopstyleimage {
+	width: 168px;
+	height: 178px;
+}
+/* ============================================================== */
 
 </style>
 
@@ -84,21 +132,51 @@
 	<div id="wrap-chu" class="wrap-chu">
 
 		<div class="yun-container">
-			<div class="yun-box">0</div>
-			<div class="yun-box">1</div>
-			<div class="yun-box">2</div>
-			<div class="yun-box">3</div>
-			<div class="yun-box">4</div>
-			<div class="yun-box">5</div>
-			<div class="yun-box">6</div>
-			<div class="yun-box">7</div>
-			<div class="yun-box">8</div>
-			<div class="yun-box">9</div>
-			<div class="yun-box">10</div>
-			<div class="yun-box">11</div>
-			<div class="yun-box">12</div>
-			<div class="yun-box">13</div>
-			<div class="yun-box">14</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (1).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (2).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (3).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (4).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (5).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (6).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (7).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (8).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (9).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (10).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (11).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (12).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (13).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (14).png">
+			</div>
+			<div class="yun-box">
+			<img class="yun-boximage" src="../images/main/woman (15).png">
+			</div>
 		</div>
 	</div>
 
@@ -150,7 +228,7 @@
 					$(this).remove();
 				});
 				$('.yun-edge').after('<div class="yun-info-bg"></div>');
-				$('.yun-info-bg').load('yun-test.html');
+				$('.yun-info-bg').load('yun-shoppricelist.html');
 				$('.yun-info-bg').slideDown();
 			}
 		});
