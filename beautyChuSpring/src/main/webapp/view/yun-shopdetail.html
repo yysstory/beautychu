@@ -1,13 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>Beauty Chu~♥</title>
+
+<link rel="shortcut icon" href="../images/favicon.ico"
+	type="image/x-icon">
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+
+<style type="text/css">
+/* 스타일 적용 공간! */
+* {
+	border: 1px solid red;
+}
+
+#yun-shopdetailcontainer {
+	width: 1150px;
+	height: 600px;
+}
+
+.yun-shopcontainerdiv {
+	width: 528px;
+	height: 560px;
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+.yun-shopstyle {
+	width: 168px;
+	height: 178px;
+	float: left;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+
+#yun-buttondiv{
+	height: 50px;
+	float: right;
+}
+
+
+#yun-pricelistsection{
+	height:500px;
+}
+
+</style>
+
 </head>
 <body>
 
-<div></div>
+	<header>
+		<!-- header 건들지 말긔! -->
+	</header>
 
+
+
+	<div id="wrap-chu" class="wrap-chu">
+
+
+		<div id=yun-shopdetailcontainer>
+		
+			<div id=yun-shopstylelist class=yun-shopcontainerdiv>
+				<div id=yun-shopstyle1 class=yun-shopstyle></div>
+				<div id=yun-shopstyle2 class=yun-shopstyle></div>
+				<div id=yun-shopstyle3 class=yun-shopstyle></div>
+				<div id=yun-shopstyle4 class=yun-shopstyle></div>
+				<div id=yun-shopstyle5 class=yun-shopstyle></div>
+				<div id=yun-shopstyle6 class=yun-shopstyle></div>
+				<div id=yun-shopstyle7 class=yun-shopstyle></div>
+				<div id=yun-shopstyle8 class=yun-shopstyle></div>
+				<div id=yun-shopstyle6 class=yun-shopstyle></div>
+			</div>
+
+			<div id=yun-shoppricelist class=yun-shopcontainerdiv>
+				<div id=yun-buttondiv>
+				<img alt="" src="../images/yun-shopdetail/back-icon.png">
+				<img alt="" src="../images/yun-shopdetail/exit-icon.png">
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+
+
+
+
+	<footer>
+		<!-- footer 건들지 말긔! -->
+	</footer>
+
+
+
+
+	<!-- header, footer 로드 스크립트!! -->
+	<script type="text/javascript"
+		src='../js/resources/jquery-2.1.1.min.js'></script>
+	<script>
+		$('header').load('common/header.html');
+		$('footer').load('common/footer.html');
+
+		/* 
+		window.setTimeout('window.location.reload()', 7000); //60초마다 새로고침
+		 */
+	</script>
 
 </body>
 </html>
