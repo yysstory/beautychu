@@ -117,8 +117,7 @@
 	height: 178px;
 }
 /* ============================================================== */
-/* ============================================================== */
-/* yun-test.html css */
+/* yun-styledetail.html css */
 
 
 #yun-styledetailcontainer {
@@ -164,6 +163,58 @@
 .yun-stylecomment{
 	width : 100%;
 }
+
+/* ============================================================== */
+/* yun-shopdetail.html css */
+	
+	#yun-shopdetailcontainer {
+	width: 1150px;
+	height: 600px;
+}
+
+.yun-shopcontainerdiv {
+	width: 528px;
+	height: 560px;
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+#yun-buttondiv {
+	height: 50px;
+	float: right;
+}
+
+.yun-shopphotobig {
+	width: 520px;
+	height: 500px;
+	float: left;
+	margin-bottom: 3px;
+}
+
+.yun-shopphotosmall {
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin-left: 3px;
+}
+
+#yun-shoptitle {
+	height: 90px;
+}
+
+#yun-shopcontentdetail {
+	height: 130px;
+}
+
+.yun-shopcomment{
+	width : 100%;
+}
+	
+	
+	
+	
+/* ============================================================== */
 
 </style>
 
@@ -262,6 +313,7 @@
 			//wrapPos 끝인덱스를 저장한다.
 			wrapPos = wrapPos - 1;
 			//인덱스는 0부터 시작하므로 -1을 해준다.
+			
 			if (selectedPos == oldWrapPos) {
 				$('.yun-info-bg').slideUp(function() {
 					$(this).remove();
@@ -275,10 +327,18 @@
 					$(this).remove();
 				});
 				$('.yun-edge').after('<div class="yun-info-bg"></div>');
-				$('.yun-info-bg').load('yun-shoppricelist.html');
+				$('.yun-info-bg').load('yun-shopdetail.html');
 				$('.yun-info-bg').slideDown();
 			}
 		});
+		
+		
+
+		
+		
+		
+		
+		
 	</script>
 
 </body>
