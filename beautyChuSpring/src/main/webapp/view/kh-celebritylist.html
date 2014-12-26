@@ -63,14 +63,16 @@
 	src="http://cdn.ink.sapo.pt/3.1.1/js/ink-all.min.js"></script>
 <script type="text/javascript"
 	src="http://cdn.ink.sapo.pt/3.1.1/js/autoload.js"></script>
+<!--  슬라이드  -->
+	<script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script>
+
 	
 	
 <style type="text/css">
 /* 스타일 적용 공간! */
-*{
-	border: 1px blue solid;
 
-}
 
 
 .yun-container {
@@ -81,13 +83,14 @@
 .yun-info-bg {
 	width: 1150px;
 	height: 600px;
-	background-color: red;
+	background-color: #ededed;
 	float: left;
 	position: relative;
 	margin: 5px;
 	margin-top: 10px;
 	display: none;
 	padding-left: 170px;
+	padding-top: 70px;
 }
 
 .yun-info-cl {
@@ -117,9 +120,6 @@
 	border: 1px solid blue;
 }   */
 
-body {
-	background: #ededed;
-}
 
 .panel {
 	border-radius: 2px;
@@ -156,12 +156,9 @@ body {
 } */
 
 .kh-small-shop {
-	height: 50px;
+	height: 60px;
 }
 
-.ink-carousel {
-	height: 390px;
-}
 
 #thumbs_carousel {
 	height: 60px;
@@ -203,7 +200,109 @@ p {
 height: 1000px;
 }
 
+/* hover */
 
+
+.kh-cellist {
+	position: relative;
+	width: 280px;
+	height: 330px;
+}
+
+.kh-celimg {
+	width: 280px;
+	height: 330px;	
+	
+}
+.kh-basic {
+	position: absolute;
+	bottom: 0px;
+	width: 280px;
+	text-align: center;
+	height: 100px;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+}
+
+.kh-detail {
+	position: absolute;
+	bottom: 0px;
+	width: 280px;
+	text-align: center;
+	height: 180px;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+}	
+
+
+/* 슬라이더 */
+
+            /* jssor slider arrow navigator skin 05 css */
+            /*
+            .jssora05l              (normal)
+            .jssora05r              (normal)
+            .jssora05l:hover        (normal mouseover)
+            .jssora05r:hover        (normal mouseover)
+            .jssora05ldn            (mousedown)
+            .jssora05rdn            (mousedown)
+            */
+            .jssora05l, .jssora05r, .jssora05ldn, .jssora05rdn
+            {
+            	position: absolute;
+            	cursor: pointer;
+            	display: block;
+                background: url(../images/kh-slider/a21.png) no-repeat;
+                overflow:hidden;
+            }
+            .jssora05l { background-position: -10px -40px; }
+            .jssora05r { background-position: -70px -40px; }
+            .jssora05l:hover { background-position: -130px -40px; }
+            .jssora05r:hover { background-position: -190px -40px; }
+            .jssora05ldn { background-position: -250px -40px; }
+            .jssora05rdn { background-position: -310px -40px; }
+            
+            
+                            /* jssor slider thumbnail navigator skin 01 css */
+                /*
+                .jssort01 .p           (normal)
+                .jssort01 .p:hover     (normal mouseover)
+                .jssort01 .pav           (active)
+                .jssort01 .pav:hover     (active mouseover)
+                .jssort01 .pdn           (mousedown)
+                */
+                .jssort01 .w {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .jssort01 .c {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 68px;
+                    height: 68px;
+                    border: #000 2px solid;
+                }
+
+                .jssort01 .p:hover .c, .jssort01 .pav:hover .c, .jssort01 .pav .c {
+                    background: url(../images/kh-slider/t01.png) center center;
+                    border-width: 0px;
+                    top: 2px;
+                    left: 2px;
+                    width: 68px;
+                    height: 68px;
+                }
+
+                .jssort01 .p:hover .c, .jssort01 .pav:hover .c {
+                    top: 0px;
+                    left: 0px;
+                    width: 70px;
+                    height: 70px;
+                    border: #fff 1px solid;
+                }
 
 </style>
 
@@ -219,17 +318,72 @@ height: 1000px;
 	<div id="wrap-chu" class="wrap-chu">
 
 		<div class="yun-container">
-			<div class="yun-box">0</div>
-			<div class="yun-box">1</div>
-			<div class="yun-box">2</div>
-			<div class="yun-box">3</div>
-			<div class="yun-box">4</div>
-			<div class="yun-box">5</div>
-			<div class="yun-box">6</div>
-			<div class="yun-box">7</div>
-			<div class="yun-box">8</div>
-			<div class="yun-box">9</div>
-			<div class="yun-box">10</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel1.jpg"/>
+					<div class="kh-basic"><p>JUNO Hair</p></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel2.jpg"/>
+					<div class="kh-basic"><p>JUNO Hair</p></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel3.jpg"/>
+					<div class="kh-basic"><p>JUNO Hair</p></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel4.jpg"/>
+					<div class="kh-basic"><p>JUNO Hair</p></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel5.jpg"/>
+					<div class="kh-basic"><p>JUNO Hair</p></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel6.jpg"/>
+					<div class="kh-basic"><p>JUNO Hair</p></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel7.jpg"/>
+					<div class="kh-basic"><p>JUNO Hair</p></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel8.jpg"/>
+					<div class="kh-basic"><p>JUNO Hair</p></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel9.jpg"/>
+					<div class="kh-basic"><p>JUNO Hair</p></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel1.jpg"/>
+					<div class="kh-basic"><p>JUNO Hair</p></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel1.jpg"/>
+					<div class="kh-basic"><p>JUNO Hair</p></div>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -279,13 +433,28 @@ height: 1000px;
 					$(this).remove();
 				});
 				$('.yun-edge').after('<div class="yun-info-bg"></div>');
-				$('.yun-info-bg').load('templates/kh-celebritydetail.html');
+				$('.yun-info-bg').load('templates/kh-image-gallery.source.html');
 				$('.yun-info-bg').slideDown();
 			}
 		});
 		
 	</script>
+	<!-- hover -->
+	<script>
+	$(".kh-cellist").hover(
+			  function () {
+				  $(this).find(".kh-basic").remove();
+				  $(this).append("<div class='kh-detail'><p>JUNO Hair <br>☆☆☆☆☆</p></div>");
+			  },
+			  function () {
+				  $(this).append($("<div class='kh-basic'><p>JUNO Hair</p></div>"));
+				  $(this).find(".kh-detail").remove();
+			  }
+			);
+
+	</script>
 	
+	</script>
 
 
 </body>
