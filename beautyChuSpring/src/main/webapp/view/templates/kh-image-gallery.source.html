@@ -81,7 +81,7 @@
 
                     $ActionMode: 1,                                 //[Optional] 0 None, 1 act by click, 2 act by mouse hover, 3 both, default value is 1
                     $SpacingX: 8,                                   //[Optional] Horizontal space between each thumbnail in pixel, default value is 0
-                    $DisplayPieces: 10,                             //[Optional] Number of pieces to display, default value is 1
+                    $DisplayPieces: 6,                             //[Optional] Number of pieces to display, default value is 1
                     $ParkingPosition: 360                          //[Optional] The offset position to park thumbnail
                 }
             };
@@ -92,7 +92,7 @@
             function ScaleSlider() {
                 var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
                 if (parentWidth)
-                    jssor_slider1.$ScaleWidth(Math.max(Math.min(parentWidth, 800), 300));
+                    jssor_slider1.$ScaleWidth(Math.max(Math.min(parentWidth, 500), 300));
                 else
                     window.setTimeout(ScaleSlider, 30);
             }
@@ -106,7 +106,9 @@
     </script>
     <!-- Jssor Slider Begin -->
     <!-- You can move inline styles to css file or css block. -->
-    <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 800px;
+    <div><h1>Celebrity</h1></div>
+    
+    <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 500px;
         height: 456px; background: #191919; overflow: hidden;">
 
         <!-- Loading Screen -->
@@ -115,15 +117,15 @@
                 background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;">
             </div>
             <div style="position: absolute; display: block; background: url(../images/kh-slider/loading.gif) no-repeat center center;
-                top: 0px; left: 0px;width: 100%;height:100%;">
+                top: 0px; left: 0px;width: 50%;height:100%;">
             </div>
         </div>
 
         <!-- Slides Container -->
-        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 800px; height: 356px; overflow: hidden;">
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 500px; height: 356px; overflow: hidden;">
             <div>
-                <img u="image" src="../images/kh-slider/alila/01.jpg" />
-                <img u="thumb" src="../images/kh-slider/alila/thumb-01.jpg" />
+                <img u="image" src="../images/kh-celebrity/cel1.jpg" />
+                <img u="thumb" src="../images/kh-celebrity/cel1.jpg" />
             </div>
             <div>
                 <img u="image" src="../images/kh-slider/alila/02.jpg" />
@@ -183,9 +185,9 @@
         <!-- Arrow Navigator Skin End -->
         
         <!-- Thumbnail Navigator Skin Begin -->
-        <div u="thumbnavigator" class="jssort01" style="position: absolute; width: 800px; height: 100px; left:0px; bottom: 0px;">
+        <div u="thumbnavigator" class="jssort01" style="position: absolute; width: 500px; height: 100px; left:0px; bottom: 0px;">
             <!-- Thumbnail Item Skin Begin -->
-            <div u="slides" style="cursor: move;">
+            <div u="slides" style="cursor: move;"">
                 <div u="prototype" class="p" style="position: absolute; width: 72px; height: 72px; top: 0; left: 0;">
                     <div class=w><div u="thumbnailtemplate" style=" width: 100%; height: 100%; border: none;position:absolute; top: 0; left: 0;"></div></div>
                     <div class=c>
@@ -197,5 +199,6 @@
         <!-- Thumbnail Navigator Skin End -->
     </div>
     <!-- Jssor Slider End -->
+    <div class="kh-celinfo"><p>celebrity info</p></div>
 <!-- </body>
 </html> -->
