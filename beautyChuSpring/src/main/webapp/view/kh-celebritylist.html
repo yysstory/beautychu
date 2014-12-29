@@ -18,6 +18,7 @@
 <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="../css/common.css">
 
+
 <!-- 슬라이드 이미지 -->
 <link rel="apple-touch-icon"
 	href="http://cdn.ink.sapo.pt/3.1.1/img/touch-icon-iphone.png">
@@ -67,7 +68,11 @@
 	<script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
     <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script>
-
+    
+	<!-- 별 -->
+<link rel="stylesheet" href="../css/resources/starrr.css">
+<link rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
 	
 	
 <style type="text/css">
@@ -81,15 +86,15 @@
 }
 
 .yun-info-bg {
-	width: 1150px;
-	height: 600px;
+	width: 570px;
+	height: 670px;
 	background-color: #ededed;
 	float: left;
 	position: relative;
 	margin: 5px;
-	margin-top: 10px;
+	margin-top: 5px;
 	display: none;
-	padding : 40px 60px;
+	padding : 23px 44px;
 }
 
 .yun-info-cl {
@@ -98,7 +103,7 @@
 
 .yun-box {
 	width: 280px;
-	height: 330px;
+	height: 410px;
 	background-color: grey;
 	float: left;
 	margin: 5px;
@@ -205,12 +210,12 @@ height: 1000px;
 .kh-cellist {
 	position: relative;
 	width: 280px;
-	height: 330px;
+	height: 410px;
 }
 
 .kh-celimg {
 	width: 280px;
-	height: 330px;	
+	height: 410px;	
 	
 }
 .kh-basic {
@@ -218,7 +223,7 @@ height: 1000px;
 	bottom: 0px;
 	width: 280px;
 	text-align: center;
-	height: 100px;
+	height: 60px;
 	background-color: rgba(0,0,0,0.5);
 	color: white;
 }
@@ -228,7 +233,7 @@ height: 1000px;
 	bottom: 0px;
 	width: 280px;
 	text-align: center;
-	height: 180px;
+	height: 100px;
 	background-color: rgba(0,0,0,0.5);
 	color: white;
 }	
@@ -303,15 +308,12 @@ height: 1000px;
                     border: #fff 1px solid;
                 }
                 
-                .kh-celinfo {
-                	width: 500px;
-                	height: 400px;
-                	float: right;
-                	display: inline;
+                .starrr{
+                	position: absolute;
+                	top: 40px;
+                	left: 90px;
                 }
-                #slider1_container {
-                	display: inline;
-                }
+                
 					
 </style>
 
@@ -453,7 +455,8 @@ height: 1000px;
 	$(".kh-cellist").hover(
 			  function () {
 				  $(this).find(".kh-basic").remove();
-				  $(this).append("<div class='kh-detail'><p>JUNO Hair <br>☆☆☆☆☆</p></div>");
+				  $(this).append("<div class='kh-detail'></div>");
+				  $(".kh-detail").load("kh-star.html");
 			  },
 			  function () {
 				  $(this).append($("<div class='kh-basic'><p>JUNO Hair</p></div>"));
@@ -463,7 +466,10 @@ height: 1000px;
 
 	</script>
 	
-	</script>
+<!-- 별 -->    
+	<script
+		src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+	<script src="../js/resources/starrr.js"></script>
 
 
 </body>
