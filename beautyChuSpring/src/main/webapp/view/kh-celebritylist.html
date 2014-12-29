@@ -87,7 +87,7 @@
 
 .yun-info-bg {
 	width: 570px;
-	height: 670px;
+	height: 830px;
 	background-color: #ededed;
 	float: left;
 	position: relative;
@@ -95,6 +95,7 @@
 	margin-top: 5px;
 	display: none;
 	padding : 23px 44px;
+	border-radius: 10px;
 }
 
 .yun-info-cl {
@@ -104,19 +105,14 @@
 .yun-box {
 	width: 280px;
 	height: 410px;
-	background-color: grey;
 	float: left;
 	margin: 5px;
 	font-size: 40px;
+	overflow: hidden;
+	border-radius: 10px;
 }
 
-.yun-edge {
-	background-color: yellow;
-}
 
-.yun-selected {
-	background-color: red;
-}
 
 
 /* 슬라이드 이미지 CSS */
@@ -211,11 +207,15 @@ height: 1000px;
 	position: relative;
 	width: 280px;
 	height: 410px;
+	overflow: hidden;
+	border-radius: 10px;
 }
 
 .kh-celimg {
 	width: 280px;
 	height: 410px;	
+	overflow: hidden;
+	border-radius: 10px;
 	
 }
 .kh-basic {
@@ -226,6 +226,7 @@ height: 1000px;
 	height: 60px;
 	background-color: rgba(0,0,0,0.5);
 	color: white;
+	border-radius: 0px 0px 10px 10px;
 }
 
 .kh-detail {
@@ -236,6 +237,7 @@ height: 1000px;
 	height: 100px;
 	background-color: rgba(0,0,0,0.5);
 	color: white;
+	border-radius: 0px 0px 10px 10px;
 }	
 
 
@@ -385,7 +387,7 @@ height: 1000px;
 			</div>
 			<div class="yun-box">
 				<div class="kh-cellist">
-					<img class="kh-celimg" src="../images/kh-celebrity/cel1.jpg"/>
+					<img class="kh-celimg" src="../images/kh-celebrity/cel10.jpg"/>
 					<div class="kh-basic"><p>Celebrity</p></div>
 				</div>
 			</div>
@@ -440,12 +442,21 @@ height: 1000px;
 				oldWrapPos = selectedPos;
 				elements.removeClass('yun-edge');
 				$(elements[wrapPos]).addClass('yun-edge');
-				$('.yun-info-bg').slideUp(function() {
+				$('.yun-info-bg').remove();
+				
+				/* $('.yun-info-bg').slideUp(function() {
 					$(this).remove();
 				});
+				 */
 				$('.yun-edge').after('<div class="yun-info-bg"></div>');
 				$('.yun-info-bg').load('templates/kh-image-gallery.source.html');
 				$('.yun-info-bg').slideDown();
+				setTimeout(function () {  $('.yun-info-bg').each(function(){
+
+					  this.scrollIntoView(true);
+
+					});   },900);
+				
 			}
 		});
 		
