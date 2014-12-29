@@ -298,7 +298,8 @@
 		var container = $('.yun-container');
 		var elements = container.children();
 		var oldWrapPos = -1;
-
+		var pagebtnnum ;
+		
 		$('.yun-box').click(function() {
 			container.children().removeClass('yun-selected'); // 기존에 selected 된 클레스를 리셋
 			$(this).addClass('yun-selected'); //누른 div에 selected 표시
@@ -331,6 +332,7 @@
 				$('.yun-edge').after('<div id=changediv class="yun-info-bg"><div id=yun-div1 class=yun-div><div></div>');
 				$('#yun-div1').load('templates/yun-styledetail.html');
 				$('.yun-info-bg').slideDown();
+				pagebtnnum=2;
 			}
 		});
 		
@@ -338,7 +340,7 @@
 
 		<!--썸네일 상세페이지 앞뒤이동 &오버레이 스크립트 -->		
 
-		var pagebtnnum = 2;
+
 		
 		
 	/* 	$(document).ready(function(){
@@ -353,6 +355,7 @@
 		
 
 		$('div').on("click",".yun-shop-button",function() {
+			event.stopPropagation();
 			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
 			.css("z-index",pagebtnnum);
 			$('#yun-div'+pagebtnnum).load('templates/yun-shopdetail.html');
@@ -362,6 +365,7 @@
 		
 		
 		$('div').on("click",".yun-shoppricelist",function() {
+			event.stopPropagation();
 			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
 			.css("z-index",pagebtnnum);
 			$('#yun-div'+pagebtnnum).load('templates/yun-shoppricelist.html');
@@ -370,22 +374,25 @@
 
 		
 		$('div').on("click",".yun-back",function(){
+			event.stopPropagation();
 			pagebtnnum--;
+			if(pagebtnnum!='1'){
 			$('#yun-div'+pagebtnnum).remove();
-			
+			}
 		});
 		
 		$('div').on("click",".yun-exit",function(){
+			event.stopPropagation();
 			$('.yun-info-bg').slideUp(function() {
 				$(this).remove();
 			});
-			pagebtnnum =-1;
 		});
 		
 		$('div').on("click",".yun-shopstyle",function() {
+			event.stopPropagation();
 			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
 			.css("z-index",pagebtnnum);
-			$('#yun-div'+pagebtnnum).load('templates/yun-pricelist.html');
+			$('#yun-div'+pagebtnnum).load('templates/yun-styledetail.html');
 			pagebtnnum++;
 
 		});
