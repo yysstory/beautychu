@@ -11,7 +11,10 @@
 <link rel="stylesheet" href="../css/resources/starrr.css">
 <link rel="stylesheet"
 	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/yun/button.min.css">
+
 <style type="text/css">
+
 /* 스타일 적용 공간! */
 
 /* ============================================================== */
@@ -42,7 +45,7 @@
 	float: left;
 	margin: 5px;
 	font-size: 40px;
-	border-radius : 10px;
+	border-radius: 10px;
 	overflow: hidden;
 }
 
@@ -79,12 +82,18 @@
 	color: white;
 }
 
+.yun-shop-button .yun-shoppricelist{
+	float: left;
+}
+.get-coupon{
+	float: right;
+}
 
 /* ============================================================== */
 /* yun-test.html css */
 #changediv {
 	position: relative;
-	border-radius:10px;
+	border-radius: 10px;
 	overflow: hidden;
 }
 
@@ -135,7 +144,7 @@
 .yun-shopstyleimage {
 	width: 168px;
 	height: 178px;
-	border-radius:5px;
+	border-radius: 5px;
 	overflow: hidden;
 }
 /* ============================================================== */
@@ -231,6 +240,7 @@
 }
 
 /* ============================================================== */
+/* ==============================버튼 스타일================================ */
 </style>
 
 </head>
@@ -400,6 +410,7 @@
 		});
 		
 		
+
 		$('div').on("click",".yun-shoppricelist",function() {
 			event.stopPropagation();
 			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
