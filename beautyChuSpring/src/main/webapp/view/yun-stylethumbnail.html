@@ -8,7 +8,9 @@
 	type="image/x-icon">
 <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="../css/common.css">
-
+<link rel="stylesheet" href="../css/resources/starrr.css">
+<link rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
 <style type="text/css">
 /* 스타일 적용 공간! */
 
@@ -33,13 +35,13 @@
 }
 
 .yun-box {
-	position :relative;
+	position: relative;
 	width: 280px;
 	height: 410px;
 	background-color: grey;
 	float: left;
 	margin: 5px;
-	font-size: 30px;
+	font-size: 40px;
 }
 
 .yun-edge {
@@ -61,7 +63,7 @@
 	width: 280px;
 	text-align: center;
 	height: 60px;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
 }
 
@@ -71,9 +73,10 @@
 	width: 280px;
 	text-align: center;
 	height: 100px;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
-}	
+}
+
 
 /* ============================================================== */
 /* yun-test.html css */
@@ -244,63 +247,63 @@
 		<div class="yun-container">
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (1).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (2).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (3).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (4).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (5).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (6).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (7).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (8).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (9).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (10).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (11).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (12).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (13).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (14).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (15).png">
-				<div class='kh-basic'>JUNO Hair</div>
+				<div class='kh-basic'>Celebrity</div>
 			</div>
 		</div>
 	</div>
@@ -313,8 +316,8 @@
 
 	<script type="text/javascript"
 		src='../js/resources/jquery-2.1.1.min.js'></script>
-			<script src="../js/resources/starrr.js"></script>
-		
+	<script src="../js/resources/starrr.js"></script>
+
 	<script type="text/javascript">
 	<!-- header, footer 로드 스크립트!! -->
 		$('header').load('common/header.html');
@@ -430,12 +433,12 @@
 		$(".yun-box").hover(
 				  function () {
 					  $(this).find(".kh-basic").remove();
-					  $(this).append("<div class='kh-detail' >JUNO Hair<div class=starrr></div></div>");
-					  
+					  $(this).append("<div class='kh-detail'></div>");
+					  $(".kh-detail").load("kh-star.html");
 					  
 				  },
 				  function () {
-					  $(this).append($("<div class='kh-basic'><p>JUNO Hair</p></div>"));
+					  $(this).append("<div class='kh-basic'>Celebrity</div>");
 					  $(this).find(".kh-detail").remove();
 				  }
 				);
