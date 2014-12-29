@@ -451,11 +451,7 @@ height: 1000px;
 				$('.yun-edge').after('<div class="yun-info-bg"></div>');
 				$('.yun-info-bg').load('templates/kh-image-gallery.source.html');
 				$('.yun-info-bg').slideDown();
-				setTimeout(function () {  $('.yun-info-bg').each(function(){
-
-					  this.scrollIntoView(true);
-
-					});   },900);
+				setTimeout(function () {  $('html, body').animate({scrollTop:$('.yun-info-bg').position().top}, 'slow');  });
 				
 			}
 		});
