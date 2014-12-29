@@ -13,7 +13,6 @@
 /* 스타일 적용 공간! */
 
 /* ============================================================== */
-
 .yun-container {
 	width: 100%;
 	margin: 0 auto;
@@ -34,12 +33,13 @@
 }
 
 .yun-box {
+	position :relative;
 	width: 280px;
-	height: 330px;
+	height: 410px;
 	background-color: grey;
 	float: left;
 	margin: 5px;
-	font-size: 40px;
+	font-size: 30px;
 }
 
 .yun-edge {
@@ -50,34 +50,51 @@
 	background-color: red;
 }
 
-.yun-boximage{
-
+.yun-boximage {
 	width: 280px;
-	height: 330px;
+	/* height: 410px; */
 }
+
+.kh-basic {
+	position: absolute;
+	bottom: 0px;
+	width: 280px;
+	text-align: center;
+	height: 60px;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+}
+
+.kh-detail {
+	position: absolute;
+	bottom: 0px;
+	width: 280px;
+	text-align: center;
+	height: 100px;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+}	
 
 /* ============================================================== */
 /* yun-test.html css */
-
- #changediv {
+#changediv {
 	position: relative;
 }
 
 .yun-div {
 	position: absolute;
 	background-color: #DCDBD9;
-	
 }
- 
+
 #yun-div1 {
-/* 	background-image: url("../images/yun-test/shopimg.png"); */
+	/* 	background-image: url("../images/yun-test/shopimg.png"); */
 	z-index: 1;
 }
-/* ============================================================== */\
+/* ============================================================== */
+\
 
 /* ============================================================== */
 /* yun-shoppricelist.html css */
-
 #yun-shopdetailcontainer {
 	width: 1150px;
 	height: 600px;
@@ -114,8 +131,6 @@
 }
 /* ============================================================== */
 /* yun-styledetail.html css */
-
-
 #yun-styledetailcontainer {
 	width: 1150px;
 	height: 600px;
@@ -156,14 +171,13 @@
 	height: 130px;
 }
 
-.yun-stylecomment{
-	width : 100%;
+.yun-stylecomment {
+	width: 100%;
 }
 
 /* ============================================================== */
 /* yun-shopdetail.html css */
-	
-	#yun-shopdetailcontainer {
+#yun-shopdetailcontainer {
 	width: 1150px;
 	height: 600px;
 }
@@ -203,15 +217,11 @@
 	height: 130px;
 }
 
-.yun-shopcomment{
-	width : 100%;
+.yun-shopcomment {
+	width: 100%;
 }
-	
-	
-	
-	
-/* ============================================================== */
 
+/* ============================================================== */
 </style>
 
 </head>
@@ -222,7 +232,7 @@
 	</header>
 
 
-<!--	<div id=changediv >
+	<!--	<div id=changediv >
 			<div id=div1>1 <button class='yun-pricelist' type="button">price list</button>
 			</div>
 
@@ -233,49 +243,64 @@
 
 		<div class="yun-container">
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (1).png">
+				<img class="yun-boximage" src="../images/main/woman (1).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (2).png">
+				<img class="yun-boximage" src="../images/main/woman (2).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (3).png">
+				<img class="yun-boximage" src="../images/main/woman (3).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (4).png">
+				<img class="yun-boximage" src="../images/main/woman (4).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (5).png">
+				<img class="yun-boximage" src="../images/main/woman (5).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (6).png">
+				<img class="yun-boximage" src="../images/main/woman (6).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (7).png">
+				<img class="yun-boximage" src="../images/main/woman (7).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (8).png">
+				<img class="yun-boximage" src="../images/main/woman (8).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (9).png">
+				<img class="yun-boximage" src="../images/main/woman (9).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (10).png">
+				<img class="yun-boximage" src="../images/main/woman (10).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (11).png">
+				<img class="yun-boximage" src="../images/main/woman (11).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (12).png">
+				<img class="yun-boximage" src="../images/main/woman (12).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (13).png">
+				<img class="yun-boximage" src="../images/main/woman (13).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (14).png">
+				<img class="yun-boximage" src="../images/main/woman (14).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 			<div class="yun-box">
-			<img class="yun-boximage" src="../images/main/woman (15).png">
+				<img class="yun-boximage" src="../images/main/woman (15).png">
+				<div class='kh-basic'>JUNO Hair</div>
 			</div>
 		</div>
 	</div>
@@ -288,6 +313,8 @@
 
 	<script type="text/javascript"
 		src='../js/resources/jquery-2.1.1.min.js'></script>
+			<script src="../js/resources/starrr.js"></script>
+		
 	<script type="text/javascript">
 	<!-- header, footer 로드 스크립트!! -->
 		$('header').load('common/header.html');
@@ -398,7 +425,28 @@
 		});
 		
 		
+		
+		
+		$(".yun-box").hover(
+				  function () {
+					  $(this).find(".kh-basic").remove();
+					  $(this).append("<div class='kh-detail' >JUNO Hair<div class=starrr></div></div>");
+					  
+					  
+				  },
+				  function () {
+					  $(this).append($("<div class='kh-basic'><p>JUNO Hair</p></div>"));
+					  $(this).find(".kh-detail").remove();
+				  }
+				);
+
+
+		
 	</script>
+
+
+
+
 
 </body>
 </html>
@@ -408,7 +456,7 @@
 
 
 
- 
+
 
 
 
