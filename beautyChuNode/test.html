@@ -12,7 +12,7 @@
 
 <script type="text/javascript">
 $("#keyevent").keyup(function(data){
-	$.get("/id",{
+	$.get("http://192.168.0.143:52273/id",{
 		id : $('#keyevent').val()
 	},function(data){
 		$('#yesno').html(data.result);
