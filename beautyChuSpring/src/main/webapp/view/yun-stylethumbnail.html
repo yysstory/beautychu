@@ -82,10 +82,11 @@
 	color: white;
 }
 
-.yun-shop-button .yun-shoppricelist{
+.yun-shop-button .yun-shoppricelist {
 	float: left;
 }
-.get-coupon{
+
+.get-coupon {
 	float: right;
 }
 
@@ -182,7 +183,7 @@
 }
 
 #yun-styletitle {
-	height: 90px;
+	height: 50px;
 }
 
 #yun-stylecontentdetail {
@@ -228,7 +229,7 @@
 }
 
 #yun-shoptitle {
-	height: 90px;
+	height: 50px;
 }
 
 #yun-shopcontentdetail {
@@ -378,6 +379,7 @@
 				$('.yun-edge').after('<div id=changediv class="yun-info-bg"><div id=yun-div1 class=yun-div><div></div>');
 				$('#yun-div1').load('templates/yun-styledetail.html');
 				$('.yun-info-bg').slideDown();
+				setTimeout(function () {  $('html, body').animate({scrollTop:$('.yun-info-bg').position().top}, 'slow');  });
 				pagebtnnum=2;
 			}
 		});
@@ -458,9 +460,13 @@
 					  $(this).append("<div class='kh-basic'>Celebrity</div>");
 					  $(this).find(".kh-detail").remove();
 				  }
-				);
+		);
 
-
+		
+		$('div').on("click",".get-coupon",function(){
+			event.stopPropagation();
+			alert("쿠폰이 발급되었습니다!");
+		});
 		
 	</script>
 
