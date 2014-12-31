@@ -1,0 +1,32 @@
+
+===============================DB 참고=============================================
+
+1. 사용 DB는 MARIADB(편의상 '마리아'로 지칭) 
+
+	-mysql이 오라클로 넘어가면서 차차 고급기능들이 일부 유료화 되었는데
+	 mysql 개발자 중 일부가 마리아를 만듬.
+
+	-mysql대비 사용법이 99% 비슷하며 속도 또한 대부분의 영역에서 더 빨라 많은 기업들이
+	 마리아로 갈아 타는 추세. 사실 시기적으로 이전이 거의 끝남.
+
+	-mysql 사용은 이미 해봤으니 더 성능 좋고 사용법이 같은 마리아를 사용하기로 결정
+	 사용법은 https://mariadb.com/kb/ko/mariadb/ 여기서 볼 수 있음.
+	 (어차피 우리는 깊게 사용하지 않을거라..ㅜㅜ)
+
+
+======================사용자 계정 및 권한 설정 명령어 모음==========================
+
+create database beautychudb character set utf8 collate utf8_general_ci;
+
+create user 'beautychu'@'localhost' identified by 'beautychu';
+
+create user 'beautychu'@'192.168.%' identified by 'beautychu';
+
+grant all privileges on beautychu.* to 'beautychu'@localhost with grant option;
+
+grant all privileges on beautychu.* to 'beautychu'@'192.168.%' with grant option; 
+
+
+=====================================================================================
+
+
