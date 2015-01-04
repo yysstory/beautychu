@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import beautychu.domain.Product;
 import beautychu.service.MakerService;
 import beautychu.service.ProductService;
-
+/*
 @Controller("json.productControl")
 @RequestMapping("/json/product")
 public class ProductControl {
@@ -104,7 +104,7 @@ public class ProductControl {
   }
 }
 
-
+*/
 
 
 

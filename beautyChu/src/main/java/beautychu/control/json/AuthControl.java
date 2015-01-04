@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import beautychu.domain.Member;
 import beautychu.service.MemberService;
-
+/*
 @Controller("json.authControl") 
 @RequestMapping("/json/auth") 
 public class AuthControl {
@@ -38,7 +38,7 @@ public class AuthControl {
       String uid, 
       String pwd, 
       boolean save,
-      String requestUrl, /* 세션에 저장된 값을 달라고 하려면?*/
+      String requestUrl,  세션에 저장된 값을 달라고 하려면?
       HttpServletResponse response,
       HttpSession session) throws Exception {
 
@@ -77,7 +77,7 @@ public class AuthControl {
 
 }
 
-
+*/
 
 
 

@@ -1,21 +1,11 @@
 package beautychu.service;
 
-import java.util.HashMap;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
-import beautychu.dao.ProductDao;
-import beautychu.domain.Product;
 
 /* Service 컴포넌트의 역할
  * => 비즈니스 로직 수행
  * => 트랜잭션 관리
  */
-
+/*
 @Service
 public class ProductService {
   @Autowired
@@ -37,10 +27,10 @@ public class ProductService {
     return maxPageNo;
   }
   
-  /* @Transactional 선언
+   @Transactional 선언
    * => 메서드 안의 입력/변경/삭제(manipluation) 작업을 하나의 작업을 묶는다.
    * => 모든 작업이 성공했을 때만 서버에 반영한다. 
-   */
+   
   @Transactional(
       rollbackFor=Exception.class, 
       propagation=Propagation.REQUIRED)
@@ -73,7 +63,7 @@ public class ProductService {
     return product;
   }
 }
-
+*/
 
 
 
