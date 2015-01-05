@@ -1,0 +1,383 @@
+<!-- 공통 header -->
+<script type="text/javascript" src="../js/common.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/jy_basic.css" />
+<link rel="stylesheet" type="text/css" href="../css/jy/jy_header.css">
+
+<!-- login form css -->
+<link rel="stylesheet" type="text/css" href="../css/jy/jy_dialog.css" />
+<link rel="stylesheet" type="text/css" href="../css/jy/jy_dialog-ken.css" />
+<script src="../js/resources/jy/modernizr.custom.js"></script>
+
+<!-- Dialog JS -->
+<script src="../js/resources/jy/classie.js"></script>
+<script src="../js/resources/jy/dialogFx.js"></script>
+
+
+<div id="header">
+	<div class="inner">
+		<h1 class="logo">
+			<a href="jy_main.html">Beauty Chu~♥</a>
+		</h1>
+
+		<!-- #nav -->
+		<nav id="nav">
+
+			<!-- gnb -->
+			<ul class="gnb">
+
+				<li class="m1"><a href="#">
+					<span class="over"></span>
+					<span class="label">SHOP INFO</span></a>
+					<div class="sub-menu">
+						<ul>
+							<li class="m1"><a
+								href="#"> Hot 서울</a></li>
+							<li class="m2"><a
+								href="#">강남/서초</a></li>
+							<li class="m3"><a
+								href="#">압구정/청담</a></li>
+							<li class="m4"><a href="#">논현/신사</a></li>
+							<!-- <li class="m5"><a href="/svc/notice/web/kr/noticeList.do">공지사항</a></li>-->
+							<li class="m6"><a
+								href="#" target="_blank"
+								title="다른 지점보기">이대/신촌</a></li>
+							<li class="m7"><a href="#"
+								title="갤러리아 면세점">홍대</a></li>
+						</ul>
+					</div></li>
+				<!-- end of li.m1 -->
+
+				<li class="m2"><a
+					href="/svc/show_window/web/kr/showWindowList.do"><span
+						class="over"></span><span class="label">Show Window</span></a>
+					<div class="sub-menu">
+						<ul>
+							<li class="m1"><a href="#">New Arrival</a></li>
+							<li class="m2"><a href="#">Today's Pick</a></li>
+							<li class="m7"><a href="#"style="height: 30px;">
+							Seasonal 
+							Essentials</a></li>
+							<li class="m6"><a
+								href="#">All
+									About Series</a></li>
+						</ul>
+					</div> <!-- Show Window Product -->
+					<div class="good-list-container">
+						<h2 class="title">Show Window Product</h2>
+					</div> <!-- Show Window Product --></li>
+				<!-- end of li.m2 -->
+
+				<li class="m3"><a
+					href="#"><span
+						class="over"></span><span class="label">Man</span></a>
+					<div class="sub-menu">
+						<ul>
+							<li class="m2"><a href="#">Man Cut</a></li>
+							<li class="m3"><a href="#">Man Perm</a></li>
+							<li class="m4"><a href="#,">Man Color</a></li>
+							<li class="m5"><a href="#">Man Care</a></li>
+							<li class="m6"><a href="#">Man ETC</a></li>
+						</ul>
+					
+					</div> <!-- Fashion &amp; Style Content -->
+					<div class="good-list-container">
+						<h2 class="title">Fashion &amp; Style Content</h2>
+					</div> <!-- Fashion &amp; Style Content --></li>
+					
+				<!-- end of li.m3 -->
+
+				<li class="m4">
+					<a href="yun-stylethumbnail.html"><span class="over"></span><span
+						class="label">woman</span></a>
+					<div class="sub-menu">
+						<ul>
+							<li class="m1"><a href="#">Woman Cut</a></li>
+							<li class="m2"><a href="#">Woman Perm</a></li>
+							<li class="m3_02"><a href="#">Woman Color</a></li>
+							<li class="m3"><a href="#">Woman Care</a></li>
+							<li class="m4"><a href="#">Woman ETC</a></li>
+						</ul>
+					</div>
+				</li>
+				<!-- end of li.m4 -->
+
+				<li class="m5">
+					<a href="kh-celebritylist.html"><span class="over"></span><span
+						class="label">Celebrity</span></a>
+					<div class="sub-menu sub_depth6">
+						<ul>
+							<li class="m1"><a href="#">Celebrity Man</a></li>
+							<li class="m2"><a href="#">Celebrity Woman</a></li>
+						</ul>
+					</div>
+				</li>
+				<!-- end of li.m5 -->
+
+			</ul>
+			<!-- gnb -->
+		
+		<ul>
+		<li><form method="get" action="/search" id="search">
+				<input name="q" id="search-bar" type="text" placeholder="Search..." />
+			</form></li>
+		</ul>
+		
+		
+		</nav>
+		<!-- #nav -->
+
+
+
+		<!-- sub-menu -->
+		<ul class="util-menu">
+			<!-- 로그아웃 시 노출 -->
+
+			<li class="login"><a data-dialog1="logindialog" title="로그인">login</a></li>
+			<li class="join"><a data-dialog2="joindialog" title="회원가입">Join</a></li>
+			<!-- <li class="search"><a href="#" title="검색하기">Search</a></li> -->
+
+		</ul>
+		<!--sub-menu-->
+
+		<!-- under-1200일 때 나오는 버튼 -->
+		<a href="#" class="btn-show-util-menu">기타 메뉴 보여주기</a>
+	</div>
+	<!-- end of div.inner -->
+
+	<!-- panel-util-menu : 가로 1200이하일 경우 활성화됨-->
+	<div class="panel-util-menu">
+		<div class="inner">
+			<ul class="sns-list pull-left">
+				<li class="blog"><a href="http://blogdegalleria.tistory.com/"
+					target="blank" title="blog 새창열림">blog</a></li>
+				<li class="facebook"><a
+					href="https://www.facebook.com/galleria.luxury" target="blank"
+					title="facebook 새창열림">facebook</a></li>
+				<li class="twitter"><a
+					href="https://twitter.com/Galleria_Luxury" target="blank"
+					title="twitter 새창열림">twitter</a></li>
+				<li class="app"><a href="/web/app.jsp" title="앱 보기">App</a></li>
+			</ul>
+			<a href="#" class="btn-search pull-right" title="검색하기">search</a>
+			<div class="clear"></div>
+
+			<a href="/sso/login.jsp" class="btn-login" title="로그인">login</a> <a
+				href="/member/join/agree.jsp" class="btn-join" title="회원가입">join</a>
+
+			<!-- <a href="#" class="btn-login">login</a>
+			<a href="#" class="btn-join">join</a>
+			<a href="#" class="btn-logout">logout</a>
+			<a href="#" class="btn-mypage">mypage</a> 20140312 -->
+			<div class="diff-20"></div>
+			<a href="/web/sitemap.jsp" class="btn-sitemap" title="사이트맵">sitemap</a>
+			<div class="diff-10"></div>
+			<div class="language-selector toggle-menu">
+				<!-- 언어목록은 상단에 선택된 언어를 제외하고 리스팅하세요! -->
+				<a href="#" class="btn-show-language" title="언어 더보기"> <span
+					class="current kor">Kor</span>
+
+
+				</a>
+				<ul class="language-list toggle-list">
+					<!--<li class="kor"><a href="/svc/main_page/web/kr/mainPage.do">Kor</a></li> -->
+
+					<li class="eng"><a href="/svc/main_page/web/en/mainPage.do">Eng</a></li>
+					<li class="jpn"><a href="/svc/main_page/web/jp/mainPage.do">Jpn</a></li>
+					<li class="chn"><a href="/svc/main_page/web/cn/mainPage.do">Chn</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- panel-util-menu -->
+
+</div>
+<!-- end of div#header -->
+
+
+
+<!-- login form -->
+<div id="logindialog" class="dialog">
+	<div class="dialog__overlay"></div>
+	<div class="dialog__content">
+		<div class="jy-login-header-area">
+			<button class="action jy-btn-login-close" data-dialog-close>
+				<img src="../img/search/btn-close.png">
+			</button>
+		</div>
+		<form class="jy-form-signin" role="form">
+			<div class='jy-page-header'>
+				<h2 class="jy-form-signin-heading">로그인</h2>
+			</div>
+			<div class="jy-login-line">
+				<label for="inputEmail" class="sr-only">Email address</label> <input
+					type="email" id="jy-inputEmail" class="jy-form-control-login"
+					placeholder="beautychu@appchu.com" required autofocus>
+			</div>
+			<div class="jy-login-line">
+				<label for="inputPassword" class="sr-only">Password</label> <input
+					type="password" id="jy-inputPassword" class="jy-form-control-login"
+					placeholder="Password" required>
+			</div>
+			
+			<button class="jy-btn-login" type="submit">로그인</button>
+			
+			<div class="jy-checkbox">
+				<label class="jy-checkbox-line"> <input type="checkbox"
+					value="remember-me"> 아이디 저장
+				</label>
+			</div>
+			
+			
+			<button class="jy-btn-gojoin" type="submit">회원 가입</button>
+		</form>
+	</div>
+</div>
+<!-- login form -->
+
+
+<!-- join form -->
+<div id="joindialog" class="dialog">
+	<div class="dialog__overlay"></div>
+	
+	<!-- dialog__content -->
+	<div class="dialog__content">
+		<div class="jy-join-header-area">
+		
+			<!-- page-header -->
+			<div class='jy-page-header'>
+				<h2 class='jy-form-signup-heading'>회원가입</h2>
+			</div>
+			
+			<!-- page-header -->
+			<button class="action jy-btn-join-close" data-dialog-close>
+				<img src="../img/search/btn-close.png">
+			</button>
+		</div>
+
+		<!-- 회원가입 폼 -->
+		<form name='frm' class='form-horizontal jy-join' role='form'
+			method='post'>
+
+			<!-- 이메일 -->
+			<div class='jy-form-group'>
+				<label class='jy-control-label' for='inputEmail1'> 
+				<strong class='jy-email'>이메일</strong>
+				</label>
+				<div class='jy-email-total'>
+					<div class='jy-email-div'>
+						<div class='jy-input-email'>
+							<input name='user_email' class='jy-form-control-join'
+								id='jy-user_email' type='email' maxlength='100'
+								placeholder='appchu@beautychu.com'>
+							<!-- 이메일입력 -->
+						</div>
+						<!-- /.row -->
+						<blockquote class='jy-alarm text-primary'></blockquote>
+						<!-- 이메일체크 메시지 알람 -->
+					</div>
+
+				</div>
+			</div>
+			<!-- 이메일 -->
+
+			<!-- 이메일 중복 체크  -->
+			<div id="jy-email-check" style="height: 10px;">
+			</div>
+			<!-- 이메일 중복 체크  -->
+			
+			<!-- 닉네임 -->
+			<div class='jy-form-group'>
+				<label class='jy-control-label' for='inputNickname1'> <strong
+					class='jy-nick'>닉네임</strong>
+				</label>
+				<div class='jy-input-nickname'>
+					<input name='user_nickname' class='jy-form-control-join'
+						id='jy-user_nickname' type='text' maxlength='50' placeholder=' '>
+				</div>
+			</div>
+			<!-- 닉네임 -->
+
+			<!-- 비밀번호 -->
+			<div class='jy-form-group'>
+				<label class='jy-control-label' for='inputPassword1'> <strong
+					class='jy-pw'>비밀번호</strong>
+				</label>
+				<div class='jy-input-user-pw'>
+					<input name='user_pw' class='jy-form-control-join' id='jy-user_pw'
+						type='password' maxlength='20' placeholder='4~20자로 입력해주세요.'>
+				</div>
+			</div>
+			<!-- 비밀번호 -->
+
+			<!-- 비밀번호확인 -->
+			<div class='jy-form-group'>
+				<label class='jy-control-label' for='inputPassword2'> <strong
+					class='jy-pwr'>비밀번호 확인 </strong>
+				</label>
+				<div class='jy-input-confirm-pw'>
+					<input name='confirm_pw' class='jy-form-control-join' id='jy-confirm_pw'
+						type='password' maxlength='20' placeholder='비밀번호를 재입력 해주세요.'>
+				</div>
+			</div>
+			<!-- 비밀번호확인 -->
+
+
+			<!-- 회원가입 완료 -->
+			<div class='jy-btn-area'>
+				<button class='jy-btn-join-fin' onclick='fn_form_chk();' type='button'>
+					<span class='jy-btn-join'>회원 가입 완료</span>
+				</button>
+				<div class="clear"></div>
+				<div class='jy-register-alert'>
+					<p class="jy-alert-message">
+						아래의 이메일로 사업자 등록증을 보내주시면<br> 사업자 회원으로 등록해 드립니다.<br>
+						admin@beautychu.com
+					</p>
+				</div>
+			</div>
+			<!-- 회원가입 완료 -->
+			
+		</form>
+	</div>
+</div>
+<!-- join form -->
+
+
+<script>
+
+	/* 로그인 & 회원가입 dialog slide page */
+	(function() {
+
+		var logindlgtrigger = document.querySelector('[data-dialog1]'), 
+		logindialog = document.getElementById(logindlgtrigger.getAttribute('data-dialog1')), 
+		logindlg = new DialogFx(logindialog);
+
+		var joindlgtrigger = document.querySelector('[data-dialog2]'), 
+		joindialog = document.getElementById(joindlgtrigger.getAttribute('data-dialog2')), 
+		joindlg = new DialogFx(joindialog);
+
+		logindlgtrigger.addEventListener('click', logindlg.toggle.bind(logindlg));
+		joindlgtrigger.addEventListener('click', joindlg.toggle.bind(joindlg));
+
+		/* ajax node 연결 - 이메일 유효성 검사 */
+		
+	  	$("#jy-user_email").keyup(function(data){
+		
+ 		 var yunemail=$('#jy-user_email').val();
+		 var yunregex=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/; 
+		 if(yunregex.test(yunemail)){
+			 $.get("http://192.168.0.143:55555/id", {
+					id : $('#jy-user_email').val()
+				}, function(data) {
+					$('#jy-email-check').html(data.result);
+				})
+		 }else{
+			 $('#jy-email-check').html("잘못된 이메일 형식입니다.");	 
+		 }
+		  
+
+		 });   
+
+	})();
+</script>
