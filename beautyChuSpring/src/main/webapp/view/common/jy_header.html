@@ -2,6 +2,8 @@
 <script type="text/javascript" src="../js/common.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/jy_basic.css" />
 <link rel="stylesheet" type="text/css" href="../css/jy/jy_header.css">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+
 
 <!-- login form css -->
 <link rel="stylesheet" type="text/css" href="../css/jy/jy_dialog.css" />
@@ -31,12 +33,14 @@
 					<div class="sub-menu">
 						<ul>
 							<li class="m1"><a
-								href="#"> Hot 서울</a></li>
+								href="#"> 전체 보기</a></li>
 							<li class="m2"><a
-								href="#">강남/서초</a></li>
+								href="#"> Hot 서울</a></li>
 							<li class="m3"><a
+								href="#">강남/서초</a></li>
+							<li class="m4"><a
 								href="#">압구정/청담</a></li>
-							<li class="m4"><a href="#">논현/신사</a></li>
+							<li class="m5"><a href="#">논현/신사</a></li>
 							<!-- <li class="m5"><a href="/svc/notice/web/kr/noticeList.do">공지사항</a></li>-->
 							<li class="m6"><a
 								href="#" target="_blank"
@@ -48,26 +52,6 @@
 				<!-- end of li.m1 -->
 
 				<li class="m2"><a
-					href="/svc/show_window/web/kr/showWindowList.do"><span
-						class="over"></span><span class="label">Show Window</span></a>
-					<div class="sub-menu">
-						<ul>
-							<li class="m1"><a href="#">New Arrival</a></li>
-							<li class="m2"><a href="#">Today's Pick</a></li>
-							<li class="m7"><a href="#"style="height: 30px;">
-							Seasonal 
-							Essentials</a></li>
-							<li class="m6"><a
-								href="#">All
-									About Series</a></li>
-						</ul>
-					</div> <!-- Show Window Product -->
-					<div class="good-list-container">
-						<h2 class="title">Show Window Product</h2>
-					</div> <!-- Show Window Product --></li>
-				<!-- end of li.m2 -->
-
-				<li class="m3"><a
 					href="#"><span
 						class="over"></span><span class="label">Man</span></a>
 					<div class="sub-menu">
@@ -84,9 +68,9 @@
 						<h2 class="title">Fashion &amp; Style Content</h2>
 					</div> <!-- Fashion &amp; Style Content --></li>
 					
-				<!-- end of li.m3 -->
+				<!-- end of li.m2 -->
 
-				<li class="m4">
+				<li class="m3">
 					<a href="yun-stylethumbnail.html"><span class="over"></span><span
 						class="label">woman</span></a>
 					<div class="sub-menu">
@@ -99,9 +83,9 @@
 						</ul>
 					</div>
 				</li>
-				<!-- end of li.m4 -->
+				<!-- end of li.m3 -->
 
-				<li class="m5">
+				<li class="m4">
 					<a href="kh-celebritylist.html"><span class="over"></span><span
 						class="label">Celebrity</span></a>
 					<div class="sub-menu sub_depth6">
@@ -111,7 +95,7 @@
 						</ul>
 					</div>
 				</li>
-				<!-- end of li.m5 -->
+				<!-- end of li.m4 -->
 
 			</ul>
 			<!-- gnb -->
@@ -121,7 +105,7 @@
 				<input name="q" id="search-bar" type="text" placeholder="Search..." />
 			</form></li>
 		</ul>
-		
+		<!-- search area -->
 		
 		</nav>
 		<!-- #nav -->
@@ -129,67 +113,26 @@
 
 
 		<!-- sub-menu -->
-		<ul class="util-menu">
+		<ul class="util-menu" id="util-menu">
 			<!-- 로그아웃 시 노출 -->
 
 			<li class="login"><a data-dialog1="logindialog" title="로그인">login</a></li>
 			<li class="join"><a data-dialog2="joindialog" title="회원가입">Join</a></li>
-			<!-- <li class="search"><a href="#" title="검색하기">Search</a></li> -->
+			<li class='user toggle-menu js-control'>
+			<a href='#more' class="usermenu" title="사용자 메뉴"> icon + nickname ▼ </a>
+			<ul class="user-list toggle-list">
+  			<li class="jy-mychu"><a href='#'>My Chu</a></li>
+				<li class="jy-logout"><a href='#'>Logout</a></li>  
+				<li class='jy-setting'><a href='#'>Setting</a></li>
+				<li class='jy-mleave'><a href='#'>member leave</a></li>
+			</ul></li>
+
+			<!-- <li class="search"><a href="#" title="검색하기">Search</a></li>  -->
 
 		</ul>
 		<!--sub-menu-->
 
-		<!-- under-1200일 때 나오는 버튼 -->
-		<a href="#" class="btn-show-util-menu">기타 메뉴 보여주기</a>
-	</div>
-	<!-- end of div.inner -->
-
-	<!-- panel-util-menu : 가로 1200이하일 경우 활성화됨-->
-	<div class="panel-util-menu">
-		<div class="inner">
-			<ul class="sns-list pull-left">
-				<li class="blog"><a href="http://blogdegalleria.tistory.com/"
-					target="blank" title="blog 새창열림">blog</a></li>
-				<li class="facebook"><a
-					href="https://www.facebook.com/galleria.luxury" target="blank"
-					title="facebook 새창열림">facebook</a></li>
-				<li class="twitter"><a
-					href="https://twitter.com/Galleria_Luxury" target="blank"
-					title="twitter 새창열림">twitter</a></li>
-				<li class="app"><a href="/web/app.jsp" title="앱 보기">App</a></li>
-			</ul>
-			<a href="#" class="btn-search pull-right" title="검색하기">search</a>
-			<div class="clear"></div>
-
-			<a href="/sso/login.jsp" class="btn-login" title="로그인">login</a> <a
-				href="/member/join/agree.jsp" class="btn-join" title="회원가입">join</a>
-
-			<!-- <a href="#" class="btn-login">login</a>
-			<a href="#" class="btn-join">join</a>
-			<a href="#" class="btn-logout">logout</a>
-			<a href="#" class="btn-mypage">mypage</a> 20140312 -->
-			<div class="diff-20"></div>
-			<a href="/web/sitemap.jsp" class="btn-sitemap" title="사이트맵">sitemap</a>
-			<div class="diff-10"></div>
-			<div class="language-selector toggle-menu">
-				<!-- 언어목록은 상단에 선택된 언어를 제외하고 리스팅하세요! -->
-				<a href="#" class="btn-show-language" title="언어 더보기"> <span
-					class="current kor">Kor</span>
-
-
-				</a>
-				<ul class="language-list toggle-list">
-					<!--<li class="kor"><a href="/svc/main_page/web/kr/mainPage.do">Kor</a></li> -->
-
-					<li class="eng"><a href="/svc/main_page/web/en/mainPage.do">Eng</a></li>
-					<li class="jpn"><a href="/svc/main_page/web/jp/mainPage.do">Jpn</a></li>
-					<li class="chn"><a href="/svc/main_page/web/cn/mainPage.do">Chn</a></li>
-
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- panel-util-menu -->
+	
 
 </div>
 <!-- end of div#header -->
@@ -342,7 +285,7 @@
 	</div>
 </div>
 <!-- join form -->
-
+</div>
 
 <script>
 
