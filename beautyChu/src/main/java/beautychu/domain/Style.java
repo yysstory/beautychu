@@ -84,6 +84,4 @@ public class Style implements Serializable {
 				+ email + "]";
 	}
 	
-	
-	
 }

@@ -12,7 +12,7 @@ import beautychu.service.StyleService;
 @Controller("json.styleControl")
 @RequestMapping("/json/style")
 public class StyleControl {
-	static Logger log = Logger.getLogger(ProductControl.class);
+//	static Logger log = Logger.getLogger(ProductControl.class);
 
 	@Autowired
 	StyleService styleServie;
