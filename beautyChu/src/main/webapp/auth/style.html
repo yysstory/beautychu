@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>스타일 불러오기</title>
+<style type="text/css">
+#container div{
+width: 300px;
+height: 200px;
+border: 1px solid black;
+float: left;
+}
+
+</style>
+</head>
+<body>
+	<div id='container'></div>
+
+	<script type="text/javascript" src='../js/jquery-1.11.1.js'></script>
+	<script type="text/javascript">
+		$(function() {
+			console.log('오잉?');
+			$.getJSON('../json/style/list.do', function(data) {
+				
+				console.log(data.styleList.length);
+ 				for(var i=0;i<data.styleList.length;i++){
+					
+					$('<div>').appendTo('#container').html(
+					data.styleList[i].email+
+					data.styleList[i].gender+
+					data.styleList[i].preple+
+					data.styleList[i].price+
+					data.styleList[i].skillTime+
+					data.styleList[i].styleIntro+
+					data.styleList[i].sytleName
+					);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+				} 
+			});
+		});
+	</script>
+</body>
+</html>

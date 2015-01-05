@@ -34,27 +34,30 @@ public class AuthControl {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public Object login(String uid, String pwd, boolean save,
+	public Object login(String email, String password, boolean save,
 			String requestUrl, /* 세션에 저장된 값을 달라고 하려면? */
 			HttpServletResponse response, HttpSession session) throws Exception {
 
 		if (save) { // 쿠키로 아이디 저장
-			Cookie cookie = new Cookie("uid", uid);
+			Cookie cookie = new Cookie("email", email);
 			cookie.setMaxAge(60 * 60 * 24 * 15);
 			response.addCookie(cookie);
 		} else {
-			Cookie cookie = new Cookie("uid", "");
+			Cookie cookie = new Cookie("email", "");
 			cookie.setMaxAge(0); // 무효화시킴
 			response.addCookie(cookie);
 		}
 
-		Member member = memberService.validate(uid, pwd);
+		Member member = memberService.validate(email, password);
 
 		HashMap<String, Object> resultMap = new HashMap<>();
 
+		System.out.println(email+":"+password);
 		if (member != null) {
 			resultMap.put("status", "success");
 			session.setAttribute("loginUser", member);
+			resultMap.put("loginUser", member);
+			
 		} else {
 			session.invalidate();
 			resultMap.put("status", "fail");

@@ -20,23 +20,22 @@ $('#loginBtn').click(function(event){
 });
 
 
+	$.getJSON('/web03t/json/auth/loginUser.do', function(data) {
+		if (data.status == 'fail') {
+			$('#loginBtn').css('display', '');
 
-$.getJSON('/web03t/json/auth/loginUser.do', function(data){
-	if (data.status == 'fail') {
-		$('#loginBtn').css('display', '');
-		
-	} else {
-		$('#logoutBtn').css('display', '');
-		
-		if (data.photo) {
-			  $('#userPhoto').attr('src', data.loginUser.photo);
+		} else {
+			$('#logoutBtn').css('display', '');
+
+			if (data.photo) {
+				$('#userPhoto').attr('src', data.loginUser.photo);
+			}
+			$('#userName').html(data.loginUser.userName);
+			$('#userName').click(function() {
+				alert('사용자 정보 조회 창으로 보낼 예정');
+			});
 		}
-	  $('#userName').html(data.loginUser.userName);
-		$('#userName').click(function(){
-			alert('사용자 정보 조회 창으로 보낼 예정');
-		});
-	}
-});
+	});
 </script>
 
 
