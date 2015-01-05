@@ -3,9 +3,8 @@ package beautychu.dao;
 import java.util.List;
 import java.util.Map;
 
-public interface StyleDao {
+public interface StylePhotoDao {
 	
-	  List<?> getList();
-	
+	  List<?> getList(int no);
 
 	}
