@@ -1,26 +1,17 @@
-package beautyChu.service;
+package beautychu.service;
 
-import java.util.HashMap;
-import java.util.List;
-import beautyChu.dao.ProductDao;
-import beautyChu.domain.Product;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 /* Service 컴포넌트의 역할
  * => 비즈니스 로직 수행
  * => 트랜잭션 관리
  */
-
+/*
 @Service
 public class ProductService {
   @Autowired
   ProductDao productDao;
   
- /* public List<?> getList(int pageNo, int pageSize) {
+  public List<?> getList(int pageNo, int pageSize) {
     HashMap<String,Object> paramMap = new HashMap<>();
     paramMap.put("startIndex", ((pageNo - 1) * pageSize));
     paramMap.put("pageSize", pageSize);
@@ -70,9 +61,9 @@ public class ProductService {
     Product product = productDao.selectOne(productNo);
     product.setPhotoList( productDao.selectPhoto(productNo));
     return product;
-  }*/
+  }
 }
-
+*/
 
 
 
