@@ -71,28 +71,16 @@
 	<div id="wrap-chu" class="wrap-chu">
 
  -->
-
+    <script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script>
 <div id=yun-shopdetailcontainer>
 
 	<!--*****************************************************************************************-->
 	<!--**************************** 샵사진 슬라이드가 들어가는 div *****************************-->
-	<div id=yun-shopphotolist class=yun-shopcontainerdiv>
+	<div id='yun-shopphotolist' class=yun-shopcontainerdiv>
 
-		<div class=yun-shopphotobig>
-			<img class=yun-shopphotobig src="../images/shop/shop1.jpg">
-		</div>
-		<div id=yun-shopphotosmall>
-			<img class=yun-shopphotosmall src="../images/shop/shop2.jpg">
-		</div>
-		<div id=yun-shopphotosmall>
-			<img class=yun-shopphotosmall src="../images/shop/shop3.jpg">
-		</div>
-		<div id=yun-shopphotosmall>
-			<img class=yun-shopphotosmall src="../images/shop/shop4.jpg">
-		</div>
-		<div id=yun-shopphotosmall>
-			<img class=yun-shopphotosmall src="../images/shop/shop5.jpg">
-		</div>
+
 
 	</div>
 
@@ -135,6 +123,34 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$('#yun-shopphotolist').load('templates/kh-styleimage-gallery.html');
+
+</script>
+<script>
+
+$( document ).ready(function() {
+	$(".kh-smalldetail").css("display", "none");
+$(".yun-shopstyle").hover(
+		  function () {
+			  $(this).find(".kh-smallbasic").css("display", "none");
+			  $(this).find(".kh-smalldetail").css("display", "block");
+			  $(this).find(".kh-gradation").css("display", "block");
+		  },
+		  function () {
+			  $(this).find(".kh-smallbasic").css("display", "block");
+			  $(this).find(".kh-smalldetail").css("display", "none");
+			  $(this).find(".kh-gradation").css("display", "none");
+		  }
+		);
+});
+
+
+
+
+
+</script>
 <!-- 
 	</div>
 
