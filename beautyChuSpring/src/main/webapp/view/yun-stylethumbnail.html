@@ -7,20 +7,78 @@
 <link rel="shortcut icon" href="../images/favicon.ico"
 	type="image/x-icon">
 <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/common_chu2.css">
 <link rel="stylesheet" href="../css/resources/starrr.css">
 <link rel="stylesheet"
 	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/yun/button.min.css">
 
+<!-- 공통 스크립트 -->
+<link rel="stylesheet" type="text/css" href="../css/basic.css"/>
+<script type="text/javascript" src="../js/modernizr.min.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.js"></script>
+<script type="text/javascript" src="../js/jquery-scrolltofixed-min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/motion.js"></script> 
+<script type="text/javascript" src="../js/jquery.motio.min.js"></script>
+
+	<script>
+			window.intro = 'yes';
+	</script>
+		
+	<!-- page가 home일 경우에만 로드하는 js -->
+	<script type="text/javascript" src="../js/jquery.touchSwipe.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.event.drag-2.2.js"></script>
+	<script type="text/javascript" src="../js/jquery.event.drag.live-2.2.js"></script>
+	<script type="text/javascript" src="../js/home.js"></script>
+	<script type="text/javascript" src="../js/home.show-window.js"></script>
+<!-- 공통 스크립트 -->
+
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.7.2.js'></script>
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+
 <style type="text/css">
+
 
 /* 스타일 적용 공간! */
 
 /* ============================================================== */
+
+
+.wrap-chu {
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+	/* margin-top: 50px; */
+}
+
+html {
+	height: 100%;
+}
+
+
+
+footer {
+	text-align: center;
+}
+
+body {
+	height: 100%;
+	display: table;
+	width: 100%;
+}
+
+#footer {
+	height: 100px;
+}
+
 .yun-container {
 	width: 100%;
 	margin: 0 auto;
+	height: 100%;
+	display: table;
+	margin-top: 100px;
 }
 
 .yun-info-bg {
@@ -41,8 +99,7 @@
 	position: relative;
 	width: 280px;
 	height: 410px;
-	background-color: grey;
-	float: left;
+ 	float: left; 
 	margin: 5px;
 	font-size: 40px;
 	border-radius: 10px;
@@ -50,11 +107,9 @@
 }
 
 .yun-edge {
-	background-color: yellow;
 }
 
 .yun-selected {
-	background-color: red;
 }
 
 .yun-boximage {
@@ -67,19 +122,57 @@
 	bottom: 0px;
 	width: 280px;
 	text-align: center;
-	height: 60px;
-	background-color: rgba(0, 0, 0, 0.5);
+	height: 100px;
+	background-color: rgba(0,0,0,1);
 	color: white;
+	border-radius: 0px 0px 10px 10px;
+	font-size: 30px;
 }
+.kh-basic h2 {
+	color: white;
+	margin-top: 15px;
+}
+
+.kh-detail h2 {
+	color: white;
+	margin-top: 10px;
+	font-size: 30px;
+}
+
+.kh-detail p {
+	color: white;
+	margin-top: 15px;
+	font-size: 15px;
+}
+
+.kh-detail .starrr {
+	margin-top: 6px;
+}
+
+.kh-basic .starrr {
+   	margin-top: 10px;
+}
+
 
 .kh-detail {
 	position: absolute;
 	bottom: 0px;
 	width: 280px;
 	text-align: center;
-	height: 100px;
-	background-color: rgba(0, 0, 0, 0.5);
+	height: 140px;
+	background-color: rgba(0,0,0,1);
 	color: white;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.kh-gradation {
+	position: absolute;
+	top: 0px;
+	width: 280px;
+	height: 270px;
+	background-color: rgba(0,0,0,0.5);
+	display: none;
+	border-radius: 10px 10px 0px 0px;
 }
 
 .yun-shop-button .yun-shoppricelist {
@@ -117,12 +210,40 @@
 	height: 600px;
 }
 
-.yun-shopcontainerdiv {
-	width: 528px;
+#yun-shopstylelist {
+	width: 700px;
 	height: 560px;
 	float: left;
-	margin-left: 30px;
-	margin-top: 20px;
+	margin-left: 20px;
+	margin-top: 35px;
+	/* border: 1px red solid; */
+}
+
+#yun-shoppricelist {
+	height: 585px;
+	width: 410px;
+	float: right;
+	padding: 1px;
+	margin: 3px;
+}
+
+.kh-pricelist {
+	width: 195px;
+	height: 168px;
+	float: left;
+	margin: 4px;
+	text-align: center;
+	
+}
+
+.kh-priceicon img {
+	height: 110px;
+	width: 110px;
+	border-radius: 5px;
+}
+
+.kh-lengthprice {
+	margin-top: 5px;
 }
 
 .yun-shopstyle {
@@ -131,6 +252,23 @@
 	float: left;
 	margin-left: 5px;
 	margin-top: 5px;
+	position: relative;
+}
+
+.kh-smallbasic {
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+	width: 168px;
+	
+}
+
+.kh-smalldetail {
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+	width: 168px;
+
 }
 
 #yun-buttondiv {
@@ -147,6 +285,9 @@
 	height: 178px;
 	border-radius: 5px;
 	overflow: hidden;
+}
+
+.yun-shoppricelist {
 }
 /* ============================================================== */
 /* yun-styledetail.html css */
@@ -184,6 +325,7 @@
 
 #yun-styletitle {
 	height: 50px;
+	font-size: 30px;
 }
 
 #yun-stylecontentdetail {
@@ -230,6 +372,11 @@
 
 #yun-shoptitle {
 	height: 50px;
+	font-size: 30px;
+}
+.yun-pricetitle {
+	float: left;
+	font-size: 30px;
 }
 
 #yun-shopcontentdetail {
@@ -240,16 +387,22 @@
 	width: 100%;
 }
 
+.row {
+	height: 100%;
+	boredr: 1px green solid;
+	
+}
+
 /* ============================================================== */
 /* ==============================버튼 스타일================================ */
 </style>
 
 </head>
-<body>
+<body class="home">
 
-	<header>
+	<jy_header>
 		<!-- header 건들지 말긔! -->
-	</header>
+	</jy_header>
 
 
 	<!--	<div id=changediv >
@@ -262,66 +415,205 @@
 	<div id="wrap-chu" class="wrap-chu">
 
 		<div class="yun-container">
+
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (1).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
-			<div class="yun-box">
+ 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (2).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (3).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (4).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
+
+
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (5).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (6).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (7).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (8).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
+
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (9).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (10).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (11).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (12).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (13).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (14).png">
-				<div class='kh-basic'>Celebrity</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
 			</div>
 			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (15).png">
-				<div class='kh-basic'>Celebrity</div>
-			</div>
+					<div class="kh-basic">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+					</div>
+					<div class="kh-detail">
+						<h2>러블리 펌</h2>
+						<div class="starrr"></div>
+						<p>♥mychu 추가</p>
+					</div>
+					<div class="kh-gradation"></div>
+			</div> 
 		</div>
 	</div>
 
@@ -337,7 +629,7 @@
 
 	<script type="text/javascript">
 	<!-- header, footer 로드 스크립트!! -->
-		$('header').load('common/header.html');
+		$('jy_header').load('common/jy_header.html'); 
 		$('footer').load('common/footer.html');
 
 		
@@ -377,9 +669,9 @@
 					$(this).remove();
 				});
 				$('.yun-edge').after('<div id=changediv class="yun-info-bg"><div id=yun-div1 class=yun-div><div></div>');
-				$('#yun-div1').load('templates/yun-styledetail.html');
+				$('#yun-div1').load('templates/yun-shoppricelist.html');
 				$('.yun-info-bg').slideDown();
-				setTimeout(function () {  $('html, body').animate({scrollTop:$('.yun-info-bg').position().top}, 'slow');  });
+				setTimeout(function () {  $('html, body').animate({scrollTop:$('.yun-info-bg').position().top-75}, 'slow');  });
 				pagebtnnum=2;
 			}
 		});
@@ -449,19 +741,36 @@
 		
 		
 		
+		$( document ).ready(function() {
+			$(".kh-detail").css("display", "none");
 		$(".yun-box").hover(
 				  function () {
-					  $(this).find(".kh-basic").remove();
-					  $(this).append("<div class='kh-detail'></div>");
-					  $(".kh-detail").load("kh-star.html");
-					  
+					  $(this).find(".kh-basic").css("display", "none");
+					  $(this).find(".kh-detail").css("display", "block");
+					  $(this).find(".kh-gradation").css("display", "block");
 				  },
 				  function () {
-					  $(this).append("<div class='kh-basic'>Celebrity</div>");
-					  $(this).find(".kh-detail").remove();
+					  $(this).find(".kh-basic").css("display", "block");
+					  $(this).find(".kh-detail").css("display", "none");
+					  $(this).find(".kh-gradation").css("display", "none");
 				  }
-		);
-
+				);
+		});
+		$( document ).ready(function() {
+			$(".kh-smalldetail").css("display", "none");
+		$(".yun-shopstyle").hover(
+				  function () {
+					  $(this).find(".kh-smallbasic").css("display", "none");
+					  $(this).find(".kh-smalldetail").css("display", "block");
+					  $(this).find(".kh-gradation").css("display", "block");
+				  },
+				  function () {
+					  $(this).find(".kh-smallbasic").css("display", "block");
+					  $(this).find(".kh-smalldetail").css("display", "none");
+					  $(this).find(".kh-gradation").css("display", "none");
+				  }
+				);
+		});
 		
 		$('div').on("click",".get-coupon",function(){
 			event.stopPropagation();
@@ -469,10 +778,16 @@
 		});
 		
 	</script>
+	
+	<script>
 
 
 
 
+
+
+
+</script>
 
 </body>
 </html>
