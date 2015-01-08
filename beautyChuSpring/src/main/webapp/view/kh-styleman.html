@@ -708,49 +708,64 @@ body {
 		
 		
 
-		$('div').on("click",".yun-shop-button",function() {
-			event.stopPropagation();
-			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
-			.css("z-index",pagebtnnum);
-			$('#yun-div'+pagebtnnum).load('templates/yun-shopdetail.html');
-			pagebtnnum++;
+		 $('div').on("click",".yun-shop-button",function() {
+				event.stopPropagation();
+				$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
+				.css({"z-index":pagebtnnum,"margin-left":"100%"}).animate({ marginLeft: "0px" }, 500);
+				$('#yun-div'+pagebtnnum).load('templates/yun-shopdetail.html');
+				pagebtnnum++;
 
-		});
-		
-		
-
-		$('div').on("click",".yun-shoppricelist",function() {
-			event.stopPropagation();
-			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
-			.css("z-index",pagebtnnum);
-			$('#yun-div'+pagebtnnum).load('templates/yun-shoppricelist.html');
-			pagebtnnum++;
-		});
-
-		
-		$('div').on("click",".yun-back",function(){
-			event.stopPropagation();
-			pagebtnnum--;
-			if(pagebtnnum!='1'){
-			$('#yun-div'+pagebtnnum).remove();
-			}
-		});
-		
-		$('div').on("click",".yun-exit",function(){
-			event.stopPropagation();
-			$('.yun-info-bg').slideUp(function() {
-				$(this).remove();
 			});
-		});
-		
-		$('div').on("click",".yun-shopstyle",function() {
-			event.stopPropagation();
-			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
-			.css("z-index",pagebtnnum);
-			$('#yun-div'+pagebtnnum).load('templates/yun-styledetail.html');
-			pagebtnnum++;
+			
+			
 
-		});
+			$('div').on("click",".yun-shoppricelist",function() {
+				event.stopPropagation();
+				$('<div>').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
+				.css({"z-index":pagebtnnum,"margin-left":"100%"}).animate({ marginLeft: "0px" }, 500);
+				
+				
+				
+				$('#yun-div'+pagebtnnum).load('templates/yun-shoppricelist.html');
+				pagebtnnum++;
+			});
+
+			
+			$('div').on("click",".yun-back",function(){
+				event.stopPropagation();
+				pagebtnnum--;
+				if(pagebtnnum!='1'){
+				$('#yun-div'+pagebtnnum).animate({marginLeft: "-100%" }, 500,function(){
+					$(this).remove();
+				})
+				}
+			});
+			
+			
+	/* 		$('div').on("click",".yun-back",function(){
+				event.stopPropagation();
+				pagebtnnum--;
+				if(pagebtnnum!='1'){
+				$('#yun-div'+pagebtnnum).remove();
+				}
+			}); */
+			
+			$('div').on("click",".yun-exit",function(){
+				event.stopPropagation();
+				$('.yun-info-bg').slideUp(function() {
+					$(this).remove();
+				});
+			});
+			
+			$('div').on("click",".yun-shopstyle",function() {
+				event.stopPropagation();
+				$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
+				.css({"z-index":pagebtnnum,"margin-left":"100%"}).animate({ marginLeft: "0px" }, 500);
+				$('#yun-div'+pagebtnnum).load('templates/yun-styledetail.html');
+				pagebtnnum++;
+
+			});
+			
 		
 		
 		
