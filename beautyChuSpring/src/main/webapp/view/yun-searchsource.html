@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+<style type="text/css">
+/* div{
+	border-bottom: 1px black solid;
+} */
+</style>
+</head>
+
+
+<body>
+	<input type="text" id="keyevent" placeholder="검색어를 입력하세요" />
+	<h1 id=result>검색 결과</h1>
+
+	<script type="text/javascript">
+	
+		$("#keyevent").keyup(function() {
+			
+			if($('#keyevent').val()!=''){
+			
+			$.get("http://192.168.0.36:55555/search", {
+				searchitem : $('#keyevent').val()
+			}, function(data) {
+
+				console.log(data.length);
+				$('div').remove();
+				for (var i = 0; i < data.length; i++) {
+					$('<div>').appendTo('#result').html(data[i].STYLENAME);
+				}
+
+			}).fail(function() {
+				$('div').remove();
+				console.log('error');
+			})
+			}else{
+				$('div').remove();
+			}
+		});
+	</script>
+</body>
+</html>
