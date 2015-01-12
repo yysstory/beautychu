@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Mobile Basic</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script
+	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+	<div data-role="page" id="homePage">
+		<div data-role="header" id="myheader">
+			<a href="" onClick="changePage('#homePage')">Home</a> 
+			<a href="" onClick="changePage('#detailPage')">Details</a>
+		</div>
+		<div data-role="content">
+			<p>This is where the content of the page should go!</p>
+		</div>
+		<div data-role="footer" id="myfooter">
+			<a href="" onClick="changePage('#aboutPage')">About Us</a>
+		</div>
+	</div>
+	<!-- home page end -->
+
+	<div data-role="page" id="detailPage">
+		<div data-role="content">
+			<p>This is the detail content!</p>
+		</div>
+	</div>
+	<!-- detail page end -->
+	<div data-role="page" id="aboutPage">
+		<div data-role="content">
+			<p>This is the about page</p>
+		</div>
+	</div>
+	<!-- about page end --->
+
+	<script language="javascript">
+		$header = $('#myheader');
+		$footer = $('#myfooter');
+		function changePage(pageName) {
+			$header.detach();
+			$footer.detach();
+			$header.prependTo(pageName);
+			$footer.appendTo(pageName);
+			$.mobile.changePage(pageName);
+		}
+	</script>
+</body>
+</html>

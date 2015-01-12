@@ -1,61 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>jQuery Mobile Basic</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.css">
-    <style>
+<meta charset="UTF-8">
 
-    </style>
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.js"></script>
-    <script>
+<title>AJAX 코딩</title>
 
-    </script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+	$(function() {
+		$("#btn").click(function() {
+			var formData = new FormData();
+			formData.append("test2", $("input[name=test2]").val());
+			formData.append("test3", $("textarea[name=test3]").text());
+			formData.append("test4", $("input[name=test4]")[0].files[0]);
+
+			$.ajax({
+				url : '/saveFileTest.do',
+				data : formData,
+				processData : false,
+				contentType : false,
+				type : 'POST',
+				success : function(data) {
+					alert("성공!");
+				}
+			});
+
+		});
+	});
+</script>
 </head>
+
 <body>
 
-  <article data-role="page" id="article1">
-    <div data-role="header" data-theme="b" data-position="fixed" data-id="footer">
-      <h1>Articles</h1>
-    </div>
-    <div data-role="content">
-      <p>Article 1</p>
-    </div>
-    <div data-role="footer" data-theme="b" data-position="fixed" data-id="footer">
-      <h1>Footer</h1>    
-    </div>
-  </article>
+	<form id="ajaxform" action="/saveFileTest.do" method="post"
+		enctype="multipart/form-data">
+		<input type="text" name="test2" /><br />
+		<textarea rows="10" cols="10" name="test3"></textarea>
+		<br /> <input type="file" name="test4" /> 
+		<input type="button" id="btn" value="전송" />
+		</form>
 
-  <article data-role="page" id="article2">
-    <div data-role="header" data-theme="b" data-position="fixed" data-id="footer">
-      <a href="#article1" data-icon="home" data-iconpos="notext">Home</a>
-      <h1>Articles</h1>
-    </div>
-    <div data-role="content">
-      <p>Article 2</p>
-    </div>
-    <div data-role="footer" data-theme="b" data-position="fixed" data-id="footer">
-      <h1>Footer</h1>
-    </div>
-  </article>
-
-  <article data-role="page" id="article3">
-    <div data-role="header" data-theme="b" data-position="fixed" data-id="footer">
-      <a href="#article1" data-icon="home" data-iconpos="notext">Home</a>
-      <h1>Articles</h1>
-    </div>
-    <div data-role="content">
-      <p>Article 3</p>
-    </div>
-    <div data-role="footer" data-theme="b" data-position="fixed" data-id="footer">
-      <h1>Footer</h1>
-    </div>
-  </article>
-<script>
-    $(document).on('mobileinit', function () {
-        $.mobile.ignoreContentEnabled = true;
-    });
-</script> 
 </body>
 </html>

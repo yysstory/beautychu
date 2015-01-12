@@ -1,89 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+
 <title>jQuery Mobile Basic</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=no" />
 <link rel="stylesheet"
 	href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-<style>
-</style>
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script
 	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/jquery.wookmark.js"></script>
+
+<style>
+.styleContent {
+	border: 1px solid gray;
+	width: 46%;
+	/* height: 300px; 자유로운 길이 */
+	float: left;
+	margin-top: 2.5%;
+	margin-left: 2.3%;
+	position: relative;
+}
+
+.ui-content {
+	padding: 0px;
+	margin-left: 1px;
+}
+
+section#container .block {
+	height: auto;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+</style>
 
 </head>
 <body>
+
+
 	<div data-role="page" id="page1">
 		<div data-role="header" style="overflow: hidden;">
-			<h1>I'm a header</h1>
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#page1" data-icon="grid" class="ui-btn-active">One</a></li>
-                    <li><a href="#page2" data-icon="star">Two</a></li>
-                    <li><a href="#" data-icon="alert">Three</a></li>
-                    <li><a href="#" data-icon="info">Four</a></li>
-                    <li><a href="#" data-icon="gear">Five</a></li>
-                </ul>
-            </div>
-			<!-- /navbar -->
+			<h1>BeautyChu~♥</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#page1" data-icon="star"
+						class="ui-btn-active ui-state-persist">HOT</a></li>
+					<li><a href="#page2" data-icon="star">WOMEN</a></li>
+					<li><a href="#page3" data-icon="star">MAN</a></li>
+					<li><a href="#page4" data-icon="star">SHOP</a></li>
+					<li><a href="#page5" data-icon="star">MyChu</a></li>
+				</ul>
+			</div>
 		</div>
 		<!-- /header -->
 
-
-
 		<div data-role="content">
-			<ul data-role="listview">
-				<li><a href="#">List Item 1</a></li>
-				<li><a href="#">List Item 2</a></li>
-				<li><a href="#">List Item 3</a></li>
-				<li><a href="#">List Item 4</a></li>
-			</ul>
+			<div class=styleContent style="height: 300px"></div>
+			<div class=styleContent style="height: 400px"></div>
+			<div class=styleContent style="height: 200px"></div>
+			<div class=styleContent style="height: 500px"></div>
 		</div>
-
 	</div>
 
 
 
 	<div data-role="page" id="page2">
 		<div data-role="header" style="overflow: hidden;">
-			<h1>I'm a header</h1>
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#page1" data-icon="grid" class="ui-btn-active">One</a></li>
-                    <li><a href="#page2" data-icon="star">Two</a></li>
-                    <li><a href="#" data-icon="alert">Three</a></li>
-                    <li><a href="#" data-icon="info">Four</a></li>
-                    <li><a href="#" data-icon="gear">Five</a></li>
-                </ul>
-            </div>
-			<!-- /navbar -->
+			<h1>BeautyChu~♥</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#page1" data-icon="star">HOT</a></li>
+					<li><a href="#page2" data-icon="star"
+						class="ui-btn-active ui-state-persist">WOMEN</a></li>
+					<li><a href="#page3" data-icon="star">MAN</a></li>
+					<li><a href="#" data-icon="star">SHOP</a></li>
+					<li><a href="#" data-icon="star">MyChu</a></li>
+				</ul>
+			</div>
 		</div>
 		<!-- /header -->
-
-
 	</div>
 	<!-- /content -->
+
+
+
+
 
 	<!-- 	<div data-role="footer">
 		<h1>footer</h1>
 	</div> -->
 	<!-- /footer -->
 
-
-
-
-
 	<script>
 		$("#page1").on("swipeleft", function(e) {
 			$.mobile.changePage("#page2", {
-				transition : "slide"
+				transition : "none"
 			});
 		});
 
 		$("#page2").on("swiperight", function(e) {
 			$.mobile.changePage("#page1", {
-				transition : "slide",
+				transition : "none",
 				reverse : true
 			});
 		});
