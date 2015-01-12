@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Mobile Basic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.css">
+    <style>
+
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+
+  <article data-role="page" id="article1">
+    <div data-role="header" data-theme="b" data-position="fixed" data-id="footer">
+      <h1>Articles</h1>
+    </div>
+    <div data-role="content">
+      <p>Article 1</p>
+    </div>
+    <div data-role="footer" data-theme="b" data-position="fixed" data-id="footer">
+      <h1>Footer</h1>    
+    </div>
+  </article>
+
+  <article data-role="page" id="article2">
+    <div data-role="header" data-theme="b" data-position="fixed" data-id="footer">
+      <a href="#article1" data-icon="home" data-iconpos="notext">Home</a>
+      <h1>Articles</h1>
+    </div>
+    <div data-role="content">
+      <p>Article 2</p>
+    </div>
+    <div data-role="footer" data-theme="b" data-position="fixed" data-id="footer">
+      <h1>Footer</h1>
+    </div>
+  </article>
+
+  <article data-role="page" id="article3">
+    <div data-role="header" data-theme="b" data-position="fixed" data-id="footer">
+      <a href="#article1" data-icon="home" data-iconpos="notext">Home</a>
+      <h1>Articles</h1>
+    </div>
+    <div data-role="content">
+      <p>Article 3</p>
+    </div>
+    <div data-role="footer" data-theme="b" data-position="fixed" data-id="footer">
+      <h1>Footer</h1>
+    </div>
+  </article>
+<script>
+    $(document).on('mobileinit', function () {
+        $.mobile.ignoreContentEnabled = true;
+    });
+</script> 
+</body>
+</html>
