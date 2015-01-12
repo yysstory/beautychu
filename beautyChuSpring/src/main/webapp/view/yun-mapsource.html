@@ -1,46 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8"/>
+	<title>Daum 지도 시작하기</title>
+</head>
+<body>
+	<div id="map" style="width:500px;height:400px;"></div>
+	<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=e5353ee43c5a9ea624372eb7cb8e99b1646087a2"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new daum.maps.LatLng(33.450701, 126.570667),
+			level: 3
+		};
+
+		var map = new daum.maps.Map(container, options);
+	</script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
 <meta charset="utf-8">
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=e5353ee43c5a9ea624372eb7cb8e99b1646087a2"></script>
 
 <style type="text/css">
-/* div{
-	border-bottom: 1px black solid;
-} */
 </style>
 </head>
 
 
 <body>
-	<input type="text" id="keyevent" placeholder="검색어를 입력하세요" />
-	<h1 id=result>검색 결과</h1>
 
-	<script type="text/javascript">
-	
-		$("#keyevent").keyup(function() {
-			
-			if($('#keyevent').val()!=''){
-			
-			$.get("http://192.168.0.36:55555/search", {
-				searchitem : $('#keyevent').val()
-			}, function(data) {
 
-				console.log(data.length);
-				$('div').remove();
-				for (var i = 0; i < data.length; i++) {
-					$('<div>').appendTo('#result').html(data[i].STYLENAME);
-				}
 
-			}).fail(function() {
-				$('div').remove();
-				console.log('error');
-			})
-			}else{
-				$('div').remove();
+	<div id="map" style="width: 100%; height: 350px;"></div>
+
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = {
+       center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+		// 지도를 생성합니다    
+		var map = new daum.maps.Map(mapContainer, mapOption);
+
+		// 주소-좌표 변환 객체를 생성합니다
+		var geocoder = new daum.maps.services.Geocoder();
+
+		// 주소로 좌표를 검색합니다
+		geocoder.addr2coord('서울시 서초구 서초동 1327-15번지', function(status, result) {
+
+			// 정상적으로 검색이 완료됐으면 
+			if (status === daum.maps.services.Status.OK) {
+
+				var coords = new daum.maps.LatLng(result.addr[0].lat,
+						result.addr[0].lng);
+
+				// 결과값으로 받은 위치를 마커로 표시합니다
+				var marker = new daum.maps.Marker({
+					map : map,
+					position : coords
+				});
+
+				// 인포윈도우로 장소에 대한 설명을 표시합니다
+				var infowindow = new daum.maps.InfoWindow({
+					content : '<div style="padding:5px;">비트교육센터</div>'
+				});
+				infowindow.open(map, marker);
 			}
 		});
-	</script>
+</script>
+
+
+
 </body>
-</html>
+</html> -->
