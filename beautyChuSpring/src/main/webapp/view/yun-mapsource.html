@@ -1,33 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"/>
-	<title>Daum 지도 시작하기</title>
-</head>
-<body>
-	<div id="map" style="width:500px;height:400px;"></div>
-	<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=e5353ee43c5a9ea624372eb7cb8e99b1646087a2"></script>
-	<script>
-		var container = document.getElementById('map');
-		var options = {
-			center: new daum.maps.LatLng(33.450701, 126.570667),
-			level: 3
-		};
-
-		var map = new daum.maps.Map(container, options);
-	</script>
-</body>
-</html>
-
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
 <meta charset="utf-8">
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=e5353ee43c5a9ea624372eb7cb8e99b1646087a2"></script>
-
+<script type="text/javascript"
+	src="//apis.daum.net/maps/maps3.js?apikey=d68325ce80aa99b09337e375aa77d969&libraries=services"></script>
 <style type="text/css">
 </style>
 </head>
@@ -35,16 +13,15 @@
 
 <body>
 
-
-
 	<div id="map" style="width: 100%; height: 350px;"></div>
 
-<script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = {
-       center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		mapOption = {
+			center : new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+			level : 3
+		// 지도의 확대 레벨
+		};
 		// 지도를 생성합니다    
 		var map = new daum.maps.Map(mapContainer, mapOption);
 
@@ -52,7 +29,7 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 		var geocoder = new daum.maps.services.Geocoder();
 
 		// 주소로 좌표를 검색합니다
-		geocoder.addr2coord('서울시 서초구 서초동 1327-15번지', function(status, result) {
+				geocoder.addr2coord('서울특별시 서초구 서초동 1327-15', function(status, result) {
 
 			// 정상적으로 검색이 완료됐으면 
 			if (status === daum.maps.services.Status.OK) {
@@ -70,12 +47,17 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 				var infowindow = new daum.maps.InfoWindow({
 					content : '<div style="padding:5px;">비트교육센터</div>'
 				});
+				map.panTo(coords);
 				infowindow.open(map, marker);
+
+				
+			} else {
+				console.log('주소를 못찾음 ');
 			}
 		});
-</script>
+	</script>
 
 
 
 </body>
-</html> -->
+</html>
