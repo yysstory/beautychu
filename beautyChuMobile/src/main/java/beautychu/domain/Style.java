@@ -1,6 +1,7 @@
 package beautychu.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Style implements Serializable {
 
@@ -15,6 +16,7 @@ public class Style implements Serializable {
 	int SkillTime;
 	int price;
 	String email;
+	List<?> stylePhoto;
 	
 	
 	public int getStyleNumber() {
@@ -71,17 +73,13 @@ public class Style implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public List<?> getStylePhoto() {
+		return stylePhoto;
+	}
+	public void setStylePhoto(List<?> stylePhoto) {
+		this.stylePhoto = stylePhoto;
 	}
 	
-	@Override
-	public String toString() {
-		return "Style [styleNumber=" + styleNumber + ", people=" + people
-				+ ", gender=" + gender + ", styleLength=" + styleLength
-				+ ", styleName=" + styleName + ", styleIntro=" + styleIntro
-				+ ", SkillTime=" + SkillTime + ", price=" + price + ", email="
-				+ email + "]";
-	}
+
 	
 }

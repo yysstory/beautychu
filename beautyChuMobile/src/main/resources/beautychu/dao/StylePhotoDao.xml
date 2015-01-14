@@ -9,7 +9,6 @@
     <id column="STYLEPHOTONO" property="stylePhotoNumber"/>
     <result column="STYLENO" property="styleNumber"/>
     <result column="STYLEPHOTO" property="stylePhoto"/>
-
   </resultMap>
   
   <select id="getList" parameterType="map" resultMap="stylePhotoMap">

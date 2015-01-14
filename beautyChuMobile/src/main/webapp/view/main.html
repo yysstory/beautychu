@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>jQuery Mobile Basic</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="../css/icon.css" />
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script
+	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src='../js/handlebars-v2.0.0.js'></script>
+
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+* {
+	font-family: "Nanum Gothic", sans-serif;
+}
+
+/* 가장 큰 내용 css */
+#content-div {
+	padding: 0px;
+	background-color: lightgray;
+}
+/* 두개의 섹션 */
+.content-section {
+	width: 47%;
+	float: left;
+	margin-left: 2%;
+}
+/* 각 스타일 div 내용 */
+.style-content {
+	margin-top: 5%;
+	margin-bottom: 2%;
+	border: 1px solid lightgray;
+	background-color: white;
+	border-radius: 3%;
+	overflow: hidden;
+}
+/* 스타일 이미지 내용 */
+.style-content img {
+	width: 100%;
+}
+
+button {
+	margin: 2%;
+}
+
+.adddiv {
+	height: 500px;
+}
+/* 제목 내용 */
+.div-section-1 {
+	margin-top: 1.5%;
+	margin-bottom: 1.5%;
+	padding-left: 4%;
+	padding-right: 4%;
+}
+
+.div-section-2 {
+	border-top: 1px solid lightgray;
+}
+
+.div-section-2 div {
+	text-align: center;
+	font-weight: bold;
+	font-size: 90%;
+}
+
+.div-section-2 count-font {
+	font-size:
+}
+
+.div-title {
+	font-weight: bold;
+	font-size: 80%;
+}
+
+.div-content {
+	font-size: 70%;
+}
+
+.div-writer {
+	text-align: right;
+	font-size: 60%;
+}
+</style>
+
+
+
+</head>
+<body>
+
+	<script id="template" type="text/temp"></script>
+
+
+	<div data-role="page" id="page1">
+		<div data-role="header" style="overflow: hidden;">
+			<h1>BeautyChu~♥</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#page1" data-icon="star"
+						class="ui-btn-active ui-state-persist">HOT</a></li>
+					<li><a href="#page2" data-icon="star">WOMEN</a></li>
+					<li><a href="#page3" data-icon="star">MAN</a></li>
+					<li><a href="#page4" data-icon="star">SHOP</a></li>
+					<li><a href="#page5" data-icon="star">MyChu</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content" id=content-div>
+			<div id=content-section-1 class=content-section></div>
+			<div id=content-section-2 class=content-section>
+				<!-- <div class=style-content>
+					<img src="../fileupload/s3.jpg">
+					<div class=div-section-1>
+						<div class=div-title>러블리펌</div>
+						<div class=div-content>사랑스러운 퍼머입니다. 인기있어요</div>
+						<div class=div-writer>from.리안헤어 실장</div>
+					</div>
+					<div class='div-section-2 ui-grid-a'>
+						<div class='div-coment ui-block-a i'>
+							<div>
+								<i class="write icon"></i>
+							</div>
+							<div class=count-font>12</div>
+
+						</div>
+						<div class='div-chu-count ui-block-b'>
+							<div>
+								<i class="red heart icon"></i>
+							</div>
+							<div class=count-font>12</div>
+						</div>
+					</div>
+
+				</div> -->
+			</div>
+
+			<button id=addbtn>div 추가</button>
+		</div>
+	</div>
+
+
+
+	<!-- 	<div data-role="page" id="page2">
+		<div data-role="header" style="overflow: hidden;">
+			<h1>BeautyChu~♥</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#page1" data-icon="star">HOT</a></li>
+					<li><a href="#page2" data-icon="star"
+						class="ui-btn-active ui-state-persist">WOMEN</a></li>
+					<li><a href="#page3" data-icon="star">MAN</a></li>
+					<li><a href="#" data-icon="star">SHOP</a></li>
+					<li><a href="#" data-icon="star">MyChu</a></li>
+				</ul>
+			</div>
+		</div>
+		/header
+	</div>
+	/content -->
+
+
+
+
+
+	<!-- 	<div data-role="footer">
+		<h1>footer</h1>
+	</div> -->
+	<!-- /footer -->
+
+
+
+
+	<script>
+
+		$(function() {
+
+			var imsidata;
+
+			$.getJSON("../json/style/list.do", function(data) {
+						imsidata = data.styleList;
+					})
+					.done(function() {
+								if (imsidata) {
+									for (var i = 0; i < imsidata.length; i++) {
+										console.log(imsidata[i].styleNumber);
+
+										$('#template').load('../templates/styletemplate.html', function() {
+											var source = $('#template').html();
+											var template = Handlebars.compile(source);
+											var html = template({
+												cards : imsidata
+											});
+											console.log(html);
+											$('#content-section-1').html(html);
+										});
+										
+/* 										$.getJSON("../json/style/photoList.do",
+														{
+															styleNumber : imsidata[i].styleNumber
+														},
+														function(data) {
+															//console.log(imsidata[i].styleNumber);
+															if (data.photoList) {
+																console
+																		.log('----');
+																for (var j = 0; j < data.photoList.length; j++) {
+																	console.log(data.photoList[j].stylePhoto);
+																}
+														}
+											}) */
+									}
+								}
+							})
+
+			/* 스타일 페이지 로드 */
+
+			$('#addbtn').on(
+					'click',
+					function() {
+
+						if ($('#content-section-1').outerHeight() <= $(
+								'#content-section-2').outerHeight()) {
+							$('<div>').appendTo('#content-section-1').addClass(
+									'adddiv style-content');
+
+						} else {
+							$('<div>').appendTo('#content-section-2').addClass(
+									'adddiv style-content');
+						}
+
+					})
+
+			/* 핸들바스 */
+
+/* 			$('#template').load('../templates/styletemplate.html', function() {
+				var source = $('#template').html();
+				var template = Handlebars.compile(source);
+				var html = template({
+					cards : imsidata
+				});
+				console.log(html);
+				$('#content-section-1').html(html);
+			}); */
+
+			/* 스와이프 코드 */
+
+			$("#page1").on("swipeleft", function(e) {
+				$.mobile.changePage("#page2", {
+					transition : "none"
+				});
+			});
+
+			$("#page2").on("swiperight", function(e) {
+				$.mobile.changePage("#page1", {
+					transition : "none",
+					reverse : true
+				});
+			});
+
+		})
+	</script>
+
+</body>
+</html>

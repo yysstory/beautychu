@@ -9,6 +9,8 @@ public class StylePhoto implements Serializable {
 	int stylePhotoNumber;
 	int styleNumber;
 	String stylePhoto;
+	
+	
 	public int getStylePhotoNumber() {
 		return stylePhotoNumber;
 	}

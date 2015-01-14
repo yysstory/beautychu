@@ -25,6 +25,7 @@
     <result column="SKILLTIME" property="SkillTime"/>
     <result column="PRICE" property="price"/>
     <result column="EMAIL" property="email"/>
+    
 
   </resultMap>
   
