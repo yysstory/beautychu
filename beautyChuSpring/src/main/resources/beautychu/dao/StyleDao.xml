@@ -39,8 +39,9 @@
     FROM STYLE T1 JOIN STYLEPHOTO T2 USING(STYLENO)
   </select>
     <select id="getList" parameterType="map" resultMap="styleGridMap">
+
     SELECT T1.STYLENAME, T2.URL 
-    FROM STYLE T1 JOIN STYLEPHOTO T2 USING(STYLENO)
+    FROM STYLE T1 JOIN (SELECT STYLENO,URL,STYLEPHOTONO FROM STYLEPHOTO GROUP BY STYLENO) T2 USING(STYLENO) ORDER BY STYLENO
   </select>
   
    <select id="insertStyle" parameterType="Style" >
