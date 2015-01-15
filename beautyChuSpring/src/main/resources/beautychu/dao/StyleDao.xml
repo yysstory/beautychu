@@ -28,13 +28,24 @@
 
   </resultMap>
   
-  <select id="getList" parameterType="map" resultMap="styleMap">
-    SELECT STYLENO,PEOPLE,GENDER,STYLELENGTH,STYLENAME,STYLEINTRO,SKILLTIME,PRICE,EMAIL 
-    FROM STYLE
+  <resultMap type="StyleGrid" id="styleGridMap">
+    <result column="STYLENAME" property="styleName"/>
+    <result column="URL" property="stylePhoto"/>
+
+  </resultMap>
+  
+  <select id="getGridList" parameterType="map" resultMap="styleGridMap">
+    SELECT T1.STYLENAME, T2.URL 
+    FROM STYLE T1 JOIN STYLEPHOTO T2 USING(STYLENO)
   </select>
+    <select id="getList" parameterType="map" resultMap="styleGridMap">
+    SELECT T1.STYLENAME, T2.URL 
+    FROM STYLE T1 JOIN STYLEPHOTO T2 USING(STYLENO)
+  </select>
+  
    <select id="insertStyle" parameterType="Style" >
     INSERT INTO STYLE (PEOPLE,GENDER,STYLELENGTH,STYLENAME,STYLEINTRO,SKILLTIME,PRICE,EMAIL)
-    VALUES (#{people},#{gender},#{styleLength},#{styleName},#{styleIntro},#{skillTime},#{price},#{email})
+    VALUES (#{people},#{gender},#{styleLength},#{styleName},#{styleIntro},#{SkillTime},#{price},#{email})
   </select>
   
 </mapper>

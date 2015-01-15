@@ -15,8 +15,12 @@ public class StyleService {
   @Autowired StyleDao styleDao;
   
   public List<?> getList() {
-    return styleDao.getList(); 
-  }
+	    return styleDao.getList(); 
+	  }
+  
+  public List<?> getGridList() {
+	    return styleDao.getGridList(); 
+	  }
   
   
 /*	public Style validate(String email, String password) {

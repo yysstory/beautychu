@@ -23,5 +23,7 @@ public class StyleControl {
 		resultMap.put("styleList", styleServie.getList());
 		return resultMap;
 	}
+	
+	
 
 }
