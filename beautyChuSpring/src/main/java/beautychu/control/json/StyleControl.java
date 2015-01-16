@@ -24,6 +24,13 @@ public class StyleControl {
 		return resultMap;
 	}
 	
+	@RequestMapping("/detail")
+	public Object detail() throws Exception {
+
+		HashMap<String, Object> resultMap = new HashMap<>();
+		resultMap.put("styleDetail", styleServie.getStyleDetail());
+		return resultMap;
+	}
 	
 
 }

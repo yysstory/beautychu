@@ -8,7 +8,7 @@ public class StylePhoto implements Serializable {
 	
 	int stylePhotoNumber;
 	int styleNumber;
-	String stylePhoto;
+	String url;
 	public int getStylePhotoNumber() {
 		return stylePhotoNumber;
 	}
@@ -21,16 +21,16 @@ public class StylePhoto implements Serializable {
 	public void setStyleNumber(int styleNumber) {
 		this.styleNumber = styleNumber;
 	}
-	public String getStylePhoto() {
-		return stylePhoto;
+	public String getUrl() {
+		return url;
 	}
-	public void setStylePhoto(String stylePhoto) {
-		this.stylePhoto = stylePhoto;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 	@Override
 	public String toString() {
 		return "StylePhoto [stylePhotoNumber=" + stylePhotoNumber
-				+ ", styleNumber=" + styleNumber + ", stylePhoto=" + stylePhoto
+				+ ", styleNumber=" + styleNumber + ", url=" + url
 				+ "]";
 	}
 	

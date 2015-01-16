@@ -22,6 +22,10 @@ public class StyleService {
 	    return styleDao.getGridList(); 
 	  }
   
+  public List<?> getStyleDetail() {
+	    return styleDao.getStyleDetail(); 
+	  }
+  
   
 /*	public Style validate(String email, String password) {
 		HashMap<String, String> params = new HashMap<>();

@@ -7,7 +7,6 @@
 <link rel="shortcut icon" href="../images/favicon.ico"
 	type="image/x-icon">
 <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="../css/common_chu2.css">
 <link rel="stylesheet" href="../css/resources/starrr.css">
 <link rel="stylesheet"
 	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
@@ -169,6 +168,7 @@ body {
 	background-color: rgba(0,0,0,1);
 	color: white;
 	border-radius: 0px 0px 10px 10px;
+	display: none;
 }
 
 .kh-gradation {
@@ -446,7 +446,7 @@ border-radius: 20px;
 
 
 	<div id="wrap-chu" class="wrap-chu">
-
+<div class="yun-container"></div>
 
 <!--  			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (1).png">
@@ -464,7 +464,7 @@ border-radius: 20px;
 
 	</div>
 <script id="template" type="text/temp"></script>
-
+<script id="template1" type="text/temp"></script>
 
 	<footer>
 		<!-- footer 건들지 말긔! -->
@@ -481,12 +481,80 @@ border-radius: 20px;
 
 		
 		<!-- 썸네일 로드 스크립트!! -->		
-		var container = $('.yun-container');
-		var elements = container.children();
-		var oldWrapPos = -1;
-		var pagebtnnum ;
 		
-		$('.yun-box').click(function() {
+		
+		
+
+			var oldWrapPos = -1;
+			var pagebtnnum ;
+		
+		 $('div').on("click",".yun-box",function(event){
+			event.stopPropagation();
+			var container = $('.yun-container');
+			var elements = container.children();
+			
+			container.children().removeClass('yun-selected'); // 기존에 selected 된 클레스를 리셋
+			$(this).addClass('yun-selected'); //누른 div에 selected 표시
+			var selectedPos = $(".yun-box").index(this); // 누른 div의 index값 저장
+			console.log("selectedPos:" + selectedPos);
+			var elementsInRow = 4; // 너비 4칸으로 고정
+		 	var row = Math.floor(selectedPos / elementsInRow) + 1;
+		 	console.log("row:" + row);
+			//floor는 버리는 함수 누른인덱스/너비 4칸 +1해서 몇번째 줄인지 구함
+			var wrapPos = (row * elementsInRow);
+			console.log("wrapPos:" + wrapPos);
+			// 만약 마지막 줄을 선택했다면 마지막 엘리먼트를 이용한다. 
+			var size = elements.length; //총 div의 갯수
+			if (wrapPos >= size) {
+				wrapPos = size;
+			}
+			//wrapPos 끝인덱스를 저장한다.
+			wrapPos = wrapPos - 1;
+			//인덱스는 0부터 시작하므로 -1을 해준다.
+			
+			if (selectedPos == oldWrapPos) {
+				$('.yun-info-bg').slideUp(function() {
+					$(this).remove();
+				});
+				oldWrapPos = -1;
+			} else {
+				oldWrapPos = selectedPos;
+				elements.removeClass('yun-edge');
+				$(elements[wrapPos]).addClass('yun-edge');
+				$('.yun-info-bg').slideUp(function() {
+					$(this).remove();
+				});
+				$('.yun-edge').after('<div id=changediv class="yun-info-bg"><div id=yun-div1 class=yun-div><div></div>');
+				/* $('#yun-div1').load('templates/yun-styledetail.html'); */
+				
+				
+				$.getJSON('../json/style/detail.do', 
+					    function(data){
+						
+						console.log(data);
+					      $('#template1').load('templates/kh-styledetail.html', function(source){
+					    	  console.log(source);
+						    	  var template = Handlebars.compile(source);
+						    	  var html = template(data);
+						    	  console.log(html);
+						    	  $('#yun-div1').html(html);
+						    	});  
+						
+					    });
+				
+				
+				
+				
+				
+				
+				$('.yun-info-bg').slideDown();
+				setTimeout(function () {  $('html, body').animate({scrollTop:$('.yun-info-bg').position().top-75}, 'slow');  });
+				pagebtnnum=2;
+			}
+		}); 
+		
+/* 		$('div').on("click",".yun-box",function(){
+			console.log(container);
 			container.children().removeClass('yun-selected'); // 기존에 selected 된 클레스를 리셋
 			$(this).addClass('yun-selected'); //누른 div에 selected 표시
 			var selectedPos = $(this).index(); // 누른 div의 index값 저장
@@ -521,7 +589,7 @@ border-radius: 20px;
 				setTimeout(function () {  $('html, body').animate({scrollTop:$('.yun-info-bg').position().top-75}, 'slow');  });
 				pagebtnnum=2;
 			}
-		});
+		}); */
 		
 		
 
@@ -583,55 +651,44 @@ border-radius: 20px;
 			}
 		}); */
 		
-		$('div').on("click",".yun-exit",function(){
+/* 		$('div').on("click",".yun-exit",function(){
 			event.stopPropagation();
 			$('.yun-info-bg').slideUp(function() {
 				$(this).remove();
 			});
-		});
+		}); */
 		
 		$('div').on("click",".yun-shopstyle",function() {
 			event.stopPropagation();
 			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
 			.css({"z-index":pagebtnnum,"margin-left":"100%"}).animate({ marginLeft: "0px" }, 500);
-			$('#yun-div'+pagebtnnum).load('templates/yun-styledetail.html');
+			 $('#yun-div'+pagebtnnum).load('templates/yun-styledetail.html'); 	
+			
+			
 			pagebtnnum++;
 
 		});
 		
 		
+
+
+		
+	$(document).on('mouseenter', '.yun-box',  function(){
+			
+			
+			  $(this).find(".kh-basic").css("display", "none");
+			  $(this).find(".kh-detail").css("display", "block");
+			  $(this).find(".kh-gradation").css("display", "block");
+			  
+		}).on('mouseleave', '.yun-box', function() {
+		  $(this).find(".kh-basic").css("display", "block");
+		  $(this).find(".kh-detail").css("display", "none");
+		  $(this).find(".kh-gradation").css("display", "none");
+
+	});
 		
 		
-		$( document ).ready(function() {
-			$(".kh-detail").css("display", "none");
-		$(".yun-box").hover(
-				  function () {
-					  $(this).find(".kh-basic").css("display", "none");
-					  $(this).find(".kh-detail").css("display", "block");
-					  $(this).find(".kh-gradation").css("display", "block");
-				  },
-				  function () {
-					  $(this).find(".kh-basic").css("display", "block");
-					  $(this).find(".kh-detail").css("display", "none");
-					  $(this).find(".kh-gradation").css("display", "none");
-				  }
-				);
-		});
-		$( document ).ready(function() {
-			$(".kh-smalldetail").css("display", "none");
-		$(".yun-shopstyle").hover(
-				  function () {
-					  $(this).find(".kh-smallbasic").css("display", "none");
-					  $(this).find(".kh-smalldetail").css("display", "block");
-					  $(this).find(".kh-gradation").css("display", "block");
-				  },
-				  function () {
-					  $(this).find(".kh-smallbasic").css("display", "block");
-					  $(this).find(".kh-smalldetail").css("display", "none");
-					  $(this).find(".kh-gradation").css("display", "none");
-				  }
-				);
-		});
+
 		
 		/** 기현아 사랑해... 나는 언제나 너만 바라보고 있어~    -조게이*/
 		$('div').on("click",".get-coupon",function(){
@@ -646,36 +703,18 @@ border-radius: 20px;
 
 		
 		
-		
-		
-/* 		$.getJSON('../json/style/list.do', 
-			    function(data){
-				console.log(data);
-			      
-			      require(['text!templates/kh-style-photo.html'], function(html){
-			      console.log(html);
-					
-			        var template = Handlebars.compile(html);
-			        $('#wrap-chu').html( template(data) );
-			      });
-			    });  */
-		
 				
 				$.getJSON('../json/style/list.do', 
 					    function(data){
 						
 						console.log(data);
-					/*         require(['text!templates/style-table.html'], function(html){
-						console.log(html);
-					        var template = Handlebars.compile(html);
-					        $('#listDiv').html( template(data) );
-					      });   */
+
 					      $('#template').load('templates/style-table.html', function(source){
 					    	  console.log(source);
 						    	  var template = Handlebars.compile(source);
 						    	  var html = template(data);
 						    	  console.log(html);
-						    	  $('#wrap-chu').html(html);
+						    	  $('.yun-container').html(html);
 						    	});  
 					    });
 			    
@@ -685,35 +724,5 @@ border-radius: 20px;
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
