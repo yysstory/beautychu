@@ -25,7 +25,19 @@
     VALUES (#{email},#{name},#{password})
   </select>
   	 
+  <update id="updateUser" parameterType="Member">
+  UPDATE MEMBER SET 
+		NAME=#{name},
+		ADDR=#{address},
+		PHONE=#{phone},
+		PASSWORD=#{password}
+	WHERE EMAIL=#{email};
+  </update>
   
+  <delete id="deleteUser" parameterType="Member">
+  DELETE FROM MEMBER
+  WHERE EMAIL=#{email};
+  </delete>  
   
 </mapper>
 

@@ -21,18 +21,27 @@ public class AuthControl {
 	@Autowired
 	MemberService memberService;
 
-	@RequestMapping(value = "/loginUser", method = RequestMethod.GET)
-	public Object loginUser(HttpSession session) throws Exception {
-		HashMap<String, Object> resultMap = new HashMap<>();
+  @RequestMapping(value = "/loginUser", method = RequestMethod.GET)
+  public Object loginUser(String email, String name, String address, 
+      String phone, String password, HttpSession session) throws Exception {
+    HashMap<String, Object> resultMap = new HashMap<>();
 
-		if (session.getAttribute("loginUser") != null) {
-			resultMap.put("status", "success");
-			resultMap.put("loginUser", session.getAttribute("loginUser"));
-		} else {
-			resultMap.put("status", "fail");
-		}
-		return resultMap;
-	}
+    if (session.getAttribute("loginUser") != null) {
+      resultMap.put("status", "success");
+      resultMap.put("loginUser", session.getAttribute("loginUser"));
+      
+      Member member = new Member();
+      member.setEmail(email);
+      member.setName(name);
+      member.setAddress(address);
+      member.setPhone(phone);
+      member.setPassword(password);
+      
+    } else {
+      resultMap.put("status", "fail");
+    }
+    return resultMap;
+  }
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public Object login(String email, String password, boolean save,

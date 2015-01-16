@@ -10,17 +10,25 @@ import beautychu.domain.Member;
 
 @Service
 public class MemberService {
-	@Autowired
-	MemberDao memberDao;
+  @Autowired
+  MemberDao memberDao;
 
-	public Member validate(String email, String password) {
-		HashMap<String, String> params = new HashMap<>();
-		params.put("email", email);
-		params.put("password", password);
-		return memberDao.existUser(params);
-	}
+  public Member validate(String email, String password) {
+    HashMap<String, String> params = new HashMap<>();
+    params.put("email", email);
+    params.put("password", password);
+    return memberDao.existUser(params);
+  }
 
-	public void insertUser(Member member) {
-		memberDao.insertUser(member);
-	}
+  public void insertUser(Member member) {
+    memberDao.insertUser(member);
+  }
+
+  public void updateUser(Member member) {
+    memberDao.updateUser(member);
+  }
+
+  public void deleteUser(Member member) {
+    memberDao.deleteUser(member);
+  }
 }
