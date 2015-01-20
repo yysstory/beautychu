@@ -29,10 +29,24 @@
   </resultMap>
   
   <resultMap type="StyleGrid" id="styleGridMap">
+    <id column="STYLENO" property="styleNumber"/>
     <result column="STYLENAME" property="styleName"/>
-    <result column="URL" property="stylePhoto"/>
+    <result column="URL" property="url"/>
 
   </resultMap>
+
+
+  <resultMap type="StyleDetail" id="styleDetailMap">
+    <id column="STYLENO" property="styleNumber"/>
+    <result column="STYLENAME" property="styleName"/>
+    <result column="STYLEINTRO" property="styleIntro"/> 
+    <result column="SKILLTIME" property="SkillTime"/>
+    <result column="PRICE" property="price"/> 
+    <result column="URL" property="url"/>
+
+  </resultMap>
+
+
   
   <select id="getGridList" parameterType="map" resultMap="styleGridMap">
     SELECT T1.STYLENAME, T2.URL 
@@ -40,9 +54,17 @@
   </select>
     <select id="getList" parameterType="map" resultMap="styleGridMap">
 
-    SELECT T1.STYLENAME, T2.URL 
+    SELECT T1.STYLENO, T1.STYLENAME, T2.URL 
     FROM STYLE T1 JOIN (SELECT STYLENO,URL,STYLEPHOTONO FROM STYLEPHOTO GROUP BY STYLENO) T2 USING(STYLENO) ORDER BY STYLENO
   </select>
+
+    <select id="getStyleDetail" parameterType="map" resultMap="styleDetailMap">
+
+    SELECT T1.STYLENAME, T1.STYLEINTRO, T1.SKILLTIME, T1.PRICE, T2.URL 
+    FROM STYLE T1 JOIN STYLEPHOTO T2 USING(STYLENO) WHERE STYLENO = 968
+    <!-- ORDER BY STYLENO -->
+  </select>
+
   
    <select id="insertStyle" parameterType="Style" >
     INSERT INTO STYLE (PEOPLE,GENDER,STYLELENGTH,STYLENAME,STYLEINTRO,SKILLTIME,PRICE,EMAIL)

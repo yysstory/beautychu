@@ -14,13 +14,42 @@ stylelength<input id="kh-stylelength"><br>
 stylename<input id="kh-stylename"><br>
 styleintro<input id="kh-styleintro"><br>
 skilltime<input id="kh-skilltime"><br>
-price<input id="kh-price"><br>
-email<input id="kh-email"><br>
+price<input id="kh-price" value=""><br>
+<a id='kh-email' href='#'></a>
 <button id="kh-styleadd">add</button>
 
+<div class='container'>
+
+<div class='header'></div>
+
+<div class='content'>
+<h1>제품 목록</h1>
+<div id='listDiv'></div>
+<div class='yun-container'></div>
+<div id='d1'></div>
+<script id="template" type="text/temp"></script>
+
+</div>
+
+<hr>
+
+<div class="form"></div>
+
+<div class='footer'></div>
+
+</div>
 
 
+
+
+
+
+
+<script type="text/javascript" src='../js/handlebars-v2.0.0.js'></script>
+<script type="text/javascript" src='../js/require.js'></script>
 <script>
+
+
 $('#kh-styleadd').click(function() {
 		$.ajax({
 			type : 'post',
@@ -29,12 +58,12 @@ $('#kh-styleadd').click(function() {
 			data : {
 				people : $('#kh-people').val(),
 				gender : $('#kh-gender').val(),
-				stylelength : $('#kh-stylelength').val(),
-				stylename : $('#kh-stylename').val(),
-				styleintro : $('#kh-skillintro').val(),
-				skilltime : $('#kh-skilltime').val(),
+				styleLength : $('#kh-stylelength').val(),
+				styleName : $('#kh-stylename').val(),
+				styleIntro : $('#kh-styleintro').val(),
+				SkillTime : $('#kh-skilltime').val(),
 				price : $('#kh-price').val(),
-				email : $('#kh-email').val()
+				email : $('#kh-email').html()
 				
 			},
 			success : function(data) {
@@ -42,7 +71,7 @@ $('#kh-styleadd').click(function() {
 				console.log(data.loginUser);
 				alert("추가완료");
 				/* location.href = 'jy_main.html'; */
-
+				htm
 			},
 			error : function() {
 				console.log('회원가입 ajax 실패');
@@ -50,8 +79,49 @@ $('#kh-styleadd').click(function() {
 
 		});
 
+
 	});
 
+
+$.getJSON('../json/auth/loginUser.do', function(data){
+		
+	  $('#kh-email').html(data.loginUser.email);
+	  /* $('#kh-price').val(data.loginUser.email); */
+	});
+	
+	
+
+	 /*  if (pageNo <= 0) pageNo = currPageNo; */
+	  
+
+  
+/* 	$.getJSON('../json/style/list.do', 
+    function(data){
+	
+	console.log(data);
+
+      $('#template').load('templates/style-table.html', function(source){
+    	  console.log(source);
+	    	  var template = Handlebars.compile(source);
+	    	  var html = template(data);
+	    	  console.log(html);
+	    	  $('#d1').html(html);
+	    	});  
+    }); */
+	  
+	$.getJSON('../json/style/detail.do', 
+		    function(data){
+			
+			console.log(data);
+		      $('#template').load('templates/kh-styledetail.html', function(source){
+		    	  console.log(source);
+			    	  var template = Handlebars.compile(source);
+			    	  var html = template(data);
+			    	  console.log(html);
+			    	  $('#d1').html(html);
+			    	});  
+			
+		    });
 </script>
 
 </body>

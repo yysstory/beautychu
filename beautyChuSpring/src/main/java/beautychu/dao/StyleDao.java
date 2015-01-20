@@ -10,6 +10,7 @@ public interface StyleDao {
 	
 	  List<?> getList();
 	  List<?> getGridList();
+	  List<?> getStyleDetail();
 	  /*Style existUser(Map<String,String> params);*/
 	  void insertStyle(Style style);
 
