@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="beautychu.dao.ShopInfoDao">
+
+  <resultMap type="ShopInfo" id="shopInfoMap">
+    <id column="EMAIL" property="email"/>
+    <result column="LICENSEENO" property="licenseeNo"/>
+    <result column="SHOPNAME" property="shopName"/>
+    <result column="SHOPADDR" property="shopAddr"/>
+    <result column="SHOPTEL" property="shopTel"/>
+    <result column="SHOPINTRO" property="shopIntro"/>
+    <result column="SHOPPHOTONO" property="shopPhotoNo"/>
+    <result column="SHOPPHOTOURL" property="shopPhotoUrl"/>    
+  </resultMap>
+  
+  <select id="getList" parameterType="map" resultMap="shopInfoMap">
+    SELECT T1.EMAIL, SHOPPHOTOURL, LICENSEENO, SHOPNAME, SHOPADDR, SHOPTEL, SHOPINTRO
+    FROM SHOP T1 LEFT JOIN SHOPPHOTO T2 
+    ON T1.EMAIL = T2.EMAIL
+    WHERE T1.EMAIL = #{email};
+  </select>
+  
+  <update id="updateShopInfo" parameterType="ShopInfo" >
+	UPDATE SHOP T1 LEFT JOIN SHOPPHOTO T2 
+	ON T1.EMAIL = T2.EMAIL
+	SET
+	SHOPPHOTOURL=#{shopPhotoUrl},
+  	LICENSEENO=#{licenseeNo},
+  	SHOPNAME=#{shopName},
+  	SHOPADDR=#{shopAddr},
+ 	SHOPTEL=#{shopTel},
+ 	SHOPINTRO=#{shopIntro}
+ 	WHERE T1.EMAIL = #{email};
+  </update>
+  
+  <update id="updatePhoto" parameterType="ShopInfoPhoto">
+  	UPDATE SHOPPHOTO (SHOPPHOTOURL)
+  	VALUES (#{shopPhotoUrl})
+  	WHERE EMAIL = #{email};
+  </update>
+  
+  <insert id="insertPhoto" parameterType="ShopInfoPhoto">
+  	INSERT INTO SHOPPHOTO (SHOPPHOTOURL, EMAIL)
+	VALUES (#{shopPhotoUrl}, #{email});
+  </insert>
+ 
+  
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
