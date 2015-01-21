@@ -19,7 +19,7 @@
 <div id="header">
 	<div class="inner">
 		<h1 class="logo">
-			<a href="jy_main.html">Beauty Chu~♥</a>
+			<a id="logo-title" href="jy_main.html">Beauty Chu~♥</a>
 		</h1>
 
 		<!-- #nav -->
@@ -28,8 +28,8 @@
 			<!-- gnb -->
 			<ul class="gnb">
 
-				<li class="m1"><a href="kh-shopinfo.html"> <span class="over"></span> <span
-						class="label">SHOP INFO</span></a>
+				<li class="m1"><a href="kh-shopinfo.html"> <span
+						class="over"></span> <span class="label">SHOP INFO</span></a>
 					<div class="sub-menu">
 						<ul>
 							<li class="m1"><a href="#"> 전체 보기</a></li>
@@ -44,8 +44,8 @@
 					</div></li>
 				<!-- end of li.m1 -->
 
-				<li class="m2"><a href="kh-styleman.html"><span class="over"></span><span
-						class="label">Man</span></a>
+				<li class="m2"><a href="kh-styleman.html"><span
+						class="over"></span><span class="label">Man</span></a>
 					<div class="sub-menu">
 						<ul>
 							<li class="m2"><a href="#">Man Cut</a></li>
@@ -103,23 +103,28 @@
 
 		<!-- sub-menu -->
 		<ul class="util-menu" id="util-menu">
-			<!-- 로그아웃 시 노출 -->
 
 			<!-- 로그인 전 -->
+			<!-- <li id="before-login"> -->
 			<li class="join" id="join"><a data-dialog2="joindialog" title="회원가입">Join</a></li>
 			<li class="login" id="login"><a data-dialog1="logindialog" title="로그인">login</a></li>
+			<!-- </li> -->
 
 			<!-- 로그인 후 -->
+			<!-- <li id="after-login"> -->
 			<li class="jy-mypage" id="jy-mypage">
 			<a href="jy_personalinfo.html"title="마이페이지" 
 				 style="text-indent: 0; padding: 0; text-align: center;">
 			<img src="../img/logo_appchu.jpg" width="20" height="20"
-								class="img-circle img-responsive" id="user-mypage" alt="" 
+								class="jy-profileimg" id="user-mypage" alt="" 
 								style="border-radius:5px; margin: 25px 5px;"/>
 								<input class="user-nickname" id="user-mypage" value="" disabled>
+								<!-- <span class="user-nickname" id="user-mypage"></span>	 -->		
 			</a></li>
 			<li class="logout" id="logout">
 			<a title="로그아웃">logout</a></li>
+			<!-- </li> -->
+
 
 		</ul>
 		<!--sub-menu-->
@@ -166,8 +171,9 @@
 				<!-- 로그인 체크  -->
 				<div id="jy-login-check" style="height: 10px;"></div>
 				<!-- 로그인 체크  -->
-				
-				<button class="jy-btn-gojoin" type="button">회원 가입</button>
+	
+				<button class="jy-btn-gojoin" id="jy-btn-gojoin" type="button" title="회원 가입하기">
+				회원 가입</button>
 			</form>
 		</div>
 	</div>
@@ -196,6 +202,19 @@
 			<!-- 회원가입 폼 -->
 			<form name='frm' class='form-horizontal jy-join' role='form'
 				method='post'>
+
+				<!-- 사용자 분류 -->
+				<div class='jy-form-group'>
+					<label class='jy-control-label' for="classuser1"> <strong
+						class='jy-class-user'>분류</strong>
+					</label>
+					<div class="jy-radio-user">
+						<input type="radio" class="jy-chk-user" id="jy-chk-user1"
+							name="chk-user" value="uchk1" checked>일반 회원 
+						<input type="radio" class="jy-chk-user" id="jy-chk-user2"
+							name="chk-user" value="uchk2">사업자 회원
+					</div>
+				</div>
 
 				<!-- 이메일 -->
 				<div class='jy-form-group'>
@@ -322,7 +341,35 @@ $.ajax({
 });
 
 /* -------------------  */
+/* 프로필 사진 받기 */
+//$.ajax({
+//	type : 'get',
+//	dataType : "json",
+//	url : '../json/auth/loginUser.do',
+//	success : function(data) {
+//			
+//			if(data.status != 'fail') {
+//				console.log("login"+data.status);
+//				$('.user-nickname').val(data.loginUser.name);
+//				/* 다만 main 전체가 떴다가 아래가 사라짐.. */
+//				$('.join').hide();
+//				$('.login').hide();
+//				
+			/* } else if (data.status == 'fail') { */
+//				} else {
+//				console.log("login"+data.status);
+				/* 다만 main 전체가 떴다가 아래가 사라짐.. */
+//				$('.jy-mypage').hide();
+//				$('.logout').hide();
+//			}
+			
+//	},
+//	error : function() {
+//		console.log('로그인 ajax 실패');
+		
+//	}
 
+//});
 
 </script>
 
@@ -360,16 +407,20 @@ $.ajax({
 								}, function(data) {
 									if (data.result === 'yes') {
 										$('#jy-email-check').html(
-												'사용가능한 아이디 입니다.');
+												'사용가능한 아이디 입니다.')
+												.css("color","blue");
 										joinpass = 1;
 									} else if (data.result === 'no') {
 										$('#jy-email-check').html(
-												'중복된 아이디가 있습니다.');
+												'중복된 아이디가 있습니다.')
+												.css("color","red");
 										joinpass = 0;
 									}
 								})
 							} else {
-								$('#jy-email-check').html("잘못된 이메일 형식입니다.");
+								$('#jy-email-check').html("잘못된 이메일 형식입니다.")
+								.css("color","red");
+								
 								joinpass = 0;
 
 							}
@@ -385,10 +436,10 @@ $.ajax({
 				$('#jy-pw-check').html("비밀번호를 입력해주세요.");
 				passwordpass = 0;
 			} else if (password1 === password2) {
-				$('#jy-pw-check').html("패스워드가 일치 합니다.^^");
+				$('#jy-pw-check').html("패스워드가 일치 합니다.^^").css("color","blue");
 				passwordpass = 1;
 			} else {
-				$('#jy-pw-check').html("패스워드가 일치하지 않습니다..");
+				$('#jy-pw-check').html("패스워드가 일치하지 않습니다..").css("color","red");
 				passwordpass = 0;
 			}
 		}
@@ -407,7 +458,7 @@ $.ajax({
 
 		$('#jy-btn-join-fin').click(function() {
 			if (passwordpass === 0) {
-				$('#jy-pw-check').html("패스워드를 동일하게 입력해 주세요.");
+				$('#jy-pw-check').html("패스워드를 동일하게 입력해 주세요.").css("color","red");
 
 			}
 			/* 
@@ -416,7 +467,7 @@ $.ajax({
 			}
 			 */
 			else if (joinpass === 0) {
-				$('#jy-pw-check').html("올바른 아이디를 입력해 주세요.");
+				$('#jy-pw-check').html("올바른 아이디를 입력해 주세요.").css("color","red");
 			} else {
 
 				$.ajax({
@@ -455,9 +506,9 @@ $.ajax({
 			var password = $('#jy-inputPassword').val();
 
 			if (email === '') {
-				$('#jy-login-check').html('이메일을 입력 해주세요.');
+				$('#jy-login-check').html('이메일을 입력 해주세요.').css("color","red");
 			} else if (password === '') {
-				$('#jy-login-check').html('비밀번호를 입력 해주세요.');
+				$('#jy-login-check').html('비밀번호를 입력 해주세요.').css("color","red");
 			} else {
 
 				$.ajax({
@@ -475,7 +526,7 @@ $.ajax({
 							location.href = 'jy_main.html';
 							
 						} else {
-							$('#jy-login-check').html('아이디 혹은 비밀번호가 맞지 않습니다.');
+							$('#jy-login-check').html('아이디 혹은 비밀번호가 맞지 않습니다.').css("color","red");
 
 						}
 					},
@@ -488,6 +539,14 @@ $.ajax({
 
 		});
 		/* -------------------  */
+		
+	  /* 로그인 페이지에서 회원가입 버튼 누르면 회원가입 페이지로 넘어가기 */
+ 		$('#jy-btn-gojoin').click(function(){
+			//alert("join click!"); 			
+			//$('.join').
+			//$('.join').click();
+			//$('#joindialog').show();
+		})
 		
 
 		/* 사업자 메시지 보이기 */
@@ -503,13 +562,7 @@ $.ajax({
 			$('.jy-register-alert').show();
 		});
 
-		/* 로그인 페이지에서 회원가입 버튼 누르면 회원가입 페이지로 넘어가기 */
-		
- 		$('#jy-btn-gojoin').click(function(){
-			alert("join click!"); 			
-			//$('.join').
-			
-		})
+
 		
 		
 	})();

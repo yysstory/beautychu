@@ -80,13 +80,12 @@
 .jy-checkbox-line { margin-left: -75px; }
 .jy-btn-login { width: 90px; float: right; height: 63px; margin-top: -68px; font-size: 20px;/* 사이즈 별로면 없애 */}
 .jy-btn-gojoin { margin-top: 50px; width: 410px; float: left; padding: 1em 2em; font-size: 15px;}
-.jy-btn-join {width: 292px; float: left; padding: 1em 2em; margin-left: -8px; font-size: 15px;}
+.jy-btn-join {width: 288px; float: left; padding: 1em 2em; margin-left: -8px; font-size: 15px;}
 .jy-btn-login-close { margin: 0; float: right; padding: 0; margin-right: -65px;}
 .jy-login-header-area { margin-bottom: 30px;}
 
 #jy-inputEmail { margin-left: 0px;}
 #jy-inputPassword { margin-left: 30px;}
-#jy-login-check { height: 20px; margin-top: 10px; font-size: 13px; color: red;}
 
 
 /* join form css */
@@ -96,32 +95,34 @@
 .jy-join-header-area { margin-bottom: 30px; margin-top: 30px;}
 .jy-control-label {float: left; font-size:14px; margin-top: 8px;}
 .jy-form-group {margin-bottom: 20px;}
-.jy-form-control-join { width: 250px; margin-left: 30px; height: 25px; font-size: 11px;}
-.jy-form-control-label { width: 250px; margin-left: 30px; height: 25px; font-size: 11px;}
-.jy-btn-join-fin {width: 352px; float: left; margin-top: 20px;}
+.jy-form-control-join { /* width: 250px; */ width:65%; margin-left: 30px; height: 25px; font-size: 11px;}
+.jy-form-control-label { /* width: 250px;  */ width:65%; margin-left: 30px; height: 25px; font-size: 11px;}
+.jy-btn-join-fin {/* width: 347px; */ width:92%; float: left; margin-top: 20px;}
 .jy-register-alert {float: left;}
 .jy-join {margin-left: 30px; margin-top: -30px;}
-.jy-alert-message {font-size: 13px; width: 347px; margin-top: 10px;}
+.jy-alert-message {font-size: 13px; /* width: 347px; */ width:133%; margin-top: 10px;}
 .jy-btn-public-join { padding: 80px 40px; padding: 1em 2em;}
 .jy-btn-licensee-join { padding: 80px 35px; padding: 1em 2em;}
 /* .jy-email { font-size: 15px;}
 .jy-nick { font-size: 15px;}
 .jy-pw { font-size: 15px;}
 .jy-pwr { font-size: 15px;}  */
-
-
+.jy-radio-user { font-size: 14px; padding-top: 7px;}
+.jy-chk-user { margin: 0px 7px;}
 
 #jy-user_pw { margin-left: 15px;}
 #jy-confirm_pw { margin-left:-20px;} 
 #jy-email-check { 
 	font-size:12px; text-align: left;
 	margin-top: -10px; margin-bottom: 10px; 
-	width: 265px; padding-left: 100px; 
+	/* width: 265px; */ width:66%; padding-left: 100px; 
 	/* margin-left:141px; */
 	}
-#jy-pw-check { 	font-size:12px; text-align: left;
+#jy-pw-check { 
+	font-size:12px; text-align: left;
 	margin-top: -10px; margin-bottom: 10px; 
-	width: 265px; padding-left: 101px; }
-
+	/* width: 265px; */ width:66%; padding-left: 100px; 
+	/* margin-left:141px; */
+}
 
 

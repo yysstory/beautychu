@@ -4,7 +4,7 @@
 }
 
 /*html,body { width: 100%; height: 100%;}*/
-html.home,body.home { background:#1f1f1f !important;}
+html.home,body.home { /* background:#1f1f1f !important; */background: #fff;}
 .home .wrapper {display: none;}
 
 
