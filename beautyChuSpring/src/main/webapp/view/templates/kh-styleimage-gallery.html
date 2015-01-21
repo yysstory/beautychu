@@ -1,6 +1,4 @@
-﻿        	<script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
-    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script>
+﻿
     <script>
 
         jQuery(document).ready(function ($) {
@@ -113,7 +111,7 @@
 
     
     <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 480px;
-        height: 566px; background: #191919; overflow: hidden;">
+        height: 516px; background: #191919; overflow: hidden;">
 
         <!-- Loading Screen -->
         <div  style="position: absolute; top: 0px; left: 0px;">
@@ -126,11 +124,13 @@
         </div>
 
         <!-- Slides Container -->
-        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 480px; height: 466px; overflow: hidden;">
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 480px; height: 416px; overflow: hidden;">
+        		{{#each photos}}
             <div>
-                <img u="image" src="../images/kh-celebrity/cel1.jpg" />
-                <img u="thumb" src="../images/kh-celebrity/cel1.jpg" />
+                <img u="image" src="{{url}}" />
+                <img u="thumb" src="{{url}}" />
             </div>
+            	{{/each}}
             <div>
                 <img u="image" src="../images/kh-celebrity/cel2.jpg" />
                 <img u="thumb" src="../images/kh-celebrity/cel2.jpg" />
@@ -204,5 +204,10 @@
         <!-- Thumbnail Navigator Skin End -->
     </div>
     <!-- Jssor Slider End -->
+    
+    
+        <script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
+            <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script> 
 <!-- </body>
 </html> -->
