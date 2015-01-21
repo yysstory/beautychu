@@ -1,10 +1,12 @@
+    <script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script>
 
 <div id=yun-shopdetailcontainer>
 
 	<!--*****************************************************************************************-->
 	<!--**************************** 샵사진 슬라이드가 들어가는 div *****************************-->
 	<div id='yun-shopphotolist' class=yun-shopcontainerdiv>
-
 
 
 
@@ -37,8 +39,8 @@
 
 		</div>
 		
-		<div>
-			 <h3>가격:{{styleDetail.price}}</h3>
+		<div><p>소요시간:</p><p id='kh-time'></p><br>
+			 <p>가격:</p><p id='kh-price'></p>
 		</div>
 
 
@@ -48,16 +50,15 @@
 		</div>
 
 		<div id=yun-stylecomment class=yun-stylecomment>
-
+			<img class=yun-stylecomment
+				src="../images/yun-shopdetail/comment.png" />
 		</div>
 	</div>
 </div>
-    <script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
-    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script> 
+
 
 <script type="text/javascript">
-	 /* $('#yun-shopphotolist').load('templates/kh-styleimage-gallery.html');  */
+	/*   $('#yun-shopphotolist').load('templates/kh-styleimage-gallery.html');   */
 	
 /*     $('#template1').load('templates/kh-styleimage-gallery.html', function(source){
 	    	  var template = Handlebars.compile(source);

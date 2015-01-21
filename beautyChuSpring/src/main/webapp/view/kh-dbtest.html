@@ -95,7 +95,7 @@ $.getJSON('../json/auth/loginUser.do', function(data){
 	  
 
   
-/* 	$.getJSON('../json/style/list.do', 
+ 	$.getJSON('../json/style/list.do', 
     function(data){
 	
 	console.log(data);
@@ -107,9 +107,14 @@ $.getJSON('../json/auth/loginUser.do', function(data){
 	    	  console.log(html);
 	    	  $('#d1').html(html);
 	    	});  
-    }); */
+    }); 
 	  
-	$.getJSON('../json/style/detail.do', 
+ 	  $(document).on('click', '.data-row a', function(){
+ 		    loadProduct($(this).attr('data-no'));
+ 		  });
+	 
+ 	 function loadProduct(productNo) {
+ 	$.getJSON('../json/style/detail.do', 
 		    function(data){
 			
 			console.log(data);
@@ -121,7 +126,8 @@ $.getJSON('../json/auth/loginUser.do', function(data){
 			    	  $('#d1').html(html);
 			    	});  
 			
-		    });
+		    }); 
+ 	 }
 </script>
 
 </body>

@@ -71,14 +71,26 @@
 	<div id="wrap-chu" class="wrap-chu">
 
  -->
-    <script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
+   <!-- <link rel="import" href="../js/resources/jquery-1.9.1.min.js">
+  <link rel="import" href="../js/resources/kh/jssor.js">
+  <link rel="import" href="../js/resources/kh/jssor.slider.js"> -->
+  
+  
+ 
+ 
+    <!-- <script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
-    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script> -->
 <div id=yun-shopdetailcontainer>
 
 	<!--*****************************************************************************************-->
 	<!--**************************** 샵사진 슬라이드가 들어가는 div *****************************-->
 	<div id='yun-shopphotolist' class=yun-shopcontainerdiv>
+
+
+
+
+
 
 
 
@@ -95,17 +107,15 @@
 		<!--**************************** 샵 제목 div  ***********************************************-->
 
 		<div id=yun-shoptitle>
-			<h1>Juno hair</h1>
+			<h1>{{shop.shopName}}</h1>
 		</div>
 		<!--*****************************************************************************************-->
 		<!--**************************** 샵 내용 div **************************************-->
 
 		<div id='yun-shopcontentdetail'>
-			<pre>
-안녕하세요^^	준오헤어 가로수길점입니다!
-시원하게 탁트인 통유리의 인테리어로 고급스러움속의 심플함을 느낄 수 있는 곳, 
-다양한 스타일의 트렌드를 창조하는 최고의 스타일리스트와 함께
-준오헤어 가로수길점에서 행복과 여유를 만끽하시기 바랍니다.
+			<pre>{{shop.shopIntro}}
+			{{shop.shopAddr}}
+			{{shopTel}}
 </pre>
 
 
@@ -128,10 +138,6 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	$('#yun-shopphotolist').load('templates/kh-shopimage-gallery.html');
-
-</script>
 <script>
 
 $( document ).ready(function() {
@@ -155,6 +161,9 @@ $(".yun-shopstyle").hover(
 
 
 </script>
+    <script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script> 
 <!-- 
 	</div>
 

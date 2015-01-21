@@ -11,15 +11,23 @@
 <link rel="stylesheet"
 	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/yun/button.min.css">
+<!-- 스타일 -->
+<link rel="stylesheet" href="../css/jy/jy_DG_Slider.css" type="text/css"
+	media="all" />
+	
+<!-- 썸네일 이미지 -->	
+
+	<link rel="stylesheet" type="text/css" href="../css/resources/kh-thumnail.css" />
+	<link rel="stylesheet" type="text/css" href="../css/resources/kh-shop.css" />
 
  <!-- 공통 스크립트 -->
-<script type="text/javascript" src="../js/modernizr.min.js"></script>
+<!-- <script type="text/javascript" src="../js/modernizr.min.js"></script> -->
 <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="../js/jquery.easing.js"></script>
-<script type="text/javascript" src="../js/jquery-scrolltofixed-min.js"></script>
+<!-- <script type="text/javascript" src="../js/jquery.easing.js"></script> -->
+<!-- <script type="text/javascript" src="../js/jquery-scrolltofixed-min.js"></script> -->
 <script type="text/javascript" src="../js/common.js"></script>
-<script type="text/javascript" src="../js/motion.js"></script> 
-<script type="text/javascript" src="../js/jquery.motio.min.js"></script> 
+<!-- <script type="text/javascript" src="../js/motion.js"></script>  -->
+<!-- <script type="text/javascript" src="../js/jquery.motio.min.js"></script>  -->
 
 
 	<script>
@@ -27,19 +35,30 @@
 	</script>
 		
 <!-- 	page가 home일 경우에만 로드하는 js -->
- 	<script type="text/javascript" src="../js/jquery.touchSwipe.min.js"></script>
-	<script type="text/javascript" src="../js/jquery.event.drag-2.2.js"></script>
-	<script type="text/javascript" src="../js/jquery.event.drag.live-2.2.js"></script>
-	<script type="text/javascript" src="../js/home.js"></script>
-	<script type="text/javascript" src="../js/home.show-window.js"></script>
+<!--  	<script type="text/javascript" src="../js/jquery.touchSwipe.min.js"></script> -->
+<!-- 	<script type="text/javascript" src="../js/jquery.event.drag-2.2.js"></script> -->
+<!-- 	<script type="text/javascript" src="../js/jquery.event.drag.live-2.2.js"></script> -->
+<!-- 	<script type="text/javascript" src="../js/home.js"></script> -->
+<!-- 	<script type="text/javascript" src="../js/home.show-window.js"></script> -->
 <!-- 공통 스크립트 -->
 
-<script type='text/javascript' src='http://code.jquery.com/jquery-1.7.2.js'></script>
 <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>  
 
 <script type="text/javascript" src='../js/handlebars-v2.0.0.js'></script>
-<script type="text/javascript" src='../js/require.js'></script>
+
+
+
+<!--     <script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script> -->
+    <script type="text/javascript" src="../js/resources/kh/jssor.js"></script> 
+    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script> 
+
+
+<!-- 썸네일이미지 -->
+	<script type="text/javascript" src="../js/shop.js"></script>
+
 <style type="text/css">
+
+
 
 
 
@@ -49,6 +68,12 @@
 
 
 
+/*  댓글 스타일 */
+.comment{
+height: 50px;
+}
+
+/* ========================== */
 .wrap-chu {
 	width: 1200px;
 	height: 100%;
@@ -338,7 +363,7 @@ body {
 	margin-left: 3px;
 }
 
-#yun-styletitle {http://www.aliexpress.com/http://www.aliexpress.com/
+#yun-styletitle {
 	height: 50px;
 	font-size: 30px;
 }
@@ -347,10 +372,10 @@ body {
 	height: 130px;
 	line-height: 20px;
 }
-
+/* 댓글 */
 .yun-stylecomment {
 	width: 100%;
-	margin-top: 10px;
+	margin-top: 52px;
 	
 }
 
@@ -463,8 +488,6 @@ border-radius: 20px;
 			</div>  -->
 
 	</div>
-<script id="template" type="text/temp"></script>
-<script id="template1" type="text/temp"></script>
 
 	<footer>
 		<!-- footer 건들지 말긔! -->
@@ -527,21 +550,47 @@ border-radius: 20px;
 				$('.yun-edge').after('<div id=changediv class="yun-info-bg"><div id=yun-div1 class=yun-div><div></div>');
 				/* $('#yun-div1').load('templates/yun-styledetail.html'); */
 				
+				loadProduct($(this).attr('data-no')); 
 				
-				$.getJSON('../json/style/detail.do', 
+			 	function loadProduct(styleNo) {
+				$.getJSON('../json/style/detail.do?no='+styleNo, 
 					    function(data){
-						
-						console.log(data);
-					      $('#template1').load('templates/kh-styledetail.html', function(source){
-					    	  console.log(source);
+					console.log(data);
+					      $.get('templates/kh-styledetail.html', function(source){
 						    	  var template = Handlebars.compile(source);
 						    	  var html = template(data);
-						    	  console.log(html);
 						    	  $('#yun-div1').html(html);
+ 						    	  $('#kh-styleName').html(data.styleDetail.styleName);
+						    	  $('#kh-intro').html(data.styleDetail.styleIntro);
+						    	  $('#kh-time').html(data.styleDetail.skillTime);
+						    	  /* $('#kh-price').html(data.styleDetail.price);  */
 						    	});  
+					      
+					      
+					      $.get('templates/kh-imgthumnail.html', function(source){
+					    	  var template = Handlebars.compile(source);
+					    	  var html = template(data);
+					    	  $('#yun-shopphotolist').html(html);
+					      });
+					      
+					      $.get('templates/jy_commenttemp.html', function(source){
+					    	  console.log(source);
+					    	  var template = Handlebars.compile(source);
+					    	  var html = template(data);
+					    	  console.log(html);
+					    	  $('#yun-stylecomment').html(html);
+					      });
 						
 					    });
 				
+
+				
+				
+				
+				
+				
+				
+			 	}
 				
 				
 				
@@ -611,11 +660,32 @@ border-radius: 20px;
 
 		$('div').on("click",".yun-shop-button",function() {
 			event.stopPropagation();
-			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
-			.css({"z-index":pagebtnnum,"margin-left":"100%"}).animate({ marginLeft: "0px" }, 500);
-			$('#yun-div'+pagebtnnum).load('templates/yun-shopdetail.html');
+			console.log($(this).attr('data-email')); 
+			/* $('#yun-div'+pagebtnnum).load('templates/yun-shopdetail.html'); */
+			
+			
+			loadShop($(this).attr('data-email')); 
+ 			function loadShop(email) {
+				$.getJSON('../json/shop/view.do?mail='+email, function(data){
+						console.log(data);
+					      $.get('templates/yun-shopdetail.html', function(source){
+						    	  var template = Handlebars.compile(source);
+						    	  var html = template(data);
+									$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
+									.css({"z-index":pagebtnnum,"margin-left":"100%"}).animate({ marginLeft: "0px" }, 500);
+						    	  $('#yun-div'+pagebtnnum).html(html);
+						    	});  
+					      
+ 					     $.get('templates/kh-shopimage-gallery.html', function(source){
+					    	  var template = Handlebars.compile(source);
+					    	  var html = template(data);
+				    		  $('#yun-div'+pagebtnnum+' '+'#yun-shopphotolist').html(html);	  
+					    	 
+					      }); 
+					      
+					    });
+			 	} 
 			pagebtnnum++;
-
 		});
 		
 		
@@ -707,20 +777,19 @@ border-radius: 20px;
 				$.getJSON('../json/style/list.do', 
 					    function(data){
 						
-						console.log(data);
 
-					      $('#template').load('templates/style-table.html', function(source){
-					    	  console.log(source);
+					      $.get('templates/style-table.html', function(source){
 						    	  var template = Handlebars.compile(source);
 						    	  var html = template(data);
-						    	  console.log(html);
 						    	  $('.yun-container').html(html);
 						    	});  
 					    });
 			    
 	</script>
 	
-
+    <script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script> 
 
 </body>
 </html>
