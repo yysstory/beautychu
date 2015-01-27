@@ -14,17 +14,15 @@
 <!-- 스타일 -->
 <link rel="stylesheet" href="../css/jy/jy_DG_Slider.css" type="text/css"
 	media="all" />
+	
+<!-- 썸네일 이미지 -->	
 
-<!-- 썸네일 이미지 -->
+	<link rel="stylesheet" type="text/css" href="../css/thumnail.css" />
+	<link rel="stylesheet" type="text/css" href="../css/shop.css" />
 
-<link rel="stylesheet" type="text/css"
-	href="../css/resources/kh-thumnail.css" />
-<link rel="stylesheet" type="text/css"
-	href="../css/resources/kh-shop.css" />
-
-<!-- 공통 스크립트 -->
+ <!-- 공통 스크립트 -->
 <!-- <script type="text/javascript" src="../js/modernizr.min.js"></script> -->
-<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <!-- <script type="text/javascript" src="../js/jquery.easing.js"></script> -->
 <!-- <script type="text/javascript" src="../js/jquery-scrolltofixed-min.js"></script> -->
 <script type="text/javascript" src="../js/common.js"></script>
@@ -32,10 +30,10 @@
 <!-- <script type="text/javascript" src="../js/jquery.motio.min.js"></script>  -->
 
 
-<script>
+	<script>
 			window.intro = 'yes';
 	</script>
-
+		
 <!-- 	page가 home일 경우에만 로드하는 js -->
 <!--  	<script type="text/javascript" src="../js/jquery.touchSwipe.min.js"></script> -->
 <!-- 	<script type="text/javascript" src="../js/jquery.event.drag-2.2.js"></script> -->
@@ -44,42 +42,77 @@
 <!-- 	<script type="text/javascript" src="../js/home.show-window.js"></script> -->
 <!-- 공통 스크립트 -->
 
-<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
 
 <script type="text/javascript" src='../js/handlebars-v2.0.0.js'></script>
 
 
 
 <!--     <script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script> -->
-<script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
-<script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.js"></script> 
+    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script> 
 
 
 <!-- 썸네일이미지 -->
-<script type="text/javascript" src="../js/shop.js"></script>
+	<script type="text/javascript" src="../js/shop.js"></script>
 
 <style type="text/css">
+
+
+
+
 
 /* 스타일 적용 공간! */
 
 /* ============================================================== */
 
+
+
 /*  댓글 스타일 */
-.comment {
-	height: 50px;
+.comment{
+height: 50px;
 }
+
+.kh-reviewbtn {
+	display: none;
+
+}
+.btn {
+	display: block;
+	float: right;
+}
+
+.none {
+	display: none;
+
+}
+
+.reviewUpdateForm {
+
+	 float: left; 
+}
+
+.review-btn {
+	float: right;
+}
+
+.kh-selected .band .band-comment pre {
+	display: none;
+}
+
+
 
 /* ========================== */
 .wrap-chu {
 	width: 1200px;
 	height: 100%;
 	margin: 0 auto;
-	margin-top: 100px;
+	margin-top: 100px; 
 }
 
 html {
 	height: 100%;
 }
+
 
 header {
 	height: 100px;
@@ -124,7 +157,7 @@ body {
 	position: relative;
 	width: 280px;
 	height: 410px;
-	float: left;
+ 	float: left; 
 	margin: 5px;
 	font-size: 40px;
 	border-radius: 10px;
@@ -132,11 +165,9 @@ body {
 }
 
 .yun-edge {
-	
 }
 
 .yun-selected {
-	
 }
 
 .yun-boximage {
@@ -150,12 +181,11 @@ body {
 	width: 280px;
 	text-align: center;
 	height: 100px;
-	background-color: rgba(0, 0, 0, 1);
+	background-color: rgba(0,0,0,1);
 	color: white;
 	border-radius: 0px 0px 10px 10px;
 	font-size: 30px;
 }
-
 .kh-basic h2 {
 	color: white;
 	margin-top: 15px;
@@ -178,8 +208,9 @@ body {
 }
 
 .kh-basic .starrr {
-	margin-top: 10px;
+   	margin-top: 10px;
 }
+
 
 .kh-detail {
 	position: absolute;
@@ -187,7 +218,7 @@ body {
 	width: 280px;
 	text-align: center;
 	height: 140px;
-	background-color: rgba(0, 0, 0, 1);
+	background-color: rgba(0,0,0,1);
 	color: white;
 	border-radius: 0px 0px 10px 10px;
 	display: none;
@@ -198,7 +229,7 @@ body {
 	top: 0px;
 	width: 280px;
 	height: 270px;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0,0,0,0.5);
 	display: none;
 	border-radius: 10px 10px 0px 0px;
 }
@@ -206,6 +237,7 @@ body {
 .yun-shop-button .yun-shoppricelist {
 	float: left;
 }
+
 
 /* ============================================================== */
 /* yun-test.html css */
@@ -258,6 +290,7 @@ body {
 	float: left;
 	margin: 4px;
 	text-align: center;
+	
 }
 
 .kh-priceicon img {
@@ -284,7 +317,7 @@ body {
 	bottom: 0px;
 	text-align: center;
 	width: 155px;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0,0,0,0.5);
 	border-radius: 0 0 5px 5px;
 	color: white;
 }
@@ -295,13 +328,14 @@ body {
 	text-align: center;
 	width: 155px;
 	height: 178px;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0,0,0,0.5);
 	border-radius: 5px;
 	color: white;
 }
 
 .kh-smalldetailinfo {
 	margin-top: 75px;
+	
 }
 
 #yun-buttondiv {
@@ -321,7 +355,6 @@ body {
 }
 
 .yun-shoppricelist {
-	
 }
 /* ============================================================== */
 /* yun-styledetail.html css */
@@ -371,6 +404,7 @@ body {
 .yun-stylecomment {
 	width: 100%;
 	margin-top: 52px;
+	
 }
 
 /* ============================================================== */
@@ -412,7 +446,6 @@ body {
 	height: 50px;
 	font-size: 30px;
 }
-
 .yun-pricetitle {
 	float: left;
 	font-size: 30px;
@@ -431,23 +464,31 @@ body {
 .row {
 	height: 100%;
 	boredr: 1px green solid;
+	
 }
+
 
 /* ============================================================== */
 /* ==============================버튼 스타일================================ */
+
 .buttondiv {
 	text-align: center;
 }
 
 .ui.basic.button, .ui.basic.buttons .button {
-	border-radius: 20px;
+
+border-radius: 20px;
 }
+
+
 </style>
 
 </head>
 <body class="home">
 
-	<jy_header> <!-- header 건들지 말긔! --> </jy_header>
+	<jy_header>
+		<!-- header 건들지 말긔! -->
+	</jy_header>
 
 
 	<!--	<div id=changediv >
@@ -455,12 +496,14 @@ body {
 			</div>
 
 		</div> -->
-
-
 	<div id="wrap-chu" class="wrap-chu">
-		<div class="yun-container"></div>
 
-		<!--  			<div class="yun-box">
+<INPUT TYPE="radio" NAME="Gubun" value="Short">SHORT
+<INPUT TYPE="radio" NAME="Gubun" value="Medium">MEDIUM
+<INPUT TYPE="radio" NAME="Gubun" value="Long">LONG
+<div class="yun-container"></div>	
+
+<!--  			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (1).png">
 					<div class="kh-basic">
 						<h2>러블리 펌</h2>
@@ -480,7 +523,7 @@ body {
 		<!-- footer 건들지 말긔! -->
 	</footer>
 
-	<!-- 	<script type="text/javascript"
+<!-- 	<script type="text/javascript"
 		src='../js/resources/jquery-2.1.1.min.js'></script>
 	<script src="../js/resources/starrr.js"></script> -->
 
@@ -534,58 +577,13 @@ body {
 				$('.yun-info-bg').slideUp(function() {
 					$(this).remove();
 				});
-				$('.yun-edge').after('<div id=changediv class="yun-info-bg"><div id=yun-div1 class=yun-div><div></div>');
-				/* $('#yun-div1').load('templates/yun-styledetail.html'); */
-				
-				loadProduct($(this).attr('data-no')); 
-				
-			 	function loadProduct(styleNo) {
-				$.getJSON('../json/style/detail.do?no='+styleNo, 
-					    function(data){
-					console.log(data);
-					      $.get('templates/kh-styledetail.html', function(source){
-						    	  var template = Handlebars.compile(source);
-						    	  var html = template(data);
-						    	  $('#yun-div1').html(html);
- 						    	  $('#kh-styleName').html(data.styleDetail.styleName);
-						    	  $('#kh-intro').html(data.styleDetail.styleIntro);
-						    	  $('#kh-time').html(data.styleDetail.skillTime);
-						    	  /* $('#kh-price').html(data.styleDetail.price);  */
-						    	});  
-					      
-					      
-					      $.get('templates/kh-imgthumnail.html', function(source){
-					    	  var template = Handlebars.compile(source);
-					    	  var html = template(data);
-					    	  $('#yun-shopphotolist').html(html);
-					      });
-					      
-					      $.get('templates/jy_commenttemp.html', function(source){
-					    	  console.log(source);
-					    	  var template = Handlebars.compile(source);
-					    	  var html = template(data);
-					    	  console.log(html);
-					    	  $('#yun-stylecomment').html(html);
-					      });
-						
-					    });
-				
-
-				
-				
-				
-				
-				
-				
-			 	}
-				
-				
-				
-				
-				
-				$('.yun-info-bg').slideDown();
-				setTimeout(function () {  $('html, body').animate({scrollTop:$('.yun-info-bg').position().top-75}, 'slow');  });
-				pagebtnnum=2;
+					$('.yun-edge').after('<div id=changediv class="yun-info-bg"><div id=yun-div1 class=yun-div></div></div>');
+					/* $('#yun-div1').load('templates/yun-styledetail.html'); */
+					loadStyleDetail($(this).attr('data-no')); 
+				 	
+					$('.yun-info-bg').slideDown();
+					setTimeout(function () {  $('html, body').animate({scrollTop:$('.yun-info-bg').position().top-75}, 'slow');  });
+					pagebtnnum=2;
 			}
 		}); 
 		
@@ -643,7 +641,84 @@ body {
 		});
 		 */
 		
-		
+		 $('div').on("click","#kh-reviewAdd",function() {
+			 event.stopPropagation();
+			 /* $.getJSON('../json/auth/loginUser.do', 
+					    function(data){
+						if(data.loginUser == null){
+							alert("로그인 후 이용해 주세요");
+						}
+					    });	 */
+			 $.ajax({
+					type : 'post',
+					dataType : "json",
+					url : '../json/review/reviewAdd.do',
+					data : {
+						content : $('#kh-content').val(),
+						star : $('#kh-star').val(),
+						styleNo : $(this).attr('data-no')
+						
+					},
+					success : function(data) {
+						console.log(data.status);
+						console.log(data.loginUser);
+						/* location.href = 'jy_main.html'; */
+					},
+					error : function() {
+						console.log('댓글입력 ajax 실패');
+						alert("로그인 후 이용해 주세요");
+					}
+				});
+			 
+				
+				refreshReview($(this).attr('data-no')); 
+
+
+			});
+		 
+		 
+		 
+		 $('div').on("click", '.reviewDelete-btn', function(){
+			 event.stopPropagation();
+			 if (confirm('댓글을 삭제하시겠습니까?')) {
+				 deleteReview($(this).attr('data-reviewNo'));
+				  refreshReview($("#kh-reviewAdd").attr('data-no'));
+				} else {
+				    // Do nothing!
+				}
+			});
+
+
+/* 		 $('div').on("click", '#kh-btnUpdate', function(){
+			 event.stopPropagation();
+			 if (confirm('댓글을 삭제하시겠습니까?')) {
+				 deleteReview($(this).attr('data-reviewNo'));
+				  refreshReview($("#kh-reviewAdd").attr('data-no'));
+				} else {
+				    // Do nothing!
+				}
+			}); */
+
+		 
+		 
+		 
+		 	function refreshReview(productNo) {
+		 		$.getJSON('../json/style/detail.do?styleNo='+productNo, 
+		 			    function(data){
+		 			      
+		 			      $.get('templates/jy_commenttemp.html', function(source){
+		 			    	  var template = Handlebars.compile(source);
+		 			    	  var html = template(data);
+		 			    	  $('#yun-stylecomment').html(html);
+		 			      });
+		 			      
+		 			    });
+		 	 	}
+		 
+		 
+		 
+		 
+		 
 
 		$('div').on("click",".yun-shop-button",function() {
 			event.stopPropagation();
@@ -652,26 +727,7 @@ body {
 			
 			
 			loadShop($(this).attr('data-email')); 
- 			function loadShop(email) {
-				$.getJSON('../json/shop/view.do?mail='+email, function(data){
-						console.log(data);
-					      $.get('templates/yun-shopdetail.html', function(source){
-						    	  var template = Handlebars.compile(source);
-						    	  var html = template(data);
-									$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
-									.css({"z-index":pagebtnnum,"margin-left":"100%"}).animate({ marginLeft: "0px" }, 500);
-						    	  $('#yun-div'+pagebtnnum).html(html);
-						    	});  
-					      
- 					     $.get('templates/kh-shopimage-gallery.html', function(source){
-					    	  var template = Handlebars.compile(source);
-					    	  var html = template(data);
-				    		  $('#yun-div'+pagebtnnum+' '+'#yun-shopphotolist').html(html);	  
-					    	 
-					      }); 
-					      
-					    });
-			 	} 
+ 			
 			pagebtnnum++;
 		});
 		
@@ -760,9 +816,10 @@ body {
 
 		
 		
-				
-				$.getJSON('../json/style/list.do', 
-						
+		/* 스타일 리스트 로드 */		
+		$.getJSON('../json/style/list.do', 
+			    function(data){
+								console.log(data);						
 
 					      $.get('templates/style-table.html', function(source){
 						    	  var template = Handlebars.compile(source);
@@ -770,13 +827,159 @@ body {
 						    	  $('.yun-container').html(html);
 						    	});  
 					    });
-			    
-	</script>
 
-	<script type="text/javascript"
-		src="../js/resources/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
-	<script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script>
+		$.getJSON('../json/auth/loginUser.do', 
+					    function(data){
+								console.log(data);						
+
+					      $.get('templates/style-table.html', function(source){
+						    	  var template = Handlebars.compile(source);
+						    	  var html = template(data);
+						    	  $('.yun-container').html(html);
+						    	});  
+					    });
+				
+				
+				
+				
+				
+				function deleteReview(reviewNo) {
+					  $.getJSON('../json/review/delete.do?no=' + reviewNo, 
+					    function(data){
+					      if (data.status == 'success') {
+					    	  
+					      }
+					    });
+					}
+				
+				
+				
+				
+				
+				$('div').on("click","#kh-content",function(){
+					event.stopPropagation();
+					$.getJSON('../json/auth/loginUser.do', 
+						    function(data){
+							if(data.loginUser == null){
+								alert("로그인 후 이용해 주세요");
+							}		
+						    });
+				});
+				
+				$('div').on("click",".reviewUpdate-btn",function(){
+					event.stopPropagation();
+						$(".right").removeClass("kh-selected");
+						$(this).parent().parent().addClass("kh-selected");
+						var reviewNo = $(this).attr("data-reviewNo");
+						$("#kh-btnUpdateCancel-"+reviewNo).css("display", "block");
+						$("#kh-btnUpdate-"+reviewNo).css("display", "none");
+						$("#kh-reviewContent-"+reviewNo).css("display", "none");
+						$("#kh-reUpdateForm-"+reviewNo).css("display", "block");
+						$("#kh-updateAdd-"+reviewNo).css("display", "block");
+				});
+				
+				$('div').on("click",".reviewUpdateCancel-btn",function(){
+					event.stopPropagation();
+					var reviewNo = $(this).attr("data-reviewNo");
+					$("#kh-btnUpdateCancel-"+reviewNo).css("display", "none");
+					$("#kh-btnUpdate-"+reviewNo).css("display", "block");
+					$("#kh-reUpdateForm-"+reviewNo).css("display", "none");
+					$("#kh-updateAdd-"+reviewNo).css("display", "none");
+					$("#kh-reviewContent-"+reviewNo).css("display", "block");
+				
+				});
+				
+ 				$('div').on("click",".review-btn",function(){
+					event.stopPropagation();
+					var reviewNo = $(this).attr("data-reviewNo");
+					console.log("수정한것::"+ $("#kh-reUpdateForm-" + reviewNo).val());
+					updateReview(reviewNo);
+					refreshReview($("#kh-reviewAdd").attr('data-no'));
+				}); 
+				
+				
+				
+				
+				
+ 				function updateReview(no) {
+					  $.post('../json/review/updateReview.do'
+					      , {
+						  	 reviewNo : $('#kh-updateAdd-'+no).attr("data-reviewNo"),
+						  	 content  : $('#kh-reUpdateForm-'+no).val(),
+					        styleNo : $('#kh-reviewAdd').attr("data-no")
+					      } 
+					      , function(result){
+					        if (result.status == "success") {
+					        } else {
+					          alert("변경 실패!");
+					        }
+					      } 
+					      , 'json')
+					   .fail(function(jqXHR, textStatus, errorThrown){ 
+					     alert(textStatus + ":" + errorThrown);
+					   });
+					}  
+				
+ 				
+ 				/* 샵 디테일 로드  */
+ 				function loadShop(email) {
+ 					$.getJSON('../json/shop/view.do?mail='+email, function(data){
+ 							console.log(data);
+ 						      $.get('templates/yun-shopdetail.html', function(source){
+ 							    	  var template = Handlebars.compile(source);
+ 							    	  var html = template(data);
+ 										$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
+ 										.css({"z-index":pagebtnnum,"margin-left":"100%"}).animate({ marginLeft: "0px" }, 500);
+ 							    	  $('#yun-div'+pagebtnnum).html(html);
+ 							    	});  
+ 						      
+ 	 					     $.get('templates/kh-shopimage-gallery.html', function(source){
+ 						    	  var template = Handlebars.compile(source);
+ 						    	  var html = template(data);
+ 					    		  $('#yun-div'+pagebtnnum+' '+'#yun-shopphotolist').html(html);	  
+ 						      }); 
+ 						    });
+ 				 	} 
+				
+ 				
+ 				/* 스타일 디테일 로드 */
+ 				function loadStyleDetail(styleNo) {
+					$.getJSON('../json/style/detail.do?styleNo='+styleNo, 
+						    function(data){
+						console.log(data);
+						      $.get('templates/kh-styledetail.html', function(source){
+							    	  var template = Handlebars.compile(source);
+							    	  var html = template(data);
+							    	  $('#yun-div1').html(html);
+	 						    	  $('#kh-styleName').html(data.styleDetail.styleName);
+							    	  $('#kh-intro').html(data.styleDetail.styleIntro);
+							    	  $('#kh-time').html(data.styleDetail.skillTime);
+							    	  /* $('#kh-price').html(data.styleDetail.price);  */
+							    	});  
+						      $.get('templates/kh-imgthumnail.html', function(source){
+						    	  var template = Handlebars.compile(source);
+						    	  var html = template(data);
+						    	  $('#yun-shopphotolist').html(html);
+						      });
+						      $.get('templates/jy_commenttemp.html', function(source){
+						    	  var template = Handlebars.compile(source);
+						    	  var html = template(data);
+						    	  $('#yun-stylecomment').html(html);
+						      });
+						    });
+				 	}
+ 				function styleListSort(styleLength) {
+ 					$.getJSON('../json/style/list.do?styleLength='+styleLength, 
+ 						    function(data){
+ 											console.log(data);						
+ 								      $.get('templates/style-table.html', function(source){
+ 									    	  var template = Handlebars.compile(source);
+ 									    	  var html = template(data);
+ 									    	  $('.yun-container').html(html);
+ 									    	});  
+ 								    });
+				 	}
+	</script>
 
 </body>
 </html>

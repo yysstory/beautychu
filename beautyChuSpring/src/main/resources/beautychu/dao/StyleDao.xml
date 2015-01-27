@@ -30,8 +30,9 @@
   
   <resultMap type="StyleGrid" id="styleGridMap">
     <id column="STYLENO" property="styleNumber"/>
+    <result column="EMAIL" property="email"/>
     <result column="STYLENAME" property="styleName"/>
-    <result column="URL" property="url"/>
+    <result column="STYLEPHOTOURL" property="url"/>
 
   </resultMap>
 
@@ -42,33 +43,77 @@
     <result column="STYLEINTRO" property="styleIntro"/> 
     <result column="SKILLTIME" property="SkillTime"/>
     <result column="PRICE" property="price"/> 
-    <result column="URL" property="url"/>
-
+    <result column="EMAIL" property="email"/> 
+  </resultMap>
+  
+  
+  <resultMap type="StylePhoto" id="stylePhotoMap">
+  	<id column="STYLEPOHOTONO" property="no"/>
+  	<result column="STYLENO" property="styleNo"/>
+  	<result column="STYLEPHOTOURL" property="url"/>
+  </resultMap>
+  
+  
+  
+  <resultMap type="Review" id="reviewMap">
+  	<id column="REVIEWNO" property="reviewNo"/>
+  	<result column="STYLENO" property="styleNo"/>
+  	<result column="NAME" property="name"/>
+  	<result column="CONTENT" property="content"/>
+  	<result column="STAR" property="star"/>
+  	<result column="REPORTDATE" property="date"/>
+  	<result column="REVIEWBTN" property="reviewbtn"/>
   </resultMap>
 
 
   
-  <select id="getGridList" parameterType="map" resultMap="styleGridMap">
+<!--   <select id="getGridList" parameterType="map" resultMap="styleGridMap">
     SELECT T1.STYLENAME, T2.URL 
     FROM STYLE T1 JOIN STYLEPHOTO T2 USING(STYLENO)
+  </select> -->
+ 
+  <select id="getList" parameterType="StyleGrid" resultMap="styleGridMap">
+
+    SELECT T1.STYLENO, T1.EMAIL, T1.STYLENAME, T2.STYLEPHOTOURL 
+    FROM STYLE T1 JOIN (SELECT STYLENO,STYLEPHOTOURL,STYLEPHOTONO FROM STYLEPHOTO GROUP BY STYLENO) T2 USING(STYLENO)
+    <if test="styleLength != null">
+		WHERE STYLELENGTH =#{{styleLength}}    
+    </if>
+     ORDER BY STYLENO
   </select>
-    <select id="getList" parameterType="map" resultMap="styleGridMap">
 
-    SELECT T1.STYLENO, T1.STYLENAME, T2.URL 
-    FROM STYLE T1 JOIN (SELECT STYLENO,URL,STYLEPHOTONO FROM STYLEPHOTO GROUP BY STYLENO) T2 USING(STYLENO) ORDER BY STYLENO
-  </select>
+  <select id="getStyleDetail" parameterType="int" resultMap="styleDetailMap">
 
-    <select id="getStyleDetail" parameterType="map" resultMap="styleDetailMap">
-
-    SELECT T1.STYLENAME, T1.STYLEINTRO, T1.SKILLTIME, T1.PRICE, T2.URL 
-    FROM STYLE T1 JOIN STYLEPHOTO T2 USING(STYLENO) WHERE STYLENO = 968
+    SELECT STYLENO, STYLENAME, STYLEINTRO, PRICE , EMAIL
+    FROM STYLE 
+    WHERE STYLENO =#{value}
     <!-- ORDER BY STYLENO -->
   </select>
 
   
-   <select id="insertStyle" parameterType="Style" >
+  <select id="insertStyle" parameterType="Style" >
     INSERT INTO STYLE (PEOPLE,GENDER,STYLELENGTH,STYLENAME,STYLEINTRO,SKILLTIME,PRICE,EMAIL)
     VALUES (#{people},#{gender},#{styleLength},#{styleName},#{styleIntro},#{SkillTime},#{price},#{email})
+  </select>
+  
+  <select id="selectPhoto" parameterType="int" resultMap="stylePhotoMap">
+    SELECT STYLEPHOTONO, STYLENO, STYLEPHOTOURL
+    FROM STYLEPHOTO
+    <if test="value > 0">
+    WHERE STYLENO = #{value}
+    </if>
+  </select>
+  
+  
+  
+  
+  <select id="getReviewList" parameterType="Review" resultMap="reviewMap">
+	SELECT  T2.REVIEWNO, T2.STYLENO, T1.NAME, T2.CONTENT, T2.STAR, T2.REPORTDATE ,
+						CASE WHEN T2.EMAIL = #{email} THEN 'btn' ELSE 'none' END REVIEWBTN
+	FROM MEMBER T1 JOIN REVIEW T2 USING(EMAIL)
+	WHERE STYLENO=#{styleNo}
+	ORDER BY REVIEWNO DESC
+	LIMIT 4
   </select>
   
 </mapper>
