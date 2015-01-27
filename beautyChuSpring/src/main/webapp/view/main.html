@@ -1,52 +1,914 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko" class="home">
 <head>
-<meta charset="UTF-8">
 <title>Beauty Chu~♥</title>
 
-<link rel="shortcut icon" href="../images/favicon.ico"
-	type="image/x-icon">
+<meta charset="UTF-8">
+
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
 <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="../css/common.css">
+
+<link rel="stylesheet" type="text/css" href="../css/basic.css"/>
+
+
+<script type="text/javascript" src="../js/modernizr.min.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.js"></script>
+<script type="text/javascript" src="../js/jquery-scrolltofixed-min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src='../js/handlebars-v2.0.0.js'></script>
+<!-- drag 아이콘 모션 스크립트 
+<script type="text/javascript" src="../js/motion.js"></script>  -->
+<script type="text/javascript" src="../js/jquery.motio.min.js"></script>
+
+	<script>
+			window.intro = 'yes';
+	</script>
+		
+	<!-- page가 home일 경우에만 로드하는 js -->
+	<script type="text/javascript" src="../js/jquery.touchSwipe.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.event.drag-2.2.js"></script>
+	<script type="text/javascript" src="../js/jquery.event.drag.live-2.2.js"></script>
+	<script type="text/javascript" src="../js/home.js"></script>
+	<script type="text/javascript" src="../js/home.show-window.js"></script>
+	<!-- dotdotdot 스크립트 -->
+	<script type="text/javascript" src="http://www.gncostyle.com/gncoCom/js/jquery.dotdotdot.js"></script>
 
 <style type="text/css">
-	/* 스타일 적용 공간! */
+footer {
+	background-color: #161616;
+	color: #333;
+}
 </style>
-
 </head>
-<body>
 
+<body class="home">
 	<header>
 		<!-- header 건들지 말긔! -->
 	</header>
 
-
-
 	<div id="wrap-chu" class="wrap-chu">
 	
-		<!-- 작업공간 - 이파일 고치지 말고 복사해서 쓰시오...!! -->
+	<div class="wrapper">
+	<div id="content">
+		<div class="show-window">
+				<div class="bg"></div>
+				<h2>Show Window</h2>
+				<div class="grid-by-slider active">
+				
+					<div class="slider">
+						<div class="bar" title="좌우로 스크롤해 주세요!"><div class="anim-obj motion-drag2" frames="84" fps="30" img-height="45"><div class="frame sprite"></div></div></div>
+					</div>
+					
+					<div class="slider-content-container">
+						<div id="main-style-div" class="slider-content">
+
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/111.jpg" alt="Crew Neck Sweater "><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/e1b15616-eeb0-418f-a93b-907da55b8f88.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/111.jpg" alt="Mustang Jacket"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/2df581a6-e5c3-4aba-8e54-30eddedf035d.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/111.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/ff648ce5-6431-4ff8-8718-446d85b2b4a4.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/111.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/79920f59-3d90-468c-ab3e-5e0922bbecdc.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/111.jpg" alt="Minidress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/34bdd219-b0d3-4a6d-8f58-f5ebe086ee63.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/man (1).png" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/d93ecd4d-a34f-4f2a-b8b4-494ada49ff91.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/man (1).png" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/d93ecd4d-a34f-4f2a-b8b4-494ada49ff91.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/man (1).png" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name">투블럭 컷</a>
+								<a href='#' class="good-brand">토니앤가이</a>
+								<!-- <a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/d93ecd4d-a34f-4f2a-b8b4-494ada49ff91.png" alt=""></a> -->
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/man (1).png" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/d93ecd4d-a34f-4f2a-b8b4-494ada49ff91.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/man (1).png" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/d93ecd4d-a34f-4f2a-b8b4-494ada49ff91.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/man (1).png" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/d93ecd4d-a34f-4f2a-b8b4-494ada49ff91.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/man (1).png" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/d93ecd4d-a34f-4f2a-b8b4-494ada49ff91.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/man (1).png" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/d93ecd4d-a34f-4f2a-b8b4-494ada49ff91.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/man (1).png" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/d93ecd4d-a34f-4f2a-b8b4-494ada49ff91.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/man (1).png" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/d93ecd4d-a34f-4f2a-b8b4-494ada49ff91.png" alt=""></a>
+							</div>
+														
+							
+							<!-- <div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1245'><img src="http://dept.galleria.co.kr/upload/show_window/58dbd003-f71b-4375-b870-5772039df344.jpg" alt="Concentrate"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1245' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/820c1c67-0383-44b2-9dd6-72c51d6f910a.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1297'><img src="http://dept.galleria.co.kr/upload/show_window/69d1c6f1-a226-419f-97b3-6d9dd0a32e3e.jpg" alt="Shoes"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1297' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/bc1b210e-7669-4e89-968e-1ce200782ee9.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1287'><img src="http://dept.galleria.co.kr/upload/show_window/2a1c006d-23ae-4477-9666-1b2ba3d2fb12.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1287' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/2bdb5271-cb1d-4f4e-840e-57e223d4cafe.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1241'><img src="http://dept.galleria.co.kr/upload/show_window/5e8dd0d7-190c-4754-93a5-b87f469d4c6a.jpg" alt="Minaudiere"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1241' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/1ec88858-5c13-4e66-b929-9a15bcfb5c03.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1300'><img src="http://dept.galleria.co.kr/upload/show_window/16e06a60-4f2c-4a09-b531-930c2dc86e7f.jpg" alt="Modern Muse"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1300' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/04794451-b057-4879-ae51-24359f53244b.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1281'><img src="http://dept.galleria.co.kr/upload/show_window/182e3194-b402-4401-aa93-e32179d40a65.jpg" alt="Minaudiere"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1281' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/4ead83cc-19f2-4a34-ad9b-d24081263779.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1295'><img src="http://dept.galleria.co.kr/upload/show_window/c20bec89-acd8-4c8b-9aec-e5c148f43a0f.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1295' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/162da54c-fac3-4046-b50d-f8948194d9ac.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1280'><img src="http://dept.galleria.co.kr/upload/show_window/0e73ca94-9663-45a7-bf4d-679c32370d87.jpg" alt="Pumps"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1280' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/290c5c5f-1d46-4987-98a0-d070cf06330d.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1235'><img src="http://dept.galleria.co.kr/upload/show_window/11242e4e-773d-42a3-bd54-4fe41cb8a8bc.jpg" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1235' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/9ccf695f-d515-47bd-b0ef-93644b1cccfd.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1234'><img src="http://dept.galleria.co.kr/upload/show_window/0759f1d1-8b5e-4609-abb2-c5f957275513.jpg" alt="Skirt"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1234' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/9f3d4c8b-6817-44e5-ba2b-25197bece9f7.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1279'><img src="http://dept.galleria.co.kr/upload/show_window/af8a329b-d116-4d9c-b82d-e71802662522.jpg" alt="Court"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1279' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/97fd9c3e-825f-4737-9ab0-4b7fa9ae9665.png" alt=""></a>
+							</div> -->
+							
+						</div>
+					</div>
+					<a href="#" class="slide-btn prev">이전</a>
+					<a href="#" class="slide-btn next">다음</a>
+				</div>
+
+
+				<!-- GRID LIST -->
+				<div class="grid-by-list hide">
+					<ul id="main-celebrity" class="good-list">
+					
+						<li>
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main-grid/a01.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">이연희의 미디움 글램펌</a>
+								<a href='#' class="good-name">[드라마] 미스코리아</a>
+							</div>
+						</li>
+						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='#'><img src="../images/main-grid/a02.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">이다희의 A라인 보브 단발컷</a>
+								<a href='#' class="good-name">[드라마] 비밀</a>
+							</div>
+						</li>
+					
+						<li>
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main-grid/a03.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">이보영의 발롱펌</a>
+								<a href='#' class="good-name">[드라마] 너의 목소리가 들려</a>
+							</div>
+						</li>
+						
+						<li>
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main-grid/a04.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">이민정의 세디웨이브 펌</a>
+								<a href='#' class="good-name">[드라마]앙큼한 돌싱녀</a>
+							</div>
+						</li>
+						
+						<li>
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main-grid/a05.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">이종석의 스핀스왈로 투블럭 펌</a>
+								<a href='#' class="good-name">[드라마] 닥터이방인</a>
+							</div>
+						</li>
+						<li>
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main-grid/a06.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">이규한의 언발란스 컷</a>
+								<a href='#' class="good-name">[드라마] 사랑만할래</a>
+							</div>
+						</li>
+					
+						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='#'><img src="../images/main-grid/a07.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">임시완의 댄디펌</a>
+								<a href='#' class="good-name">[드라마] 미생</a>
+							</div>
+						</li>
+						
+						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='#'><img src="../images/main-grid/a08.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">박해진의 포마드 웨이브펌</a>
+								<a href='#' class="good-name">[드라마] 닥터이방인</a>
+							</div>
+						</li>
+					
+						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='#'><img src="../images/main-grid/a09.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">조인성의 가르마 펌</a>
+								<a href='#' class="good-name">[드라마] 괜찮아 사랑이야</a>
+							</div>
+						</li>
+						
+						<li>
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main-grid/a01.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">이연희의 미디움 글램펌</a>
+								<a href='#' class="good-name">[드라마] 미스코리아</a>
+							</div>
+						</li>
+						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='#'><img src="../images/main-grid/a02.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">이다희의 A라인 보브 단발컷</a>
+								<a href='#' class="good-name">[드라마] 비밀</a>
+							</div>
+						</li>
+					
+						<li>
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main-grid/a03.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">이보영의 발롱펌</a>
+								<a href='#' class="good-name">[드라마] 너의 목소리가 들려</a>
+							</div>
+						</li>
+						
+						<li>
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main-grid/a04.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">이민정의 세디웨이브 펌</a>
+								<a href='#' class="good-name">[드라마]앙큼한 돌싱녀</a>
+							</div>
+						</li>
+						
+						<li>
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main-grid/a05.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">이종석의 스핀스왈로 투블럭 펌</a>
+								<a href='#' class="good-name">[드라마] 닥터이방인</a>
+							</div>
+						</li>
+						<li>
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main-grid/a06.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">이규한의 언발란스 컷</a>
+								<a href='#' class="good-name">[드라마] 사랑만할래</a>
+							</div>
+						</li>
+					
+						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='#'><img src="../images/main-grid/a07.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">임시완의 댄디펌</a>
+								<a href='#' class="good-name">[드라마] 미생</a>
+							</div>
+						</li>
+						
+						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='#'><img src="../images/main-grid/a08.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">박해진의 포마드 웨이브펌</a>
+								<a href='#' class="good-name">[드라마] 닥터이방인</a>
+							</div>
+						</li>
+					
+						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='#'><img src="../images/main-grid/a09.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">조인성의 가르마 펌</a>
+								<a href='#' class="good-name">[드라마] 괜찮아 사랑이야</a>
+							</div>
+						</li>	
+						
+						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='#'><img src="../images/main/111.jpg" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">남주혁</a>
+								<a href='#' class="good-name">[드라마] 괜찮아 사랑이야</a>
+							</div>
+						</li>	
+						
+						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='#'><img src="../images/main/man (1).png" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">조인성의 가르마 펌</a>
+								<a href='#' class="good-name">[드라마] 괜찮아 사랑이야</a>
+							</div>
+						</li>
+						
+						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='#'><img src="../images/main/man (4).png" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">조인성의 가르마 펌</a>
+								<a href='#' class="good-name">[드라마] 괜찮아 사랑이야</a>
+							</div>
+						</li>
+						
+						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='#'><img src="../images/main/man (5).png" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">조인성의 가르마 펌</a>
+								<a href='#' class="good-name">[드라마] 괜찮아 사랑이야</a>
+							</div>
+						</li>
+						
+						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='#'><img src="../images/main/woman (11).png" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">신세경</a>
+								<a href='#' class="good-name">[드라마] 괜찮아 사랑이야</a>
+							</div>
+						</li>
+					
+						<li>
+							<div class="good">
+								<div class="img-container">
+									<a href='#'><img src="../images/main/woman (16).png" alt=""><span class="over"><i></i></span></a>
+								</div>
+								<a href='#' class="good-brand">박수진</a>
+								<a href='#' class="good-name">[드라마] 괜찮아 사랑이야</a>
+							</div>
+						</li>
+						<!-- 23개 까지만 가능 -->
+					
+						<!-- 
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1287'><img src="http://dept.galleria.co.kr/upload/show_window/2a1c006d-23ae-4477-9666-1b2ba3d2fb12.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1287' class="good-brand">MARC BY MARC JACOBS</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1287' class="good-name">Dress</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1297'><img src="http://dept.galleria.co.kr/upload/show_window/69d1c6f1-a226-419f-97b3-6d9dd0a32e3e.jpg" alt="Shoes"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1297' class="good-brand">BRUNELLO CUCINELLI</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1297' class="good-name">Shoes</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1241'><img src="http://dept.galleria.co.kr/upload/show_window/5e8dd0d7-190c-4754-93a5-b87f469d4c6a.jpg" alt="Minaudiere"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1241' class="good-brand">EDIE PARKER</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1241' class="good-name">Minaudiere</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1245'><img src="http://dept.galleria.co.kr/upload/show_window/58dbd003-f71b-4375-b870-5772039df344.jpg" alt="Concentrate"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1245' class="good-brand">LA MER</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1245' class="good-name">Concentrate</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1300'><img src="http://dept.galleria.co.kr/upload/show_window/16e06a60-4f2c-4a09-b531-930c2dc86e7f.jpg" alt="Modern Muse"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1300' class="good-brand">ESTEE LAUDER</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1300' class="good-name">Modern Muse</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1233'><img src="http://dept.galleria.co.kr/upload/show_window/9e1a0775-f223-4b1f-9ec1-b6d120b1941b.jpg" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1233' class="good-brand">SERGIO ROSSI </a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1233' class="good-name">Boots</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1281'><img src="http://dept.galleria.co.kr/upload/show_window/182e3194-b402-4401-aa93-e32179d40a65.jpg" alt="Minaudiere"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1281' class="good-brand">EDIE PARKER</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1281' class="good-name">Minaudiere</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1262'><img src="http://dept.galleria.co.kr/upload/show_window/16ddfafd-8709-4750-a371-5c9ceef984b4.jpg" alt="Minidress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1262' class="good-brand">PROENZA SCHOULER</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1262' class="good-name">Minidress</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1295'><img src="http://dept.galleria.co.kr/upload/show_window/c20bec89-acd8-4c8b-9aec-e5c148f43a0f.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1295' class="good-brand">CLAUDIE PIERLOT</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1295' class="good-name">Dress</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1290'><img src="http://dept.galleria.co.kr/upload/show_window/674a62ab-2c7d-427e-903f-76fa744c3a47.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1290' class="good-brand">G. STREET 494</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1290' class="good-name">Dress</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1280'><img src="http://dept.galleria.co.kr/upload/show_window/0e73ca94-9663-45a7-bf4d-679c32370d87.jpg" alt="Pumps"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1280' class="good-brand">ROGER VIVIER</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1280' class="good-name">Pumps</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1296'><img src="http://dept.galleria.co.kr/upload/show_window/48b642c6-ce14-4a1c-ac78-86787230c097.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1296' class="good-brand">CARVEN</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1296' class="good-name">Dress</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1235'><img src="http://dept.galleria.co.kr/upload/show_window/11242e4e-773d-42a3-bd54-4fe41cb8a8bc.jpg" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1235' class="good-brand">CHRISTIAN LOUBOUTIN</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1235' class="good-name">Boots</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1188'><img src="http://dept.galleria.co.kr/upload/show_window/efb1d791-311a-42b9-b3b8-eda8352723c9.jpg" alt="Mustang Jacket"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1188' class="good-brand">IRO</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1188' class="good-name">Mustang Jacket</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1234'><img src="http://dept.galleria.co.kr/upload/show_window/0759f1d1-8b5e-4609-abb2-c5f957275513.jpg" alt="Skirt"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1234' class="good-brand">PUSH BUTTON</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1234' class="good-name">Skirt</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1232'><img src="http://dept.galleria.co.kr/upload/show_window/4d0f868f-f733-4d63-a613-bbac159581ec.jpg" alt="Crew Neck Sweater "><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1232' class="good-brand">STELLA MCCARTNEY</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1232' class="good-name">Crew Neck Sweater </a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1279'><img src="http://dept.galleria.co.kr/upload/show_window/af8a329b-d116-4d9c-b82d-e71802662522.jpg" alt="Court"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1279' class="good-brand">G. STREET 494</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1279' class="good-name">Court</a>
+							</div>
+						</li>
+					  -->
+								
+					</ul>
+					<a href="#prev" class="btn-prev">prev</a>
+					<a href="#next" class="btn-next">next</a>
+
+					<ul class="list-index">
+					
+						<li class="active"><a href="#">1</a></li>
+					
+						<li ><a href="#">2</a></li>
+					
+						<li ><a href="#">3</a></li>
+		 
+					</ul>
+				</div>
+
+				<div class="btns">
+					<a href="#" class="btn-grid-1 active">슬라이드로보기</a>
+					<a href="#" class="btn-grid-2">전체보기</a>
+				</div>
+
+			</div><!-- show-window -->
+
+				<!-- best shop -->
+				<div class="best-shop-wrap">
+					<div class="bg" style="display: block;"></div>
+					<div class="cont1080 prolisttype1 prolist5 best">
+						<h2>Show Best Shop</h2>
+						<ul>
+							<li>
+								<span class="icon_best icon_best1">BEST 01</span>
+								<a	href="#" class="prolink">
+									<span class="propic">
+										<img src="../images/shop/shop1.jpg" alt="" onmouseover="this.src=&quot;../images/shop/shopinner8.jpg&quot;" onmouseout="this.src=&quot;../images/shop/shop1.jpg&quot;" onerror="this.onerror=null;this.src='../images/shop1.jpg'">
+									</span>
+									<span class="proicon">
+										<span class="picon picon_new"></span>
+									</span>
+									<span class="txt_price"><em>Fabien.H</em></span>
+									<span class="txt_ti txt_overflow_dot">서울시 강남구 삼성로 725</span>
+									<span class="txt_brand">02-333-5555</span>
+								</a>
+								<a onclick="javascript:confirmLogin();" class="btn_wish">WISH</a>
+								<a onclick="javascript:getGoodsInfo('17322','0');" class="btn_preview">미리보기</a>
+							</li>
+							
+							<li>
+								<span class="icon_best icon_best2">BEST 02</span>
+								<a	href="#" class="prolink">
+									<span class="propic">
+										<img src="../images/shop/shopinner.jpg" alt="" onmouseover="this.src=&quot;../images/shop/shop8.jpg&quot;" onmouseout="this.src=&quot;../images/shop/shopinner7.jpg&quot;">
+									</span>
+									<span class="proicon"> </span>
+									<span class="txt_price"><em>박승철헤어스투디오</em></span>
+									<span class="txt_ti txt_overflow_dot">서울특별시 강남구 도곡동 953-1</span>
+									<span class="txt_brand">02-579-3920</span>
+								</a>
+								<a onclick="javascript:confirmLogin();" class="btn_wish">WISH</a>
+								<a onclick="javascript:getGoodsInfo('17322','0');" class="btn_preview">미리보기</a>
+							</li>
+							
+							<li>
+								<span class="icon_best icon_best3">BEST 03</span>
+								<a	href="#" class="prolink">
+									<span class="propic">
+										<img src="../images/shop/shopinner1.jpg" alt="" onmouseover="this.src=&quot;../images/shop/shop9.jpg&quot;" onmouseout="this.src=&quot;../images/shop/shopinner1.jpg&quot;">
+									</span>
+									<span class="proicon"> </span>
+									<span class="txt_price"><em>토니앤가이</em></span>
+									<span class="txt_ti txt_overflow_dot">인천광역시 부평구 부평동 738-21</span>
+									<span class="txt_brand">032-505-4589</span>
+								</a>
+								<a onclick="javascript:confirmLogin();" class="btn_wish">WISH</a>
+								<a onclick="javascript:getGoodsInfo('17322','0');" class="btn_preview">미리보기</a>
+							</li>
+							
+							<li>
+								<span class="icon_best icon_best4">BEST 04</span>
+								<a	href="#" class="prolink">
+									<span class="propic">
+										<img src="../images/shop/shopinner2.jpg" alt="" onmouseover="this.src=&quot;../images/shop/shop3.jpg&quot;" onmouseout="this.src=&quot;../images/shop/shopinner2.jpg&quot;">
+									</span>
+									<span class="proicon"> </span>
+									<span class="txt_price"><em>Style by K</em></span>
+									<span class="txt_ti txt_overflow_dot">서울특별시 동대문구 장안동 334-7</span>
+									<span class="txt_brand">02-6120-7771</span>
+								</a>
+								<a onclick="javascript:confirmLogin();" class="btn_wish">WISH</a>
+								<a onclick="javascript:getGoodsInfo('17322','0');" class="btn_preview">미리보기</a>
+							</li>
+							
+							<li>
+								<span class="icon_best icon_best5">BEST 05</span>
+								<a	href="#" class="prolink">
+									<span class="propic">
+										<img src="../images/shop/shopinner7.jpg" alt="" onmouseover="this.src=&quot;../images/shop/shop12.jpg&quot;" onmouseout="this.src=&quot;../images/shop/shopinner7.jpg&quot;">
+									</span>
+									<span class="proicon"> </span>
+									<span class="txt_price"><em>라브리지헤어살롱</em></span>
+									<span class="txt_ti txt_overflow_dot">서울특별시 중구 명동1가 59-25 5층</span>
+									<span class="txt_brand">02-778-1734</span>
+								</a>
+								<a onclick="javascript:confirmLogin();" class="btn_wish">WISH</a>
+								<a onclick="javascript:getGoodsInfo('17322','0');" class="btn_preview">미리보기</a>
+							</li>
+						</ul>
+					</div>
+				</div> <!-- end of wrap best shop -->
+
+			<footer id="footer">
+				<!-- footer 건들지 말긔! -->
+			</footer>
+			
+			</div> <!-- #content -->
+		</div> <!-- .wrapper -->
+	</div> <!-- .wrap-chu -->
+
+
 	
-	</div>
-
-
-
 	
-	<footer>
-		<!-- footer 건들지 말긔! -->
-	</footer>
-
-
-
+	
+	
 
 	<!-- header, footer 로드 스크립트!! -->
 	<script>
-		$('header').load('common/header.html');
-		$('footer').load('common/footer.html');
+		 $('header').load('common/header.html');
+		 $('footer').load('common/footer.html');
 		
 		/* 
 		window.setTimeout('window.location.reload()', 7000); //60초마다 새로고침
 		 */
 	</script>
-
+	
+	
+	<!-- ajax 서버 통신 -->
+	<script>
+	$(function() {
+		/* main style list */
+		$.ajax({
+			type : 'get',
+			dataType : "json",
+			data : {
+				/* email : imsiEmail */
+			},
+			url : '../json/style/mainStyleList.do',
+			success : function(data) {
+				console.log(data);
+				console.log(data.mainStyleList[0]);
+				
+				/* $('#shopProfile').attr('src','/beautyChuSpring_K/fileupload' + data.listShopInfo[0].shopPhotoUrl);
+				$('#licenseeNo').val(data.styleList[0].);
+				 */
+			},
+			error : function() {
+				console.log('ajax shop정보 실패');
+			}
+		});
+		
+		$.getJSON('../json/style/mainStyleList.do', function(data){
+			$.get('templates/main-style-list.html', function(source){
+				var template = Handlebars.compile(source);
+				var html = template(data);
+				$('#main-style-div').html(html);
+			});  
+	    }); /* end of main style list */
+		    
+	    
+		/* main celebrity list */
+			$.ajax({
+				type : 'get',
+				dataType : "json",
+				data : {
+					/* email : imsiEmail */
+				},
+				url : '../json/style/mainCelebrityList.do',
+				success : function(data) {
+					console.log(data);
+					console.log(data.mainCelebrityList[0]);
+				},
+				error : function() {
+					console.log('ajax shop정보 실패');
+				}
+			});
+	    
+			$.getJSON('../json/style/mainCelebrityList.do', function(data){
+				$.get('templates/main-celebrity-list.html', function(source){
+					var template = Handlebars.compile(source);
+					var html = template(data);
+					$('#main-celebrity').html(html);
+				});  
+		    }); /* end of main celebrity list */
+		 
+	 });
+	
+	</script>
+	
+	
 </body>
 </html>
