@@ -498,9 +498,9 @@ border-radius: 20px;
 		</div> -->
 	<div id="wrap-chu" class="wrap-chu">
 
-<INPUT TYPE="radio" NAME="Gubun" value="Short">SHORT
-<INPUT TYPE="radio" NAME="Gubun" value="Medium">MEDIUM
-<INPUT TYPE="radio" NAME="Gubun" value="Long">LONG
+<INPUT TYPE="radio" class="kh-radio" NAME="Gubun" value="Short">SHORT
+<INPUT TYPE="radio" class="kh-radio" NAME="Gubun" value="Medium">MEDIUM
+<INPUT TYPE="radio" class="kh-radio" NAME="Gubun" value="Long">LONG
 <div class="yun-container"></div>	
 
 <!--  			<div class="yun-box">
@@ -897,6 +897,10 @@ border-radius: 20px;
 					refreshReview($("#kh-reviewAdd").attr('data-no'));
 				}); 
 				
+ 				
+ 				$(document).on('click', '.kh-radio',  function(){
+ 					styleListSort($(this).val());
+ 				});
 				
 				
 				
@@ -975,6 +979,7 @@ border-radius: 20px;
  								      $.get('templates/style-table.html', function(source){
  									    	  var template = Handlebars.compile(source);
  									    	  var html = template(data);
+ 									    	  /* console.log(html); */
  									    	  $('.yun-container').html(html);
  									    	});  
  								    });
