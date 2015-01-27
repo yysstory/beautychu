@@ -2,15 +2,15 @@ package beautychu.control.json;
 
 import java.util.HashMap;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.ModelAndView;
 
 import beautychu.domain.Member;
 import beautychu.service.MemberService;
@@ -18,12 +18,30 @@ import beautychu.service.MemberService;
 @Controller("json.userControl")
 @RequestMapping("/json/user")
 public class UserControl {
-	@Autowired
-	MemberService memberService;
+	@Autowired MemberService memberService;
+	@Autowired ServletContext servletContext;
 
+  /*AJAX post방식*/
+  @RequestMapping(value="/fileUpload", method=RequestMethod.POST)
+  public ModelAndView fileUpload(MultipartHttpServletRequest mRequest, String email) {
+    
+    System.out.println("나나나"+email);
+    ModelAndView mav = new ModelAndView();
+    
+    if(memberService.fileUpload(mRequest, email)) {
+      mav.addObject("result", "SUCCESS");
+    } else {
+      mav.addObject("result", "FAIL");
+    }
+    
+    mav.setViewName("JSON");
+    
+    return mav;
+  }	
+	
 	@RequestMapping("/updateUser")
 	public Object updateUser(String email, String name, String phone, String address,
-	    String password, HttpSession session)	throws Exception {
+	    String password, String profilePhoto, HttpSession session)	throws Exception {
 	  
 	  Member member = new Member();
 	  member.setEmail(email);
@@ -31,6 +49,9 @@ public class UserControl {
 	  member.setAddress(address);
 	  member.setPhone(phone);
 	  member.setPassword(password);
+	  member.setProfilePhoto("\\" + profilePhoto);
+	  System.out.println("update profilePhoto - " + profilePhoto);
+	  
 	  memberService.updateUser(member);
 
 	  HashMap<String, Object> resultMap = new HashMap<>();

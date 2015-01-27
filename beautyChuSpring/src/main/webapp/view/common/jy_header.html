@@ -85,9 +85,6 @@
 					</div></li>
 				<!-- end of li.m4 -->
 
-			</ul>
-			<!-- gnb -->
-
 			<ul>
 				<li><form method="get" action="/search" id="search">
 						<input name="q" id="search-bar" type="text"
@@ -95,6 +92,11 @@
 					</form></li>
 			</ul>
 			<!-- search area -->
+
+			</ul>
+			<!-- gnb -->
+
+
 
 		</nav>
 		<!-- #nav -->
@@ -330,6 +332,7 @@ $.ajax({
 				/* 다만 main 전체가 떴다가 아래가 사라짐.. */
 				$('.jy-mypage').hide();
 				$('.logout').hide();
+				
 			}
 			
 	},
@@ -395,14 +398,13 @@ $.ajax({
 		var joinpass = 0; // 0이면 통과x  1이면 통과
 		var passwordpass = 0;
 
-		$("#jy-user_email")
-				.keyup(
+		$("#jy-user_email").keyup(
 						function(data) {
 
 							var yunemail = $('#jy-user_email').val();
 							var yunregex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
 							if (yunregex.test(yunemail)) {
-								$.get("http://192.168.0.36:55555/id", {
+								$.get("http://192.168.0.128:55555/id", {
 									id : $('#jy-user_email').val()
 								}, function(data) {
 									if (data.result === 'yes') {
@@ -540,7 +542,7 @@ $.ajax({
 		});
 		/* -------------------  */
 		
-	  /* 로그인 페이지에서 회원가입 버튼 누르면 회원가입 페이지로 넘어가기 */
+	  /* (미구현) 로그인 페이지에서 회원가입 버튼 누르면 회원가입 페이지로 넘어가기 */
  		$('#jy-btn-gojoin').click(function(){
 			//alert("join click!"); 			
 			//$('.join').
