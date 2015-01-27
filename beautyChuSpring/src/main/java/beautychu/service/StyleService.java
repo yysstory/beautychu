@@ -16,7 +16,7 @@ public class StyleService {
   @Autowired StyleDao styleDao;
   
   public List<?> getList(StyleGrid styleList) {
-	    return styleDao.getList(); 
+	    return styleDao.getList(styleList); 
 	  }
   
   public List<?> getGridList() {
