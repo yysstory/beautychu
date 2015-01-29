@@ -10,15 +10,15 @@ import beautychu.domain.Member;
 
 public interface MemberDao {
 	
-	  Member existUser(Map<String,String> params);////
-	  void insertUser(Member member);////
-	  void updateUser(Member member);// ////
-	  void deleteUser(Member member);// ////
+	  Member existUser(Map<String,String> params);
+	  void insertUser(Member member);
+	  void updateUser(Member member);
+	  void deleteUser(Member member);
 	  
-	  void setPPhoto(Customer customer);////
-	  void insertPPhoto(Customer customer);////
-	  void updatePPhoto(Customer cutomer);////
-	  void fileUpload(MultipartHttpServletRequest mRequest);//
+	  void setPPhoto(Customer customer);
+	  void insertPPhoto(Customer customer);
+	  void updatePPhoto(Member member);
+	  void fileUpload(MultipartHttpServletRequest mRequest);
 	  
 	  List<?> getList(String email);
 	}

@@ -11,13 +11,13 @@
     <result column="ADDR" property="address"/>
     <result column="NAME" property="name"/>
     <result column="PASSWORD" property="password"/>
-    <result column="PROFILEPHOTO" property="profilePhoto"/>
+   <!--  <result column="PROFILEPHOTO" property="profilePhoto"/> -->
   </resultMap>
    
    <resultMap type="Customer" id="customerMap">
   	<id column="EMAIL" property="email"/>
   	<result column="COUPONCODE" property="couponCode"/>
-  	<!-- <result column="PROFILEPHOTO" property="profilePhoto"/> -->
+  	<result column="PROFILEPHOTO" property="profilePhoto"/>
   </resultMap>
 
   <!-- MEMBER CRUD -->
@@ -68,7 +68,7 @@
    <!-- PROFILEPHOTO -->
    <select id="insertPPhoto" parameterType="Customer" >
     INSERT INTO CUSTOMER (PROFILEPHOTO)
-    VALUES (#{profilePhoto});
+    VALUES (#CprofilePhoto});
   </select>
    
   <select id="setPPhoto" parameterType="Customer">
@@ -77,9 +77,9 @@
   	WHERE EMAIL=#{email};
   </select>
   
-  <update id="updatePPhoto" parameterType="Customer">
+  <update id="updatePPhoto" parameterType="Member">
   	UPDATE CUSTOMER SET
-  		PROFILEPHOTO=#{profilePhofo}
+  		PROFILEPHOTO=#{profilePhoto}
   		WHERE EMAIL=#{email}; 
   </update>
   

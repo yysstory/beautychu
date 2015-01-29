@@ -14,7 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import beautychu.dao.MemberDao;
-import beautychu.domain.Customer;
 import beautychu.domain.Member;
 
 @Service
@@ -47,56 +46,58 @@ public class MemberService {
 	}
 	
 	
-	public void updatePPhoto(Customer customer) {
-    memberDao.updatePPhoto(customer);
+	public void updatePPhoto(Member member) {
+    memberDao.updatePPhoto(member);
   }
   
-	 /*서버에 파일(이미지) 올리기*/
-  public boolean fileUpload(MultipartHttpServletRequest mRequest, String email) {
-    boolean isSuccess = false;
 
-    // workspace 내부에 지정된 파일에 fileupload 폴더를 생성한다.
-    String uploadPath = servletContext.getRealPath("/fileupload");
+  /*서버에 파일(이미지) 올리기*/
+public boolean fileUpload(MultipartHttpServletRequest mRequest, String email) {
+ boolean isSuccess = false;
 
-    File dir = new File(uploadPath);
+ // workspace 내부에 지정된 파일에 fileupload 폴더를 생성한다.
+ String uploadPath = servletContext.getRealPath("/fileupload");
 
-    if (!dir.isDirectory()) {
-      dir.mkdirs();
-    }
+ File dir = new File(uploadPath);
 
-    Iterator<String> iter = mRequest.getFileNames();
-    System.out.println(mRequest);
-    while(iter.hasNext()) {
-      String uploadFileName = iter.next();
+ if (!dir.isDirectory()) {
+   dir.mkdirs();
+ }
 
-      MultipartFile mFile = mRequest.getFile(uploadFileName);
-      String originalFileName = mFile.getOriginalFilename();
-      System.out.println(mFile.getOriginalFilename());
-      String filename = System.currentTimeMillis() + "_";
-      String saveFileName = filename + originalFileName;
+ Iterator<String> iter = mRequest.getFileNames();
+ System.out.println(mRequest);
+ while(iter.hasNext()) {
+   String uploadFileName = iter.next();
 
-      if(saveFileName != null && !saveFileName.equals("")) {
-        if(new File(uploadPath + "/" + saveFileName).exists()) {
-          saveFileName = saveFileName + "_" + System.currentTimeMillis();
-        }
+   MultipartFile mFile = null;
+   mFile= mRequest.getFile(uploadFileName);
+   String originalFileName = mFile.getOriginalFilename();
+   System.out.println(mFile.getOriginalFilename());
+   String filename = System.currentTimeMillis() + "_";
+   String saveFileName = filename + originalFileName;
 
-        try {
-          Customer customer = new Customer();
-          customer.setEmail(email);
-          customer.setProfilePhoto( "/" + saveFileName); //check it
-          mFile.transferTo(new File(uploadPath + "/" + saveFileName));
-          memberDao.updatePPhoto(customer);
-          isSuccess = true;       
-        } catch (IllegalStateException e) {
-          e.printStackTrace();
-          isSuccess = false;
-        } catch (IOException e) {
-          e.printStackTrace();
-          isSuccess = false;
-        }
-      } // if end
-    } // while end
-    return isSuccess;
-  } // fileUpload end
+   if(saveFileName != null && !saveFileName.equals("")) {
+     if(new File(uploadPath + "/" + saveFileName).exists()) {
+       saveFileName = saveFileName + "_" + System.currentTimeMillis();
+     }
+
+     try {
+       Member member = new Member();
+       member.setEmail(email);
+       member.setProfilePhoto( "/" + saveFileName); //check it
+       mFile.transferTo(new File(uploadPath + "/" + saveFileName));
+       memberDao.updatePPhoto(member);
+       isSuccess = true;       
+     } catch (IllegalStateException e) {
+       e.printStackTrace();
+       isSuccess = false;
+     } catch (IOException e) {
+       e.printStackTrace();
+       isSuccess = false;
+     }
+   } // if end
+ } // while end
+ return isSuccess;
+} // fileUpload end
   
 }
