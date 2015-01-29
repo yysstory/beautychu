@@ -45,52 +45,40 @@
 
 /* personalinfo CSS */
 .personalinfo { width: 1000px; margin: auto; }
-.pinfo-form { border: 3px solid gray; border-radius: 10px; padding: 40px; margin-top: 100px; }
-.pinfo-data { text-align: center; }
-.title-pinfo { text-align: center; font-size: 40px; margin-bottom: 40px; }
-.pinfo-form-control { width: 600px; }
-.pinfo-subtitle { font-weight: bold; text-align: left; padding-left: 70px; margin: 10px 0px; }
-.btn-qna-submit { margin: 20px; width: 610px; }
-.pinfo-email { height: 20px; font-size: 12px; margin-bottom: 30px; }
-.pinfo-content { font-size: 12px; }
-.jy-form-group {width: 400px; margin: auto; } 
-
-/* 줄당 위 아래 마진 줌. */
-.jy-control-label {	
-} 
-/* 왼쪽 타이틀 크기 및 위치 조절 */
-.jy-form-control-modify { width: 250px; margin-left: 30px; height: 25px; font-size: 11px; }
-
-/* .jy-form-control-join의 수정 */
-.jy-form-control-phone { width: 60px; height: 25px; font-size: 11px;}
-#jy-mdf-user_phone1 { height: 28px; margin-left: -22px; }
-#jy-user_pw {	}
- 
-/* 비밀번호 입력 칸 스타일 */
-#jy-confirm_pw {}
- 
-/* 비밀번호 수정 칸 스타일 */
-#jy-mdf-user_addr { margin-left: 45px; }
-#jy-mdf-user_pw {	margin-left: 12px; }
-#jy-mdf-confirm_pw { margin-left: -20px; }
-#jy-btn-cancel { margin-right: -100px; }
-#jy-mdf-photo { margin-left: -5px; }
-#jyPreviewPhoto { width: 200px; margin: 10px auto; padding: 0; }
+.pinfo-form {border: 3px solid gray; border-radius: 10px; padding: 40px; margin-top: 100px; margin-bottom: 100px;}
+.title-pinfo {text-align: center; font-size: 40px; margin-bottom: 40px; }
+.pinfo-form-control {width: 600px;}
+.pinfo-subtitle {font-weight: bold; text-align: left; padding-left: 70px; margin: 10px 0px;}
+.btn-qna-submit {margin: 20px; width: 610px;}
+.pinfo-email {height: 20px; font-size: 12px; margin-bottom: 30px;}
+.pinfo-content {font-size: 12px;}
+.jy-form-group {width: 400px; margin: auto;}
+#jyPreviewPhoto {height: auto; max-height: 150px; width: auto; max-width: 150px;
+	margin: 10px auto; padding: 0;} 
 /*    
 .jy-btn-pinfo-fin { float: left;}
 .jy-btn-cancel { float: left;}
  */
-.jy-pinfo-btn-area { margin-top: 100px; }
-.jy-btn-exit-fin { float: right; }
-hr { display: block; margin-bottom: 30px; }
+.jy-pinfo-btn-area {margin-top: 100px; text-align: center;/*  width: 60%; float: right; */}
+.jy-btn-exit-fin {float: right;}
+
+hr {display: block; margin-bottom: 30px; }
 
 /* bring at "jy_demo.css" */
-a, button { color: #74716D; text-decoration: none; outline: none; }
-button { padding: 1em 2em; outline: none; font-weight: 600; border: none;
+a, button {color: #74716D; text-decoration: none; outline: none; }
+button {padding: 1em 2em; outline: none; font-weight: 600; border: none;
 	color: #fff; background: black; }
+.button-wrap {padding: 2.5em 0 0; font-size: 1.25em; }
+button.trigger {background: black; color: #fff; border: none; }
 
-.button-wrap { padding: 2.5em 0 0; font-size: 1.25em; }
-button.trigger { background: black; color: #fff; border: none; }
+/* table css setting */
+#personal-info-mdf {margin: auto; }
+.mdf-data-tr {height: 45px;}
+.mdf-name {/*  border: 2px solid green; */ font-size: 13px; width: 120px; text-align: left;}
+.mdf-content {/*  border: 2px solid blue; */}
+#jy-mdf-user_phone1 {height: 25px;}
+.jy-form-control-phone {max-width: 60px;}
+.mdf-content input { height: 23px; width: 250px;}
 </style>
 
 </head>
@@ -158,10 +146,11 @@ button.trigger { background: black; color: #fff; border: none; }
 							<tr class='mdf-data-tr'>
 								<td class='mdf-name'>프로필 사진</td>
 								<td class='mdf-content'>
-									<input name='mdf-photo[]' class='jy-form-control-modify'
+									<input name='mdf-photo' class='jy-form-control-modify'
 										id='jy-mdf-photo' type='file' onchange="realPath(this);" multiple />
 									<!-- realPath(this); -->
 									<!-- <div id='jyPreviewPhoto' class='jyPreviewPhoto'></div> -->
+									<br>
 									<img id='jyPreviewPhoto' class='jyPreviewPhoto' src="" alt=""
 										title='preview-image' />
 								</td>
