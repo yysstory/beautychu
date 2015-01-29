@@ -7,39 +7,79 @@
 <link rel="shortcut icon" href="../images/favicon.ico"
 	type="image/x-icon">
 <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="../css/common_chu2.css">
+<!-- <link rel="stylesheet" type="text/css" href="../css/common_chu2.css"> -->
 <link rel="stylesheet" href="../css/resources/starrr.css">
 <link rel="stylesheet"
 	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/yun/button.min.css">
 
+<!-- 댓글 -->	
+<link rel="stylesheet" href="../css/jy/jy_DG_Slider.css" type="text/css"
+	media="all" />
+
 <!-- 공통 스크립트 -->
-<link rel="stylesheet" type="text/css" href="../css/basic.css"/>
-<script type="text/javascript" src="../js/modernizr.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="../css/basic.css"/>
+<script type="text/javascript" src="../js/modernizr.min.js"></script> -->
 <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="../js/jquery.easing.js"></script>
-<script type="text/javascript" src="../js/jquery-scrolltofixed-min.js"></script>
+<!-- <script type="text/javascript" src="../js/jquery.easing.js"></script>
+<script type="text/javascript" src="../js/jquery-scrolltofixed-min.js"></script> -->
 <script type="text/javascript" src="../js/common.js"></script>
-<script type="text/javascript" src="../js/motion.js"></script> 
-<script type="text/javascript" src="../js/jquery.motio.min.js"></script>
+<!-- <script type="text/javascript" src="../js/motion.js"></script> 
+<script type="text/javascript" src="../js/jquery.motio.min.js"></script> -->
 
 	<script>
 			window.intro = 'yes';
 	</script>
 		
 	<!-- page가 home일 경우에만 로드하는 js -->
-	<script type="text/javascript" src="../js/jquery.touchSwipe.min.js"></script>
-	<script type="text/javascript" src="../js/jquery.event.drag-2.2.js"></script>
-	<script type="text/javascript" src="../js/jquery.event.drag.live-2.2.js"></script>
-	<script type="text/javascript" src="../js/home.js"></script>
-	<script type="text/javascript" src="../js/home.show-window.js"></script>
+<!-- 	<script type="text/javascript" src="../js/jquery.touchSwipe.min.js"></script> -->
+<!-- 	<script type="text/javascript" src="../js/jquery.event.drag-2.2.js"></script> -->
+<!-- 	<script type="text/javascript" src="../js/jquery.event.drag.live-2.2.js"></script> -->
+	<!-- <script type="text/javascript" src="../js/home.js"></script> -->
+<!-- 	<script type="text/javascript" src="../js/home.show-window.js"></script> -->
 <!-- 공통 스크립트 -->
 
 <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.2.js'></script>
 <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src='../js/handlebars-v2.0.0.js'></script>
 
+<!-- 지도 -->
+<script type="text/javascript"
+	src="//apis.daum.net/maps/maps3.js?apikey=d68325ce80aa99b09337e375aa77d969&libraries=services"></script>
+
 <style type="text/css">
+/*  댓글 스타일 */
+.comment{
+height: 50px;
+}
+
+.kh-reviewbtn {
+	display: none;
+
+}
+.btn {
+	display: block;
+	float: right;
+}
+
+.none {
+	display: none;
+
+}
+
+.reviewUpdateForm {
+
+	 float: left; 
+}
+
+.review-btn {
+	float: right;
+}
+
+.kh-selected .band .band-comment pre {
+	display: none;
+}
+
 
 
 
@@ -402,6 +442,7 @@ body {
 
 .yun-shopcomment {
 	width: 100%;
+	margin-top: 52px;
 }
 
 .row {
@@ -409,6 +450,9 @@ body {
 	boredr: 1px green solid;
 	
 }
+
+
+
 
 /* ============================================================== */
 /* ==============================버튼 스타일================================ */
@@ -636,7 +680,14 @@ body {
 			});
 			
 		
-		
+			
+			/* 지도 */
+			
+	$(document).on('click', '.kh-shopmap',  function(){
+ 		loadMap($(this).attr('data-email'));
+ 		});
+			
+			
 		$( document ).ready(function() {
 			$(".kh-detail").css("display", "none");
 		$(".yun-box").hover(
@@ -718,18 +769,27 @@ body {
 		 			      });
 		 			    });
 		 	 	}
+				
+				
+				
+				/* 지도보기 */
+							function loadMap(email) {
+			 		$.getJSON('../json/shop/view.do?mail='+email,
+		 			    function(data){
+		 			console.log(data);
+		 			      $.get('templates/yun-maptemp.html', function(source){
+		 			    	  var template = Handlebars.compile(source);
+		 			    	  var html = template(data);
+		 			    	  $('#yun-shopphotolist').html(html);
+		 			      });
+		 			    });
+		 	 	}
+				
+				
 	</script>
 	
-	<script>
+	<div id="map" style="width: 100%; height: 350px;"></div>
 
-
-
-
-
-
-
-</script>
 
 </body>
 </html>
-d

@@ -12,9 +12,9 @@
 	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/yun/button.min.css">
 <!-- 스타일 -->
-<!-- 댓글 -->	
 <link rel="stylesheet" href="../css/jy/jy_DG_Slider.css" type="text/css"
 	media="all" />
+	
 <!-- 썸네일 이미지 -->	
 
 	<link rel="stylesheet" type="text/css" href="../css/thumnail.css" />
@@ -818,7 +818,7 @@ border-radius: 20px;
 		
 		
 		/* 스타일 리스트 로드 */		
-		$.getJSON('../json/style/list.do?gender=Female&styleLength=All&styleSort=All', 
+		$.getJSON('../json/style/list.do?gender=male&styleLength=All&styleSort=Color', 
 			    function(data){
 								console.log(data);						
 
@@ -838,8 +838,8 @@ border-radius: 20px;
 						    	  var html = template(data);
 						    	  $('.yun-container').html(html);
 						    	});  
-					    });
- */				
+					    }); */
+				
 				
 				
 				
@@ -976,7 +976,7 @@ border-radius: 20px;
  				
  				/* 기장 분류 */
  				function styleLength(styleLength) {
- 					$.getJSON('../json/style/list.do?styleSort=All&gender=Female&styleLength='+styleLength, 
+ 					$.getJSON('../json/style/list.do?styleSort=Color&gender=male&styleLength='+styleLength, 
  						    function(data){
  											console.log(data);						
  								      $.get('templates/style-table.html', function(source){
