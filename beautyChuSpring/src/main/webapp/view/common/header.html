@@ -1,14 +1,12 @@
 <!-- 공통 header -->
 <script type="text/javascript" src="../js/common.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/jy_basic.css" />
-<link rel="stylesheet" type="text/css" href="../css/jy/jy_header.css">
-<link rel="stylesheet" type="text/css" href="../css/common.css">
+
+<!-- <link rel="stylesheet" type="text/css" href="../css/basic.css" /> -->
 
 
 <!-- login form css -->
 <link rel="stylesheet" type="text/css" href="../css/jy/jy_dialog.css" />
-<link rel="stylesheet" type="text/css"
-	href="../css/jy/jy_dialog-ken.css" />
+<link rel="stylesheet" type="text/css" href="../css/jy/jy_dialog-ken.css" />
 <script src="../js/resources/jy/modernizr.custom.js"></script>
 
 <!-- Dialog JS -->
@@ -33,13 +31,12 @@
 					<div class="sub-menu">
 						<ul>
 							<li class="m1"><a href="#"> 전체 보기</a></li>
-							<li class="m2"><a href="#"> Hot 서울</a></li>
-							<li class="m3"><a href="#">강남/서초</a></li>
-							<li class="m4"><a href="#">압구정/청담</a></li>
-							<li class="m5"><a href="#">논현/신사</a></li>
+							<li class="m2"><a href="#">강남/서초</a></li>
+							<li class="m3"><a href="#">압구정/청담</a></li>
+							<li class="m4"><a href="#">논현/신사</a></li>
 							<!-- <li class="m5"><a href="/svc/notice/web/kr/noticeList.do">공지사항</a></li>-->
-							<li class="m6"><a href="#" target="_blank" title="다른 지점보기">이대/신촌</a></li>
-							<li class="m7"><a href="#" title="갤러리아 면세점">홍대</a></li>
+							<li class="m5"><a href="#" target="_blank" title="다른 지점보기">이대/신촌</a></li>
+							<li class="m6"><a href="#" title="갤러리아 면세점">홍대</a></li>
 						</ul>
 					</div></li>
 				<!-- end of li.m1 -->
@@ -75,23 +72,24 @@
 					</div></li>
 				<!-- end of li.m3 -->
 
-				<li class="m4"><a href="kh-celebritylist.html"><span
-						class="over"></span><span class="label">Celebrity</span></a>
+				<li class="m4">
+					<a href="kh-celebritylist.html"><span class="over"></span><span class="label">Celebrity</span></a>
 					<div class="sub-menu sub_depth6">
 						<ul>
 							<li class="m1"><a href="#">Celebrity Man</a></li>
 							<li class="m2"><a href="#">Celebrity Woman</a></li>
 						</ul>
-					</div></li>
-				<!-- end of li.m4 -->
+					</div>
+				</li>
+				<!-- search area -->
+				<li class="m5" style="border-right: 0;">
+					<form method="get" action="/search" id="search">
+						<input name="q" id="search-bar" type="text" placeholder="Search..." />
+					</form>
+				</li>
+			<!-- end of li.m4 -->
 
-			<ul>
-				<li><form method="get" action="/search" id="search">
-						<input name="q" id="search-bar" type="text"
-							placeholder="Search..." />
-					</form></li>
-			</ul>
-			<!-- search area -->
+				
 
 			</ul>
 			<!-- gnb -->
@@ -485,7 +483,7 @@ $.ajax({
 						console.log("join"+data.status);
 						console.log(data.loginUser);
 						alert("가입이 완료되었습니다.\n 환영합니다^^");
-						location.href = 'jy_main.html';
+						location.href = 'main.html';
 
 					},
 					error : function() {
@@ -525,7 +523,7 @@ $.ajax({
 						if (data.loginUser) {
 							console.log("login"+data.status);
 							alert(data.loginUser.name + " 님 로그인 되었습니다.");
-							location.href = 'jy_main.html';
+							location.href = 'main.html';
 							
 						} else {
 							$('#jy-login-check').html('아이디 혹은 비밀번호가 맞지 않습니다.').css("color","red");
@@ -592,7 +590,7 @@ $.ajax({
 				success : function() {
 					console.log('로그아웃 되었습니다.');
 				  alert("로그아웃 되었습니다.");
-				  location.href = 'jy_main.html';
+				  location.href = 'main.html';
 				},
 				error : function() {
 					console.log('로그아웃 ajax 실패 ');

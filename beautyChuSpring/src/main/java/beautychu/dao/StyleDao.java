@@ -12,8 +12,13 @@ public interface StyleDao {
 	  List<?> getList(StyleGrid styleList);
 	  List<?> getGridList();
 	  StyleDetail getStyleDetail(int styleNo);
-	  /*Style existUser(Map<String,String> params);*/
+	  
+	  List<?> getMainStyleList();
+	  List<?> getMainCelebrityList();
+	  
 	  void insertStyle(Style style);
+	  void insertStylePhotoUrl(Style style);
+	  
 	  List<?> selectPhoto(int styleNo);
 	  List<?> getReviewList(Review review);
 

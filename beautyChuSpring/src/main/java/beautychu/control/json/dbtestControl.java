@@ -72,7 +72,7 @@ public class dbtestControl {
 		HashMap<String, Object> resultMap = new HashMap<>();
 		resultMap.put("status", "success");
 		return resultMap;
-	}*/
+	}
 
 	@RequestMapping("/add")
 	// @ResponseBody
@@ -95,5 +95,5 @@ public class dbtestControl {
 		resultMap.put("status", "success");
 		resultMap.put("addStyle", style);
 		return resultMap;
-	}
+	}*/
 }

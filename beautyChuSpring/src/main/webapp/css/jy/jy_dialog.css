@@ -20,7 +20,8 @@
 .dialog__overlay {
 	position: absolute;
 	z-index: 1;
-	background: rgba(55, 58, 71, 0.9);
+	background: url('../../img/search/pattern-bg.png');
+	/* background: rgba(55, 58, 71, 0.9); */
 	opacity: 0;
 	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;

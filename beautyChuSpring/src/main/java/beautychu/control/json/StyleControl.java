@@ -48,5 +48,19 @@ public class StyleControl {
 		return resultMap;
 	}
 	
+	@RequestMapping("/mainStyleList")
+	public Object mainStyleList() throws Exception {
+		HashMap<String, Object> resultMap = new HashMap<>();
+		resultMap.put("mainStyleList", styleService.getMainStyleList());
+		return resultMap;
+	}
+	
+	@RequestMapping("/mainCelebrityList")
+	public Object mainCelebrityList() throws Exception {
+		HashMap<String, Object> resultMap = new HashMap<>();
+		resultMap.put("mainCelebrityList", styleService.getMainCelebrityList());
+		return resultMap;
+	}
+	
 
 }
