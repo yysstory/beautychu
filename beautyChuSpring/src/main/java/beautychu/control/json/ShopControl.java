@@ -36,6 +36,5 @@ public class ShopControl {
 		resultMap.put("shopList", shopService.getShopList());
 		return resultMap;
 	}
-	
 
 }
