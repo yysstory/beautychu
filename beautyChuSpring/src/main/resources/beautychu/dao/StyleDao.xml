@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 	int styleNumber;
+	String people;
+	String gender;
+	String styleLength;
+	String styleName;
+	String styleIntro;
+	int SkillTime;
+	int price;
+	String email; -->
+
+<mapper namespace="beautychu.dao.StyleDao">
+
+  <resultMap type="Style" id="styleMap">
+    <id column="STYLENO" property="styleNo"/>
+    <result column="EMAIL" property="email"/>
+    <result column="PEOPLE" property="people"/>
+    <result column="GENDER" property="gender"/>
+    <result column="STYLESORT" property="styleSort"/>
+    <result column="STYLELENGTH" property="styleLength"/>
+    <result column="STYLENAME" property="styleName"/>
+    <result column="PRICE" property="price"/>
+    <result column="STYLEINTRO" property="styleIntro"/>
+  </resultMap>
+  
+  <resultMap type="StylePhoto" id="stylePhotoMap">
+    <id column="STYLEPHOTONO" property="stylePhotoNo"/>
+    <result column="STYLENO" property="styleNo"/>
+    <result column="STYLEPHOTOURL" property="stylePhotoUrl"/>
+  </resultMap>
+
+  <resultMap type="StyleGrid" id="styleGridMap">
+    <id column="STYLENO" property="styleNo"/>
+    <result column="EMAIL" property="email"/>
+    <result column="STYLENAME" property="styleName"/>
+    <result column="STYLEPHOTOURL" property="stylePhotoUrl"/>
+  </resultMap>
+  
+  <resultMap type="MainStyle" id="mainStyleMap">
+    <result column="STYLEPHOTOURL" property="stylePhotoUrl"/>
+    <result column="STYLENAME" property="styleName"/>
+    <result column="SHOPNAME" property="shopName"/>
+    <result column="STYLENO" property="styleNo"/>
+  </resultMap>
+  
+  <resultMap type="MainCelebrity" id="mainCelebrityMap">
+    <result column="STYLEPHOTOURL" property="stylePhotoUrl"/>
+    <result column="STYLENAME" property="styleName"/>
+    <result column="GENRE" property="genre"/>
+    <result column="GENRETITLE" property="genreTitle"/>
+    <result column="STYLENO" property="styleNo"/>
+  </resultMap>
+
+  <resultMap type="StyleDetail" id="styleDetailMap">
+    <id column="STYLENO" property="styleNumber"/>
+    <result column="STYLENAME" property="styleName"/>
+    <result column="STYLEINTRO" property="styleIntro"/> 
+    <result column="SKILLTIME" property="SkillTime"/>
+    <result column="PRICE" property="price"/> 
+    <result column="EMAIL" property="email"/> 
+  </resultMap>
+  
+  <resultMap type="Review" id="reviewMap">
+  	<id column="REVIEWNO" property="reviewNo"/>
+  	<result column="STYLENO" property="styleNo"/>
+  	<result column="NAME" property="name"/>
+  	<result column="CONTENT" property="content"/>
+  	<result column="STAR" property="star"/>
+  	<result column="REPORTDATE" property="date"/>
+  	<result column="REVIEWBTN" property="reviewbtn"/>
+  </resultMap>
+
+	<select id="getMainStyleList" parameterType="map" resultMap="mainStyleMap">
+   	SELECT S3.STYLEPHOTOURL, S1.STYLENAME, S2.SHOPNAME, S1.STYLENO
+    FROM STYLE S1
+    LEFT JOIN SHOP S2
+    ON S1.EMAIL = S2.EMAIL
+    LEFT JOIN STYLEPHOTO S3
+    ON S1.STYLENO = S3.STYLENO
+    WHERE PEOPLE = 'normal'
+	GROUP BY S1.STYLENO
+	ORDER BY S1.STYLENO DESC
+	LIMIT 15
+	<!-- LIMIT 20 -->
+  </select>
+  
+  <select id="getMainCelebrityList" parameterType="map" resultMap="mainCelebrityMap">
+   	SELECT S2.STYLEPHOTOURL, S1.STYLENAME, S1.GENRE, S1.GENRETITLE, S1.STYLENO
+    FROM STYLE S1
+    LEFT JOIN STYLEPHOTO S2
+    ON S1.STYLENO = S2.STYLENO
+    WHERE PEOPLE = 'celebrity'
+	GROUP BY S1.STYLENO
+	ORDER BY S1.STYLENO DESC
+	LIMIT 23
+  </select>
+
+<!--   <select id="getGridList" parameterType="map" resultMap="styleGridMap">
+    SELECT T1.STYLENAME, T2.URL 
+    FROM STYLE T1 JOIN STYLEPHOTO T2 USING(STYLENO)
+  </select> -->
+ 
+  <select id="getList" parameterType="StyleGrid" resultMap="styleGridMap">
+
+    SELECT T1.STYLENO, T1.EMAIL, T1.STYLENAME, T2.STYLEPHOTOURL 
+    FROM STYLE T1 JOIN (SELECT STYLENO,STYLEPHOTOURL,STYLEPHOTONO FROM STYLEPHOTO GROUP BY STYLENO) T2 USING(STYLENO)
+    WHERE GENDER =#{gender}
+    <if test="styleLength != 'All'">
+		AND STYLELENGTH =#{styleLength}    
+    </if> 
+    <if test="styleSort != 'All'">
+		AND STYLESORT =#{styleSort}    
+    </if>	
+     ORDER BY STYLENO
+  </select>
+
+  <select id="getStyleDetail" parameterType="int" resultMap="styleDetailMap">
+    SELECT STYLENO, STYLENAME, STYLEINTRO, PRICE , EMAIL
+    FROM STYLE 
+    WHERE STYLENO =#{value}
+    <!-- ORDER BY STYLENO -->
+  </select>
+
+  
+  <insert id="insertStyle" parameterType="Style" useGeneratedKeys="true" keyColumn="STYLENO" keyProperty="styleNo">
+    INSERT INTO STYLE (EMAIL,PEOPLE,GENDER,STYLESORT,STYLELENGTH,STYLENAME,PRICE,STYLEINTRO)
+    VALUES (#{email},#{people},#{gender},#{styleSort},#{styleLength},#{styleName},#{price},#{styleIntro});
+  </insert>
+  
+  <insert id="insertStylePhoto" parameterType="Style">
+  	INSERT INTO STYLEPHOTO (STYLENO, STYLEPHOTOURL)
+    VALUES (#{styleNo}, #{stylePhotoUrl});
+  </insert>
+  
+  <select id="selectPhoto" parameterType="int" resultMap="stylePhotoMap">
+    SELECT STYLEPHOTONO, STYLENO, STYLEPHOTOURL
+    FROM STYLEPHOTO
+    <if test="value > 0">
+    WHERE STYLENO = #{value}
+    </if>
+  </select>
+  
+  <select id="getReviewList" parameterType="Review" resultMap="reviewMap">
+	SELECT  T2.REVIEWNO, T2.STYLENO, T1.NAME, T2.CONTENT, T2.STAR, T2.REPORTDATE ,
+						CASE WHEN T2.EMAIL = #{email} THEN 'btn' ELSE 'none' END REVIEWBTN
+	FROM MEMBER T1 JOIN REVIEW T2 USING(EMAIL)
+	WHERE STYLENO=#{styleNo}
+	ORDER BY REVIEWNO DESC
+	LIMIT 4
+  </select>
+  
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
