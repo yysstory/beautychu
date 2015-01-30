@@ -15,7 +15,7 @@ public class CouponService {
   @Autowired CouponDao couponDao;
   @Autowired MemberDao memberDao;
 
-  
+   
 public List<?> viewCoupon(Coupon coupon) {
   
   HashMap<String, String> params = new HashMap<>();
