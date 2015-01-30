@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="beautychu.dao.CouponDao">
-
+ 
     <resultMap type="Coupon" id="cCouponMap">
   	<id column="LICENSEENO" property="licenseeNo"/>
   	<result column="COUPONCODE" property="couponCode"/>
