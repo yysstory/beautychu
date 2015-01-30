@@ -25,7 +25,7 @@ public class StyleControl {
 
 	@RequestMapping("/list")
 	public Object list(StyleGrid styleList) throws Exception {
-
+		System.out.println(styleList);
 		HashMap<String, Object> resultMap = new HashMap<>();
 		resultMap.put("styleList", styleService.getList(styleList));
 		return resultMap;
