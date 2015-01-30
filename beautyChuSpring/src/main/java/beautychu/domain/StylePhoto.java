@@ -6,35 +6,32 @@ public class StylePhoto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	int no;
+	int stylePhotoNo;
 	int styleNo;
-	String url;
-	public int getNo() {
-		return no;
-	}
-	public void setNo(int no) {
-		this.no = no;
+	String stylePhotoUrl;
+	public int getStylePhotoNo() {
+		return stylePhotoNo;
 	}
 	public int getStyleNo() {
 		return styleNo;
 	}
+	public String getStylePhotoUrl() {
+		return stylePhotoUrl;
+	}
+	public void setStylePhotoNo(int stylePhotoNo) {
+		this.stylePhotoNo = stylePhotoNo;
+	}
 	public void setStyleNo(int styleNo) {
 		this.styleNo = styleNo;
 	}
-	public String getUrl() {
-		return url;
+	public void setStylePhotoUrl(String stylePhotoUrl) {
+		this.stylePhotoUrl = stylePhotoUrl;
 	}
-	public void setUrl(String url) {
-		this.url = url;
-	}
-	
-	
 	@Override
 	public String toString() {
-		return "StylePhoto [no=" + no + ", styleNo=" + styleNo + ", url=" + url
-				+ "]";
+		return "StylePhoto [stylePhotoNo=" + stylePhotoNo + ", styleNo="
+				+ styleNo + ", stylePhotoUrl=" + stylePhotoUrl + "]";
 	}
-	
 
 	
 	
