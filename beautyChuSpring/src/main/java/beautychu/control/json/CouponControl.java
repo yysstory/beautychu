@@ -18,7 +18,7 @@ public class CouponControl {
   
   @Autowired CouponService couponService;
   
-  
+   
   @RequestMapping("/viewCouponList")
   public Object viewCouponList(Coupon coupon, HttpSession session) throws Exception {
     
