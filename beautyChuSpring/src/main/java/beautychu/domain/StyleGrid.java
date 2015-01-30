@@ -9,10 +9,11 @@ public class StyleGrid implements Serializable {
 	int 		styleNo;
 	String 	email;
 	String 	styleName;
-	String    	styleLength;
+	String   	styleLength;
 	String 	gender;
-	String		styleSort;
+	String	styleSort;
 	String 	stylePhotoUrl;
+	
 	public int getStyleNo() {
 		return styleNo;
 	}
