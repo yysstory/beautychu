@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Beauty Chu~♥</title>
+
+<meta charset="UTF-8">
+
+<link rel="shortcut icon" href="../images/favicon.ico"
+	type="image/x-icon">
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+
+<script type='text/javascript'
+	src='http://code.jquery.com/jquery-1.7.2.js'></script>
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src='../js/handlebars-v2.0.0.js'></script>
+<style type="text/css">
+/* 스타일 적용 공간! */
+
+/* left sub menu */
+.mypage-menu { line-height: 30px; height: auto; width: 150px; float: left; 
+								padding: 5px; margin-left: 10px; margin-top: 10px; }
+.mypage-title { text-align: center; font-size: 1.5em; }
+.mypage-uname { text-align: center; font-size: 12px; }
+.mypage-munu-list { margin-left: 20px; }
+
+/* personalinfo CSS */
+.personalinfo { width: 1000px; margin: auto; }
+.pinfo-form { border: 3px solid gray; border-radius: 10px; padding: 40px; margin-top: 100px; }
+.pinfo-data { text-align: center; }
+.title-pinfo { text-align: center; font-size: 40px; margin-bottom: 40px; }
+.pinfo-form-control { width: 600px; }
+
+/* table css */
+.jy-coupon-table { margin: 0px; padding: 0px; width: 100%; border: 1px solid #aaaaaa; }
+.jy-coupon-table table { border-collapse: collapse; border-spacing: 0;
+												width: 100%; height: 100%; margin: 0px; padding: 0px; }
+.jy-coupon-table tr:first-child { background-color: black; color: white; }
+.jy-coupon-table tr:first-child th { padding: 10px 0px; }
+.jy-coupon-table tr:hover td { background-color: #ECF1EF; }
+.jy-coupon-table tr  td { padding: 10px 0px; font-size: 12px; }
+.jy-coupon-table tr:first-child th:last-child { border-top-right-radius: 5px; }
+.jy-coupon-table tr:first-child th:first-child { border-top-left-radius: 5px; }
+.jy-coupon-table tr:last-child td:last-child { border-bottom-right-radius: 5px; }
+.jy-coupon-table tr:last-child td:first-child { border-bottom-left-radius: 5px; }
+
+.sort-coupon-data {text-align: right; font-size: 14px; margin-bottom: 10px; padding-right: 10px;}
+.sort-coupon-data input{ margin-right: 5px; }
+/* -------------------- */
+hr { display: block; margin-bottom: 30px; }
+
+/* bring at "jy_demo.css" */
+a, button { color: #74716D; text-decoration: none; outline: none; }
+button { padding: 1em 2em; outline: none; font-weight: 600;
+				 border: none; color: #fff; background: black; }
+.button-wrap { padding: 2.5em 0 0; font-size: 1.25em; }
+button.trigger { background: black; color: #fff; border: none }
+</style>
+
+</head>
+
+<body class="home">
+	<jy_header> <!-- header 건들지 말긔! --> </jy_header>
+
+
+
+	<div id="wrap-chu" class="wrap-chu">
+
+		<div class="mypage-menu">
+			<hr style="display: block;">
+			<h2 class="mypage-title">MyPage</h2>
+			<!-- <p class="mypage-uname">user name 님</p> -->
+			<hr style="display: block;">
+			<ul class="mypage-munu-list">
+				<li class="mp-infomdf" id="mp-infomdf"><a
+					href="jy_personalinfo.html">My Info</a></li>
+				<li class="mp-coupon" id="mp-coupon"><a href="jy_mycoupon.html">My
+						Coupon</a></li>
+			</ul>
+		</div>
+
+		<section class='personalinfo' id='personalinfo'>
+			<div class='pinfo-form'>
+				<div class='title-pinfo'>
+					<label>MY COUPON</label>
+				</div>
+
+				<div>
+					<hr style="display: block;">
+				</div>
+
+				<div class='pinfo-data'>
+				<div class='sort-coupon-data'>
+				<input type="radio" name="coupon-sort" id='couponchk1' value="cchk1" checked>전체보기
+				<input type="radio" name="coupon-sort" id='couponchk2' value="cchk2">사용가능 쿠폰
+				<input type="radio" name="coupon-sort" id='couponchk3' value="cchk3">지난 쿠폰
+				</div>
+					<form name='frm' id='jy-mdf-info'
+						class='form-horizontal jy-mdf-info'>
+				
+
+				
+					</form>
+				</div>
+
+			</div>
+		</section>
+
+	</div>
+	<!-- .wrap-chu -->
+
+
+
+	<footer>
+		<!-- footer 건들지 말긔! -->
+	</footer>
+
+
+	<script type="text/javascript">
+		/* 사이트 열자마자 ajax로 로긴 여부 체크하고 계정 정보 미리 가져오기*/
+		$.ajax({
+			type : 'get',
+			dataType : "json",
+			url : '../json/auth/loginUser.do',
+			success : function(data) {
+
+			/* Login Success */
+			if (data.status != 'fail') {
+			console.log("login : " + data.status);
+			console.log("email get : " + data.status);
+			console.log(data.loginUser);
+			$('#jy-mdf-user_email').val(data.loginUser.email);
+			$('#jy-mdf-user_nickname').val(data.loginUser.name);
+			$('#jy-mdf-user_addr').val(data.loginUser.address);
+
+			if (data.loginUser.phone != null) {
+					$('#jy-mdf-user_phone1').val((data.loginUser.phone).substr(0, 3));
+					$('#jy-mdf-user_phone2').val((data.loginUser.phone).substr(4, 4));
+					$('#jy-mdf-user_phone3').val((data.loginUser.phone).substr(9, 4));
+			}
+			console.log(data.loginUser.email);
+
+			/* 다만 main 전체가 떴다가 아래가 사라짐.. */
+			$('.join').hide();
+			$('.login').hide();
+
+			/* Login Fail */
+			} else {
+					console.log("login : " + data.status);
+					location.href = 'jy_main.html';
+					/* 다만 main 전체가 떴다가 아래가 사라짐.. */
+					//$('.jy-mypage').hide();
+					//$('.logout').hide();
+				}
+
+			},
+			error : function() {
+			console.log('로그인 ajax 실패');
+			console.log('계정 얻기 ajax 실패');
+
+			}
+
+	}).done(function() {
+
+	/* coupon 정보 받아오기 */
+	$.ajax({
+			type : 'get',
+			dataType : "json",
+			url : '../json/coupon/viewCouponList.do',
+			success : function(data) {
+			console.log(data);
+			console.log(data.viewCoupon);
+			//console.log(data.viewCoupon.length);
+
+			//for (var i = 0; i < data.viewCoupon.length; i++) {
+			//		console.log(data.viewCoupon[i]);
+			//}
+
+			console.log('쿠폰 리스트 ajax 성공');
+			},
+			error : function() {
+				console.log('쿠폰 리스트 ajax 실패');
+			}
+		});
+
+			$.getJSON('../json/coupon/viewCouponList.do', function(data) {
+					$.get('templates/couponTable.html',function(source) {
+						var template = Handlebars.compile(source);
+							var html = template(data);
+						$('#jy-mdf-info').html(html);
+						});
+					});
+
+			
+	});
+		
+		
+		
+		
+	/* coupon sorting */	
+/* 	$('#couponchk2').click(function() {
+	alert('정렬할거다 이거!!');	
+	});
+	
+	$('#couponchk3').click(function() {
+		alert('정렬해버릴테다!!!');	
+	}); */
+	
+	</script>
+
+
+	<!-- header, footer 로드 스크립트!! -->
+	<script>
+		$('jy_header').load('common/jy_header.html');
+		/*$('footer').load('common/footer.html'); */
+
+		/*  
+		window.setTimeout('window.location.reload()', 50000); 
+		 */
+	</script>
+
+
+</body>
+</html>
