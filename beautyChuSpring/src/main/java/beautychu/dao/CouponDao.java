@@ -11,3 +11,4 @@ public interface CouponDao {
   
   void checkCoupon(Coupon coupon);
 }
+ 
