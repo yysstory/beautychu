@@ -15,6 +15,12 @@
 <!-- 댓글 -->	
 <link rel="stylesheet" href="../css/jy/jy_DG_Slider.css" type="text/css"
 	media="all" />
+	
+<!-- 지도 -->
+<script type="text/javascript"
+	src="//apis.daum.net/maps/maps3.js?apikey=e5353ee43c5a9ea624372eb7cb8e99b1646087a2&libraries=services"></script>
+
+
 <!-- 썸네일 이미지 -->	
 
 	<link rel="stylesheet" type="text/css" href="../css/thumnail.css" />
@@ -106,7 +112,7 @@ height: 50px;
 	width: 1200px;
 	height: 100%;
 	margin: 0 auto;
-	margin-top: 100px; 
+	margin-top: 110px; 
 }
 
 html {
@@ -156,12 +162,14 @@ body {
 .yun-box {
 	position: relative;
 	width: 280px;
-	height: 410px;
+	height: 427px;
  	float: left; 
 	margin: 5px;
 	font-size: 40px;
-	border-radius: 10px;
 	overflow: hidden;
+	border: 1px #c5c5c5 solid;
+	margin-bottom: 25px;
+	margin-top : 20px;
 }
 
 .yun-edge {
@@ -172,7 +180,7 @@ body {
 
 .yun-boximage {
 	width: 280px;
-	height: 410px;
+	height: 370px;
 }
 
 .kh-basic {
@@ -180,14 +188,13 @@ body {
 	bottom: 0px;
 	width: 280px;
 	text-align: center;
-	height: 100px;
-	background-color: rgba(0,0,0,1);
-	color: white;
-	border-radius: 0px 0px 10px 10px;
+	height: 57px;
+	color: black;
 	font-size: 30px;
+	border-top: 1px #c5c5c5 solid;
 }
 .kh-basic h2 {
-	color: white;
+	color: black;
 	margin-top: 15px;
 }
 
@@ -218,9 +225,7 @@ body {
 	width: 280px;
 	text-align: center;
 	height: 140px;
-	background-color: rgba(0,0,0,1);
 	color: white;
-	border-radius: 0px 0px 10px 10px;
 	display: none;
 }
 
@@ -228,10 +233,9 @@ body {
 	position: absolute;
 	top: 0px;
 	width: 280px;
-	height: 270px;
+	height: 370px;
 	background-color: rgba(0,0,0,0.5);
 	display: none;
-	border-radius: 10px 10px 0px 0px;
 }
 
 .yun-shop-button .yun-shoppricelist {
@@ -263,8 +267,10 @@ body {
 /* yun-shoppricelist.html css */
 #yun-shopdetailcontainer {
 	width: 1150px;
-	height: 600px;
+	height: 590px;
 	background-color: white;
+	border-top: 1px #c5c5c5 solid;
+	border-bottom: 1px #c5c5c5 solid;
 }
 
 #yun-shopstylelist {
@@ -317,7 +323,9 @@ body {
 	bottom: 0px;
 	text-align: center;
 	width: 155px;
+	height: 22px;
 	background-color: rgba(0,0,0,0.5);
+	padding-top: 7px;
 	border-radius: 0 0 5px 5px;
 	color: white;
 }
@@ -411,8 +419,10 @@ body {
 /* yun-shopdetail.html css */
 #yun-shopdetailcontainer {
 	width: 1150px;
-	height: 600px;
+	height: 598px;
 	background-color: white;
+	border-top: 1px #c5c5c5 solid;
+	border-bottom: 1px #c5c5c5 solid;
 }
 
 .yun-shopcontainerdiv {
@@ -458,7 +468,7 @@ body {
 
 .yun-shopcomment {
 	width: 100%;
-	margin-top: 10px;
+	margin-top: 60px;
 }
 
 .row {
@@ -497,12 +507,14 @@ border-radius: 20px;
 
 		</div> -->
 	<div id="wrap-chu" class="wrap-chu">
-
+	<div style="text-align: center;">
+	<DIV style="font-size:50px; height:50px;  padding: 20px; margin-top: 20px;" >STYLE</DIV>
 <INPUT TYPE="radio" class="kh-radio" NAME="Gubun" value="All"  checked="checked">ALL
 <INPUT TYPE="radio" class="kh-radio" NAME="Gubun" value="Short">SHORT
 <INPUT TYPE="radio" class="kh-radio" NAME="Gubun" value="Medium">MEDIUM
 <INPUT TYPE="radio" class="kh-radio" NAME="Gubun" value="Long">LONG
-<div class="yun-container"></div>	
+</div>
+<div class="yun-container" style="border-top: 2px black solid; margin-top: 10px; padding-left: 30px;"></div>	
 
 <!--  			<div class="yun-box">
 				<img class="yun-boximage" src="../images/main/woman (1).png">
@@ -682,8 +694,15 @@ border-radius: 20px;
 		 $('div').on("click", '.reviewDelete-btn', function(){
 			 event.stopPropagation();
 			 if (confirm('댓글을 삭제하시겠습니까?')) {
-				 deleteReview($(this).attr('data-reviewNo'));
-				  refreshReview($("#kh-reviewAdd").attr('data-no'));
+				  (function(){
+					  deleteReview($(this).attr('data-reviewNo'));
+				  }).done(function(){
+						  refreshReview($("#kh-reviewAdd").attr('data-no'));
+				  });
+				  
+				 /*  $.get(deleteReview($(this).attr('data-reviewNo'))).done(function() {
+					  refreshReview($("#kh-reviewAdd").attr('data-no'));
+					}); */
 				} else {
 				    // Do nothing!
 				}
@@ -728,7 +747,8 @@ border-radius: 20px;
 			
 			
 			loadShop($(this).attr('data-email')); 
- 			
+			loadShopReview($(this).attr('data-email'));
+			
 			pagebtnnum++;
 		});
 		
@@ -790,8 +810,7 @@ border-radius: 20px;
 	$(document).on('mouseenter', '.yun-box',  function(){
 			
 			
-			  $(this).find(".kh-basic").css("display", "none");
-			  $(this).find(".kh-detail").css("display", "block");
+			  /* $(this).find(".kh-detail").css("display", "block"); */
 			  $(this).find(".kh-gradation").css("display", "block");
 			  
 		}).on('mouseleave', '.yun-box', function() {
@@ -810,10 +829,12 @@ border-radius: 20px;
 			alert("쿠폰이 발급되었습니다!");
 		});
 		
-		$('div').on("click",".kh-shopmap",function(){
-			event.stopPropagation();
-			/* $('#yun-shopphotolist').load('../images/shop/shopmap1.png'); */
-			});
+			/* 샵 지도 클릭 */
+			$(document).on('click', '.kh-shopmap',  function(){
+				console.log("ssssssssssssssss");
+		 		loadMap($(this).attr('data-email'));
+		 		});
+		
 
 		
 		
@@ -902,7 +923,8 @@ border-radius: 20px;
  				$(document).on('click', '.kh-radio',  function(){
  					styleLength($(this).val());
  				});
-				
+ 				
+
 				
 				
 				
@@ -943,6 +965,12 @@ border-radius: 20px;
  						    	  var html = template(data);
  					    		  $('#yun-div'+pagebtnnum+' '+'#yun-shopphotolist').html(html);	  
  						      }); 
+ 			 			      $.get('templates/jy_commenttemp.html', function(source){
+ 			 			    	  var template = Handlebars.compile(source);
+ 			 			    	  var html = template(data);
+ 			 			    	  $('#yun-shopcomment').html(html);
+ 			 			      });
+ 	 					     
  						    });
  				 	} 
 				
@@ -987,6 +1015,36 @@ border-radius: 20px;
  									    	});  
  								    });
 				 	}
+ 				
+ 				
+ 				/* 샵 댓글 로드 */
+ 				
+ 				function loadShopReview(email) {
+		 		$.getJSON('../json/review/reviewList.do?shopEmail='+email, 
+		 			    function(data){
+		 			console.log(data);
+		 			      $.get('templates/jy_commenttemp.html', function(source){
+		 			    	  var template = Handlebars.compile(source);
+		 			    	  var html = template(data);
+		 			    	  $('#yun-shopcomment').html(html);
+		 			      });
+		 			    });
+		 	 	}
+ 				
+ 				
+				/* 지도보기 */
+		function loadMap(email) {
+ 		$.getJSON('../json/shop/view.do?mail='+email,
+			    function(data){
+			console.log(data);
+			      $.get('templates/yun-maptemp.html', function(source){
+			    	  var template = Handlebars.compile(source);
+			    	  var html = template(data);
+			    	  console.log(html);
+			    	  $('#yun-div'+pagebtnnum+' #yun-shopphotolist').html(html);
+			      });
+			    });
+	 	}
 	</script>
 
 </body>
