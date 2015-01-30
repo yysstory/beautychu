@@ -6,56 +6,68 @@ public class StyleGrid implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	int 		styleNumber;
+	int 		styleNo;
 	String 	email;
 	String 	styleName;
 	String    	styleLength;
-	String 	url;
-	
-	
-	
-	
-	public String getStyleLength() {
-		return styleLength;
-	}
-	public void setStyleLength(String styleLength) {
-		this.styleLength = styleLength;
-	}
-	public int getStyleNumber() {
-		return styleNumber;
-	}
-	public void setStyleNumber(int styleNumber) {
-		this.styleNumber = styleNumber;
+	String 	gender;
+	String		styleSort;
+	String 	stylePhotoUrl;
+	public int getStyleNo() {
+		return styleNo;
 	}
 	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	public String getStyleName() {
 		return styleName;
+	}
+	public String getStyleLength() {
+		return styleLength;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public String getStyleSort() {
+		return styleSort;
+	}
+	public String getStylePhotoUrl() {
+		return stylePhotoUrl;
+	}
+	public void setStyleNo(int styleNo) {
+		this.styleNo = styleNo;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public void setStyleName(String styleName) {
 		this.styleName = styleName;
 	}
-	public String getUrl() {
-		return url;
+	public void setStyleLength(String styleLength) {
+		this.styleLength = styleLength;
 	}
-	public void setUrl(String url) {
-		this.url = url;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
-	
-	
+	public void setStyleSort(String styleSort) {
+		this.styleSort = styleSort;
+	}
+	public void setStylePhotoUrl(String stylePhotoUrl) {
+		this.stylePhotoUrl = stylePhotoUrl;
+	}
 	@Override
 	public String toString() {
-		return "StyleGrid [styleNumber=" + styleNumber + ", email=" + email
+		return "StyleGrid [styleNo=" + styleNo + ", email=" + email
 				+ ", styleName=" + styleName + ", styleLength=" + styleLength
-				+ ", url=" + url + "]";
+				+ ", gender=" + gender + ", styleSort=" + styleSort
+				+ ", stylePhotoUrl=" + stylePhotoUrl + "]";
 	}
 	
 	
 	
+	
+
+
 	
 
 	
