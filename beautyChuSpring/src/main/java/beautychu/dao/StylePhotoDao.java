@@ -5,6 +5,6 @@ import java.util.Map;
 
 public interface StylePhotoDao {
 	
-	  List<?> getList(int styleNumber);
+	  List<?> getList(int styleNo);
 
 	}

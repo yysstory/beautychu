@@ -1,6 +1,7 @@
 package beautychu.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class StylePhoto implements Serializable {
 
@@ -8,31 +9,39 @@ public class StylePhoto implements Serializable {
 	
 	int stylePhotoNo;
 	int styleNo;
-	String stylePhotoUrl;
+	String url;
+	List<?> photoList;
+	
 	public int getStylePhotoNo() {
 		return stylePhotoNo;
-	}
-	public int getStyleNo() {
-		return styleNo;
-	}
-	public String getStylePhotoUrl() {
-		return stylePhotoUrl;
 	}
 	public void setStylePhotoNo(int stylePhotoNo) {
 		this.stylePhotoNo = stylePhotoNo;
 	}
+	public int getStyleNo() {
+		return styleNo;
+	}
 	public void setStyleNo(int styleNo) {
 		this.styleNo = styleNo;
 	}
-	public void setStylePhotoUrl(String stylePhotoUrl) {
-		this.stylePhotoUrl = stylePhotoUrl;
+	public String getUrl() {
+		return url;
 	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public List<?> getPhotoList() {
+		return photoList;
+	}
+	public void setPhotoList(List<?> photoList) {
+		this.photoList = photoList;
+	}
+	
 	@Override
 	public String toString() {
 		return "StylePhoto [stylePhotoNo=" + stylePhotoNo + ", styleNo="
-				+ styleNo + ", stylePhotoUrl=" + stylePhotoUrl + "]";
+				+ styleNo + ", url=" + url + ", photoList=" + photoList + "]";
 	}
-
 	
 	
 }
