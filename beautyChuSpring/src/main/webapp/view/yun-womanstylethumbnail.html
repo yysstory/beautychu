@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <title>Beauty Chu~♥</title>
 
+<!-- 라디오버튼  -->
 
+<link rel="stylesheet" href="../css/resources/radiobutton.css" />
 <!-- 마페 -->
 
 <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
@@ -104,7 +106,7 @@ height: 50px;
 	width: 1200px;
 	height: 100%;
 	margin: 0 auto;
-	margin-top: 110px; 
+	margin-top: 30px; 
 }
 
 html {
@@ -502,10 +504,27 @@ border-radius: 20px;
 	<div id="wrap-chu" class="wrap-chu">
 	<div style="text-align: center;">
 	<DIV style="font-size:50px; height:50px;  padding: 20px; margin-top: 20px;" >STYLE</DIV>
-<INPUT TYPE="radio" class="kh-radio" NAME="Gubun" value="All"  checked="checked">ALL
-<INPUT TYPE="radio" class="kh-radio" NAME="Gubun" value="Short">SHORT
-<INPUT TYPE="radio" class="kh-radio" NAME="Gubun" value="Medium">MEDIUM
-<INPUT TYPE="radio" class="kh-radio" NAME="Gubun" value="Long">LONG
+		<table style="margin: auto;">
+			<tr>
+				<td><input type="radio" name="radiog_dark" id="radio1"
+					class="css-checkbox"  checked="checked"  />
+					<label for="radio1" class="css-label" data-sort="All">ALL</label>
+				</td>
+				<td><input type="radio" name="radiog_dark" id="radio2"
+					class="css-checkbox" />
+					<label for="radio2"
+					class="css-label" data-sort="SHORT">SHORT</label>
+				</td>
+				<td><input type="radio" name="radiog_dark" id="radio3"
+					class="css-checkbox" />
+					<label for="radio3" class="css-label" data-sort="Medium">MEDIUM</label>
+				</td>
+				<td><input type="radio" name="radiog_dark" id="radio4"
+					class="css-checkbox" />
+					<label for="radio4" class="css-label" data-sort="Long">LONG</label>
+				</td>				
+			</tr>
+		</table>
 </div>
 <div class="yun-container" style="border-top: 2px black solid; margin-top: 10px; padding-left: 30px;"></div>	
 
@@ -687,11 +706,9 @@ border-radius: 20px;
 		 $('div').on("click", '.reviewDelete-btn', function(){
 			 event.stopPropagation();
 			 if (confirm('댓글을 삭제하시겠습니까?')) {
-				  (function(){
 					  deleteReview($(this).attr('data-reviewNo'));
-				  }).done(function(){
 						  refreshReview($("#kh-reviewAdd").attr('data-no'));
-				  });
+
 				  
 				 /*  $.get(deleteReview($(this).attr('data-reviewNo'))).done(function() {
 					  refreshReview($("#kh-reviewAdd").attr('data-no'));
@@ -913,8 +930,11 @@ border-radius: 20px;
 				}); 
 				
  				
- 				$(document).on('click', '.kh-radio',  function(){
- 					styleLength($(this).val());
+ 				/* 라디오 버튼 클릭 */
+ 				
+ 				$(document).on('click', '.css-label',  function(){
+ 					console.log($(this).attr("data-sort"));
+ 					styleLength($(this).attr("data-sort"));
  				});
  				
 
