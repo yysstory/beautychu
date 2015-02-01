@@ -71,30 +71,21 @@
 	<div id="wrap-chu" class="wrap-chu">
 
  -->
-   <!-- <link rel="import" href="../js/resources/jquery-1.9.1.min.js">
+<!-- <link rel="import" href="../js/resources/jquery-1.9.1.min.js">
   <link rel="import" href="../js/resources/kh/jssor.js">
   <link rel="import" href="../js/resources/kh/jssor.slider.js"> -->
-  
-  
- 
- 
-    <!-- <script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
+
+
+
+
+<!-- <script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
     <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script> -->
 <div id=yun-shopdetailcontainer>
 
 	<!--*****************************************************************************************-->
 	<!--**************************** 샵사진 슬라이드가 들어가는 div *****************************-->
-	<div id='yun-shopphotolist' class=yun-shopcontainerdiv>
-
-
-
-
-
-
-
-
-	</div>
+	<div id='yun-shopphotolist' class=yun-shopcontainerdiv></div>
 
 	<!--*****************************************************************************************-->
 	<!--**************************** 버튼 div  **************************************************-->
@@ -126,14 +117,30 @@
 
 
 		<div class=buttondiv>
-			<div class="ui black basic button yun-shoppricelist">Price List ></div>
-			<div class="ui black basic button kh-shopmap" data-email="{{shop.email}}">지도보기 ></div>
-			<div class="ui black basic button get-coupon">Get Coupon</div>
+			<div class="ui black basic button yun-shoppricelist">Price List
+				></div>
+			<div class="ui black basic button kh-shopmap"
+				data-email="{{shop.email}}">지도보기 ></div>
+			<div class="md-modal md-effect-1" id="modal-1">
+				<div class="md-content">
+					<h3>쿠폰 발급</h3>
+					<div>
+						<p>쿠폰이 발급 되었습니다. 쿠폰함으로 가시겠습니까?</p>
+						<!-- 					<ul>
+						<li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
+						<li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
+						<li><strong>Close:</strong> click on the button below to close the modal.</li>
+					</ul> -->
+						<button>쿠폰함 이동</button>
+						<button class="md-close">닫기</button>
+					</div>
+				</div>
+			</div>
+			<button class="md-trigger" data-modal="modal-1">쿠폰 발급</button>
+			<div class="md-overlay" style="background: rgba(0, 0, 0, 0.8);"></div><!-- the overlay element -->
 		</div>
 
-		<div id=yun-shopcomment class=yun-shopcomment>
-
-		</div>
+		<div id=yun-shopcomment class=yun-shopcomment></div>
 	</div>
 </div>
 
@@ -160,9 +167,24 @@ $(".yun-shopstyle").hover(
 
 
 </script>
-    <script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
-    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script> 
+<script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
+<script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script>
+<!-- 쿠폰 -->
+
+		<!-- classie.js by @desandro: https://github.com/desandro/classie -->
+		<script src="../js/resources/coupon/classie.js"></script>
+		<script src="../js/resources/coupon/modalEffects.js"></script>
+
+		<!-- for the blur effect -->
+		<!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+		<script>
+			// this is important for IEs
+			var polyfilter_scriptpath = '/js/';
+		</script>
+		<script src="../js/resources/coupon/cssParser.js"></script>
+		<script src="../js/resources/coupon/css-filters-polyfill.js"></script>
+
 <!-- 
 	</div>
 
