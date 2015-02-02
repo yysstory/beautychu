@@ -491,7 +491,7 @@ body {
 		<div id="wrap-chu" class="wrap-chu">
 			<div style="text-align: center;">
 				<DIV
-					style="font-size: 50px; height: 50px; padding: 20px; margin-top: 20px;">STYLE</DIV>
+					style="font-size: 50px; height: 50px; padding: 20px; margin-top: 20px; margin-bottom: 40px;">STYLE</DIV>
 				<table style="margin: auto;">
 					<tr>
 						<td><input type="radio" name="radiog_dark" id="radio1"
@@ -966,12 +966,31 @@ body {
  			 			    	  var template = Handlebars.compile(source);
  			 			    	  var html = template(data);
  			 			    	  $('#yun-shopcomment').html(html);
+ 			 			    	console.log(yyyyMMdd(data.review0.date));
+ 			 			    	$('.kh-reviewDate').val(yyyyMMdd(data.review0.date));
  			 			      });
  	 					     
  						    });
  				 	} 
 				
- 				
+				/* 댓글 날짜 */
+ 				function yyyyMMdd(date) {
+ 					  if (date) {
+ 					    var date = new Date(date);
+ 					    var str = date.getFullYear() + '-';
+ 					    
+ 					    if (date.getMonth() < 9) str += '0';
+ 					    str += (date.getMonth() + 1) + '-';
+ 					    
+ 					    if (date.getDate() < 10) str += '0';
+ 					    str += date.getDate();
+ 					    
+ 					    return str;
+ 					    
+ 					  } else {
+ 					    return '';
+ 					  }
+ 					}
  				/* 스타일 디테일 로드 */
  				function loadStyleDetail(styleNo) {
 					$.getJSON('../json/style/detail.do?styleNo='+styleNo, 
@@ -995,6 +1014,12 @@ body {
 						    	  var template = Handlebars.compile(source);
 						    	  var html = template(data);
 						    	  $('#yun-stylecomment').html(html);
+						    	  for(var i = 0; i< data.review.length; i++){
+						    		  console.log(yyyyMMdd(data.review[i].date));  
+	 			 			    	$('.kh-reviewDate'+data.review[i].date).html(yyyyMMdd(data.review[i].date));
+						    	  }
+	 			 			    	
+	 			 			    	
 						      });
 						    });
 				 	}
