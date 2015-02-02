@@ -30,7 +30,7 @@
   <resultMap type="StylePhoto" id="stylePhotoMap">
     <id column="STYLEPHOTONO" property="stylePhotoNo"/>
     <result column="STYLENO" property="styleNo"/>
-    <result column="STYLEPHOTOURL" property="stylePhotoUrl"/>
+    <result column="STYLEPHOTOURL" property="url"/>
   </resultMap>
 
   <resultMap type="StyleGrid" id="styleGridMap">
