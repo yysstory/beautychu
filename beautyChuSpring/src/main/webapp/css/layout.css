@@ -213,7 +213,7 @@ body.home .wrapper{background: #000;}  /* mod 20140304 */
 .util-menu > li.login:hover > a,
 .util-menu > li.login > a:focus { background-position: 50% -70px; }
 
-.util-menu > li.logout > a { background:url(../img/common/sm-logout.png) 50% 0 no-repeat; width:22px; }
+.util-menu > li.logout > a { background:url(../img/common/sm-logout.png) 50% 0 no-repeat; width: 40px;/* width:22px; */ }
 .util-menu > li.logout:hover > a,
 .util-menu > li.logout > a:focus { background-position: 50% -70px; }
 
