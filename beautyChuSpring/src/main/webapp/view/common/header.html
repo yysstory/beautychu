@@ -482,7 +482,7 @@ $.ajax({
 					success : function(data) {
 						console.log("join"+data.status);
 						console.log(data.loginUser);
-						alert("가입이 완료되었습니다.\n 환영합니다^^");
+						alert("가입이 완료되었습니다.\n " + data.loginUser.name + "님 환영합니다^^");
 						location.href = 'main.html';
 
 					},
@@ -574,10 +574,10 @@ $.ajax({
 
 	(function() {
 		/* click to mypage account */
-		$('.jy-mypage').click(function() {
+/* 		$('.jy-mypage').click(function() {
 			alert("마이페이지 입니다!");
 			console.log("마이페이지 입니다!");
-		});
+		}); */
 
 		/* -------------------  */
 
@@ -589,7 +589,7 @@ $.ajax({
 				url : '../json/auth/logout.do',
 				success : function() {
 					console.log('로그아웃 되었습니다.');
-				  alert("로그아웃 되었습니다.");
+				  //alert("로그아웃 되었습니다.");
 				  location.href = 'main.html';
 				},
 				error : function() {
