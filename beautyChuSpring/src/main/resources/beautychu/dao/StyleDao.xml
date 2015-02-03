@@ -108,13 +108,19 @@
 
     SELECT T1.STYLENO, T1.EMAIL, T1.STYLENAME, T2.STYLEPHOTOURL 
     FROM STYLE T1 JOIN (SELECT STYLENO,STYLEPHOTOURL,STYLEPHOTONO FROM STYLEPHOTO GROUP BY STYLENO) T2 USING(STYLENO)
-    WHERE GENDER =#{gender}
+    WHERE STYLENO LIKE '%%' 
+    <if test="gender">
+       AND GENDER =#{gender}
+    </if>
     <if test="styleLength != 'All'">
 		AND STYLELENGTH =#{styleLength}    
     </if> 
     <if test="styleSort != 'All'">
 		AND STYLESORT =#{styleSort}    
     </if>	
+    <if test="styleName">
+		AND STYLENAME LIKE CONCAT('%', #{styleName} , '%')
+		    </if>	
      ORDER BY STYLENO
   </select>
 

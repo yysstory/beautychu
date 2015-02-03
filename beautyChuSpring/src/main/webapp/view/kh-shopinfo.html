@@ -613,7 +613,6 @@ kh-shopListName {
 				$('.yun-edge').after('<div id=changediv class="yun-info-bg"><div id=yun-div1 class=yun-div><div></div>');
 				loadShop($(this).attr('data-email'));
 				$('.yun-info-bg').slideDown();
-				loadReview($(this).attr('data-email'));
 				setTimeout(function () {  $('html, body').animate({scrollTop:$('.yun-info-bg').position().top-75}, 'slow');  });
 				pagebtnnum=2;
 			}
@@ -769,11 +768,7 @@ kh-shopListName {
  						    	  var html = template(data);
  					    		  $('#yun-div'+pagebtnnum+' '+'#yun-shopphotolist').html(html);	  
  						      });
- 			 			      $.get('templates/jy_commenttemp.html', function(source){
- 			 			    	  var template = Handlebars.compile(source);
- 			 			    	  var html = template(data);
- 			 			    	  $('#yun-shopcomment').html(html);
- 			 			      });
+ 	 					   loadReview(email);
  						    });
  				 	} 
 				
