@@ -822,12 +822,14 @@ footer {
 				</div> <!-- end of wrap best shop -->
 			
 			</div> <!-- #content -->
-		</div> <!-- .wrapper -->
-	</div> <!-- .wrap-chu -->
-
+			
 			<footer id="footer">
 				<!-- footer 건들지 말긔! -->
 			</footer>
+			
+		</div> <!-- .wrapper -->
+	</div> <!-- .wrap-chu -->
+
 
 	
 	
@@ -859,10 +861,6 @@ footer {
 			success : function(data) {
 				console.log(data);
 				console.log(data.mainStyleList[0]);
-				
-				/* $('#shopProfile').attr('src','/beautyChuSpring_K/fileupload' + data.listShopInfo[0].shopPhotoUrl);
-				$('#licenseeNo').val(data.styleList[0].);
-				 */
 			},
 			error : function() {
 				console.log('ajax shop정보 실패');
@@ -875,8 +873,8 @@ footer {
 				var html = template(data);
 				$('#main-style-div').html(html);
 			});  
-	    }); /* end of main style list */
-		    
+	    });
+		/* end of main style list */
 	    
 		/* main celebrity list */
 			$.ajax({
@@ -901,10 +899,9 @@ footer {
 					var html = template(data);
 					$('#main-celebrity').html(html);
 				});  
-		    }); /* end of main celebrity list */
-		 
+		    });
 	 });
-	
+	/* end of main celebrity list */	
 	</script>
 	
 	

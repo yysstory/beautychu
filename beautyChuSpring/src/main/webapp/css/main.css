@@ -208,7 +208,7 @@ padding-top: 50px;
 	margin-top: -1px;
 }
 
-.best-shop-wrap .bg { background: url(../img/main/show-window-center.png) no-repeat 50% 0; height: 100%; position:absolute; width: 100%; }
+.best-shop-wrap .bg { background: url(../img/main/show-window-center.png) no-repeat 50% 0; height: 40%; position:absolute; width: 100%; }
 
 .best-shop-wrap h2 {
 background: url(../img/main/title-best-shop.png) no-repeat;
