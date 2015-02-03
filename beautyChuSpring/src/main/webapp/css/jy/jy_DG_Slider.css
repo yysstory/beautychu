@@ -93,10 +93,10 @@ text-decoration: none; margin:2px;
 	
 .jy-comment-list { border-radius:0 0 2px 2px; width: 350px;}	
 .jy-wr-comment { }
-.write-comment { width: 423px; height: 34px; margin-left: 5px;}
+.write-comment { width: 390px; height: 34px; margin-left: 5px;}
 .jy-profile-phot { float: left; width: 40px; height: 40px;}
 .jy-submit-comment { float: right; text-align: center; } 
-.jy-comment-submit-icon { height: 44px; width: 50px;}	
+.jy-comment-submit-icon { height: 44px; width: 80px;}	
 
 .buyer { border:1px solid green; color: green; padding: 1px; border-radius:3px;}
 .nobuy { border:1px solid orange; color: orange; padding: 1px; border-radius:3px;}
