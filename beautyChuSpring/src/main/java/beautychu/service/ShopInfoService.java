@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import beautychu.dao.ShopInfoDao;
+import beautychu.domain.PriceListShopInfo;
 import beautychu.domain.ShopInfo;
 import beautychu.domain.ShopInfoPhoto;
 
@@ -29,6 +30,14 @@ public class ShopInfoService {
 	public void updateShopInfo(ShopInfo shopInfo) {
 		/*shopInfoDao.insertPhoto(shopInfo.getShopPhotoUrl());*/
 		shopInfoDao.updateShopInfo(shopInfo);
+	}
+	
+	public List<?> getManPriceList(String email) {
+		return shopInfoDao.getManPriceList(email); 
+	}
+	
+	public List<?> getWomanPriceList(String email) {
+		return shopInfoDao.getWomanPriceList(email); 
 	}
 
 	/*서버에 파일(이미지) 올리기*/
@@ -79,17 +88,18 @@ public class ShopInfoService {
 		return isSuccess;
 	} // fileUpload end
 
+	public void updatePrice(PriceListShopInfo priceListShopInfo) {
+		shopInfoDao.updatePrice(priceListShopInfo);		
+	}
+
 	/*@Transactional(rollbackFor=Exception.class, propagation=Propagation.REQUIRED)
 	  public void insertPhoto(ShopInfo shopInfo) {
 	    shopInfoDao.insertPhoto(shopInfo);
-
 	    if (shopInfo.getPhoto() != null) {
 	    	shopInfoDao.insertPhoto(shopInfo);
 	    }
 	  }*/
 }
-
-
 
 
 
