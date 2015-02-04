@@ -607,7 +607,7 @@ $.ajax({
 	/* 검색기능 완료 */
 	$("#search-bar").keyup(function() {
 		console.log("ddddddddddddddddd");
-		$.getJSON('../json/style/list.do?styleLength=All&styleSort=All&styleName='+$('#search-bar').val(), 
+		$.getJSON('../json/style/list.do?people=normal&gender=woman&styleLength=All&styleSort=All&styleName='+$('#search-bar').val(), 
 			    function(data){
 								console.log(data);	
 								console.log($('#search-bar').val());
