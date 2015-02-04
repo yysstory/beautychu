@@ -50,6 +50,17 @@
   	 -->
   </select>
   
+  <!-- SHOP's VIEW --> 
+  <select id="couponList" parameterType="map" resultMap="cCouponMap">
+    SELECT T1.CEMAIL, T1.C_CONTENT, T1.COUPONCODE, T1.STARTDATE, T1.ENDDATE, T1.USEDATE
+  		FROM COUPON T1 LEFT JOIN CUSTOMER T2
+  		ON T1.CEMAIL = T2.EMAIL
+  		LEFT JOIN MEMBER T3
+  		ON T2.EMAIL = T3.EMAIL
+  	WHERE T1.SEMAIL=#{sEmail}
+  	ORDER BY T1.STARTDATE DESC;
+  </select>
+  
   
 	<!-- ADMIN's VIEW -->
 	<select id="checkCoupon" parameterType="Coupon">
@@ -81,18 +92,3 @@
   </delete> -->
   
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -3,19 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- 	int styleNumber;
-	String people;
-	String gender;
-	String styleLength;
-	String styleName;
-	String styleIntro;
-	int SkillTime;
-	int price;
-	String email; -->
-
 <mapper namespace="beautychu.dao.StyleDao">
 
+  <!-- 객체의 컬럼과 프로퍼티를 연결한다. -->
   <resultMap type="Style" id="styleMap">
+  	<!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
     <id column="STYLENO" property="styleNo"/>
     <result column="EMAIL" property="email"/>
     <result column="PEOPLE" property="people"/>
@@ -25,6 +17,8 @@
     <result column="STYLENAME" property="styleName"/>
     <result column="PRICE" property="price"/>
     <result column="STYLEINTRO" property="styleIntro"/>
+    <!-- <result column="PHOTOFILE" property="photofile"/>
+    <result column="PHOTOLIST" property="photoList"/>     -->
   </resultMap>
   
   <resultMap type="StylePhoto" id="stylePhotoMap">
@@ -32,7 +26,7 @@
     <result column="STYLENO" property="styleNo"/>
     <result column="STYLEPHOTOURL" property="url"/>
   </resultMap>
-
+  
   <resultMap type="StyleGrid" id="styleGridMap">
     <id column="STYLENO" property="styleNo"/>
     <result column="EMAIL" property="email"/>
@@ -54,7 +48,7 @@
     <result column="GENRETITLE" property="genreTitle"/>
     <result column="STYLENO" property="styleNo"/>
   </resultMap>
-
+  
   <resultMap type="StyleDetail" id="styleDetailMap">
     <id column="STYLENO" property="styleNumber"/>
     <result column="STYLENAME" property="styleName"/>
@@ -74,7 +68,7 @@
   	<result column="REVIEWBTN" property="reviewbtn"/>
   </resultMap>
 
-	<select id="getMainStyleList" parameterType="map" resultMap="mainStyleMap">
+  <select id="getMainStyleList" parameterType="map" resultMap="mainStyleMap">
    	SELECT S3.STYLEPHOTOURL, S1.STYLENAME, S2.SHOPNAME, S1.STYLENO
     FROM STYLE S1
     LEFT JOIN SHOP S2
@@ -98,14 +92,8 @@
 	ORDER BY S1.STYLENO DESC
 	LIMIT 23
   </select>
-
-<!--   <select id="getGridList" parameterType="map" resultMap="styleGridMap">
-    SELECT T1.STYLENAME, T2.URL 
-    FROM STYLE T1 JOIN STYLEPHOTO T2 USING(STYLENO)
-  </select> -->
- 
+  
   <select id="getList" parameterType="StyleGrid" resultMap="styleGridMap">
-
     SELECT T1.STYLENO, T1.EMAIL, T1.STYLENAME, T2.STYLEPHOTOURL 
     FROM STYLE T1 JOIN (SELECT STYLENO,STYLEPHOTOURL,STYLEPHOTONO FROM STYLEPHOTO GROUP BY STYLENO) T2 USING(STYLENO)
     WHERE STYLENO LIKE '%%' 
@@ -126,14 +114,13 @@
 	</if>	
      ORDER BY STYLENO
   </select>
-
+  
   <select id="getStyleDetail" parameterType="int" resultMap="styleDetailMap">
     SELECT STYLENO, STYLENAME, STYLEINTRO, PRICE , EMAIL
     FROM STYLE 
     WHERE STYLENO =#{value}
     <!-- ORDER BY STYLENO -->
   </select>
-
   
   <insert id="insertStyle" parameterType="Style" useGeneratedKeys="true" keyColumn="STYLENO" keyProperty="styleNo">
     INSERT INTO STYLE (EMAIL,PEOPLE,GENDER,STYLESORT,STYLELENGTH,STYLENAME,PRICE,STYLEINTRO)
@@ -163,22 +150,6 @@
   </select>
   
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
