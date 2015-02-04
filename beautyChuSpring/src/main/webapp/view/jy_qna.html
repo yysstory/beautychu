@@ -39,7 +39,7 @@ button.trigger { background: black; color: #fff; border: none;}
 
 </head>
 <body class="home">
-	<jy_header> <!-- header 건들지 말긔! --> </jy_header>
+	<header> <!-- header 건들지 말긔! --> </header>
 
 
 
@@ -91,12 +91,8 @@ button.trigger { background: black; color: #fff; border: none;}
 
 	<!-- header, footer 로드 스크립트!! -->
 	<script>
-		$('jy_header').load('common/jy_header.html');
-		/*$('footer').load('common/footer.html'); */
-
-		/* 
-		window.setTimeout('window.location.reload()', 7000); //60초마다 새로고침
-		 */
+		$('header').load('common/header.html');
+		$('footer').load('common/footer.html');
 	</script>
 
 </body>
