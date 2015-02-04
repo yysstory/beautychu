@@ -12,12 +12,8 @@ public class ShopDetail implements Serializable {
 	String 		shopName;
 	String			ShopIntro;
 	String			shopAddr;
-	int				shopTel;
+	String			shopTel;
 	List<?>		shopPhoto;
-	
-	
-	
-	
 	public String getEmail() {
 		return email;
 	}
@@ -30,7 +26,7 @@ public class ShopDetail implements Serializable {
 	public String getShopAddr() {
 		return shopAddr;
 	}
-	public int getShopTel() {
+	public String getShopTel() {
 		return shopTel;
 	}
 	public List<?> getShopPhoto() {
@@ -48,23 +44,23 @@ public class ShopDetail implements Serializable {
 	public void setShopAddr(String shopAddr) {
 		this.shopAddr = shopAddr;
 	}
-	public void setShopTel(int shopTel) {
+	public void setShopTel(String shopTel) {
 		this.shopTel = shopTel;
 	}
 	public void setShopPhoto(List<?> shopPhoto) {
 		this.shopPhoto = shopPhoto;
 	}
-	
-	
-	
-	
 	@Override
 	public String toString() {
-		return "Shop [email=" + email + ", shopName=" + shopName
+		return "ShopDetail [email=" + email + ", shopName=" + shopName
 				+ ", ShopIntro=" + ShopIntro + ", shopAddr=" + shopAddr
 				+ ", shopTel=" + shopTel + ", shopPhoto=" + shopPhoto + "]";
 	}
 	
+	
+	
+	
+
 	
 	
 	
