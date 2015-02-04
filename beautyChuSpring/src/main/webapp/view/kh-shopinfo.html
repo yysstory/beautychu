@@ -638,6 +638,7 @@ kh-shopListName {
 				$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
 				.css({"z-index":pagebtnnum,"margin-left":"100%"}).animate({ marginLeft: "0px" }, 500);
 				$('#yun-div'+pagebtnnum).load('templates/yun-shopdetail.html');
+				$('.kh-reviewDate').val(yyyyMMdd(data.review0.date));
 				pagebtnnum++;
 
 			});
@@ -767,9 +768,14 @@ kh-shopListName {
  	 					     $.get('templates/kh-shopimage-gallery.html', function(source){
  						    	  var template = Handlebars.compile(source);
  						    	  var html = template(data);
- 					    		  $('#yun-div'+pagebtnnum+' '+'#yun-shopphotolist').html(html);	  
+ 					    		  $('#yun-div'+pagebtnnum+' '+'#yun-shopphotolist').html(html);
+ 					    		 
  						      });
  	 					   loadReview(email);
+					    	  for(var i = 0; i< data.review.length; i++){
+					    		  console.log(yyyyMMdd(data.review[i].date));  
+ 			 			    	$('.kh-reviewDate'+data.review[i].date).html(yyyyMMdd(data.review[i].date));
+					    	  }
  						    });
  				 	} 
 				
@@ -783,8 +789,10 @@ kh-shopListName {
 		 			    	  var template = Handlebars.compile(source);
 		 			    	  var html = template(data);
 		 			    	  $('#yun-shopcomment').html(html);
-		 			    	 console.log(yyyyMMdd(data.review.date));
-		 			    	 $('.kh-reviewDate').val(yyyyMMdd(data.review.date));
+					    	  for(var i = 0; i< data.review.length; i++){
+					    		  console.log(yyyyMMdd(data.review[i].date));  
+ 			 			    	$('.kh-reviewDate'+data.review[i].date).html(yyyyMMdd(data.review[i].date));
+					    	  }
 		 			      });
 		 			    });
 		 	 	}
@@ -822,6 +830,24 @@ kh-shopListName {
 		 			    });
 		 	 	}
 				
+							/* 댓글 날짜 */
+			 				function yyyyMMdd(date) {
+			 					  if (date) {
+			 					    var date = new Date(date);
+			 					    var str = date.getFullYear() + '-';
+			 					    
+			 					    if (date.getMonth() < 9) str += '0';
+			 					    str += (date.getMonth() + 1) + '-';
+			 					    
+			 					    if (date.getDate() < 10) str += '0';
+			 					    str += date.getDate();
+			 					    
+			 					    return str;
+			 					    
+			 					  } else {
+			 					    return '';
+			 					  }
+			 					}
 				
 	</script>
 	</div>
