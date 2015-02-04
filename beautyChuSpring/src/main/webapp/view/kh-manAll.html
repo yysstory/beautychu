@@ -158,7 +158,7 @@ body {
 .yun-box {
 	position: relative;
 	width: 280px;
-	height: 427px;
+	height: 438px;
 	float: left;
 	margin: 5px;
 	font-size: 40px;
@@ -177,8 +177,8 @@ body {
 }
 
 .yun-boximage {
-	width: 280px;
-	height: 370px;
+	width: 100%;
+	height: auto;
 }
 
 .kh-basic {
@@ -186,15 +186,16 @@ body {
 	bottom: 0px;
 	width: 280px;
 	text-align: center;
-	height: 57px;
+	height: 89px;
 	color: black;
 	font-size: 30px;
 	border-top: 1px #c5c5c5 solid;
 }
 
 .kh-basic h2 {
-	color: black;
+	color: #999;
 	margin-top: 15px;
+	font-family: MyriadPro-Semibold, Helvetica, sans-serif;
 }
 
 .kh-detail h2 {
@@ -231,7 +232,7 @@ body {
 	position: absolute;
 	top: 0px;
 	width: 280px;
-	height: 370px;
+	height: 349px;
 	background-color: rgba(0, 0, 0, 0.5);
 	display: none;
 }
@@ -500,8 +501,8 @@ body {
 		<div id="wrap-chu" class="wrap-chu">
 			<div style="text-align: center;">
 				<DIV
-					style="font-size: 50px; height: 50px; padding: 20px; margin-top: 20px; margin-bottom: 40px;">MAN &nbsp; STYLE</DIV>
-				<table style="margin: auto;">
+					style="font-family: MyriadPro-Semibold, Helvetica, sans-serif;font-size: 50px; height: 50px; padding: 20px; margin-top: 20px; margin-bottom: 40px;">MAN &nbsp; STYLE</DIV>
+				<table style="margin: auto;font-family: MyriadPro-Semibold, Helvetica, sans-serif;">
 					<tr>
 						<td><input type="radio" name="radiog_dark" id="radio1"
 							class="css-checkbox" checked="checked" /> <label for="radio1"
@@ -795,7 +796,10 @@ body {
 			});
 		}); */
 		
-		$('div').on("click",".yun-shopstyle",function() {
+		
+		
+		/* 가격표에서 스타일 클릭 */
+/* 		$('div').on("click",".yun-shopstyle",function() {
 			event.stopPropagation();
 			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
 			.css({"z-index":pagebtnnum,"margin-left":"100%"}).animate({ marginLeft: "0px" }, 500);
@@ -804,7 +808,7 @@ body {
 			
 			pagebtnnum++;
 
-		});
+		}); */
 		
 		
 
@@ -842,7 +846,7 @@ body {
 		
 		
 		/* 스타일 리스트 로드 */		
-		$.getJSON('../json/style/list.do?gender=man&styleLength=All&styleSort=All', 
+		$.getJSON('../json/style/list.do?people=normal&gender=man&styleLength=All&styleSort=All', 
 			    function(data){
 								console.log(data);						
 
@@ -1035,7 +1039,7 @@ body {
  				
  				/* 기장 분류 */
  				function styleLength(styleLength) {
- 					$.getJSON('../json/style/list.do?styleSort=All&gender=man&styleLength='+styleLength, 
+ 					$.getJSON('../json/style/list.do?people=normal&styleSort=All&gender=man&styleLength='+styleLength, 
  						    function(data){
  											console.log(data);						
  								      $.get('templates/style-table.html', function(source){
@@ -1059,6 +1063,7 @@ body {
 		 			    	  var html = template(data);
 		 			    	  $('#yun-shopcomment').html(html);
 		 			      });
+		 			      
 		 			    });
 		 	 	}
  				
