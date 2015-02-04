@@ -380,7 +380,7 @@
 
 /* quick_view */
 .quick_view {background-color:#fff; overflow:hidden; position:relative; height:540px; width:530px;}
-.quick_view .desc_area {overflow:hidden; padding-left:50px; height:530px; width:640px;}
+.quick_view .desc_area {overflow:hidden; padding-left:76px; height:530px; width:640px;}
 .quick_view .desc_area > a {background:url('/images/btn/shop_quick.png') no-repeat right 4px; display:block; font-size:12px; position:absolute; left:50px; bottom:50px; padding-right:15px;}
 .quick_view .desc_area > a:hover {color:#e42a1e; font-weight:bold;}
 
@@ -389,11 +389,11 @@
 .quick_view .thumnail .label_bthum .label_awrd {float:left;}
 .quick_view .thumnail .label_bthum .label_awrd span {display:block; overflow:hidden; margin-bottom:5px; height:50px; width:50px;}
 .quick_view .thumnail .label_bthum .label_awrd span img {height:auto; width:100%;}
-.quick_view .thumnail .label_bthum .big_thum {float:left; margin-left:10px; height:390px; width:425px;}
-.quick_view .thumnail .label_bthum .big_thum img {height:100%; width:100%;}
+.quick_view .thumnail .label_bthum .big_thum {float:left; margin-left:38px; height:390px; width:425px;}
+.quick_view .thumnail .label_bthum .big_thum img {height:100%; width:auto%;}
 
 .quick_view .thumnail .s_thum {overflow:hidden;}
-.quick_view .thumnail .s_thum {float:left;}
+.quick_view .thumnail .s_thum {float:left; margin-left: -50px;}
 .quick_view .thumnail .s_thum a {display:block; float:left; border:1px solid #dcdcdc; margin-left:10px; height:88px; width:88px;}
 .quick_view .thumnail .s_thum a:first-child {margin-left:0;}
 .quick_view .thumnail .s_thum a img {height:100%; width:100%;}
