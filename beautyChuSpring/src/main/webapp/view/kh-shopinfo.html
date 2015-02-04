@@ -253,7 +253,6 @@ kh-shopListName {
 
 .yun-div {
 	position: absolute;
-	background-color: #DCDBD9;
 }
 
 #yun-div1 {
@@ -683,14 +682,16 @@ kh-shopListName {
 				});
 			});
 			
-			$('div').on("click",".yun-shopstyle",function() {
+			
+			/* 갸격표에서 스타일 클릭 */
+/* 			$('div').on("click",".yun-shopstyle",function() {
 				event.stopPropagation();
 				$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
 				.css({"z-index":pagebtnnum,"margin-left":"100%"}).animate({ marginLeft: "0px" }, 500);
 				$('#yun-div'+pagebtnnum).load('templates/yun-styledetail.html');
 				pagebtnnum++;
 
-			});
+			}); */
 			
 		
 			

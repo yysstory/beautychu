@@ -795,7 +795,10 @@ body {
 			});
 		}); */
 		
-		$('div').on("click",".yun-shopstyle",function() {
+		
+		
+		/* 가격표에서 스타일 클릭 */
+/* 		$('div').on("click",".yun-shopstyle",function() {
 			event.stopPropagation();
 			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
 			.css({"z-index":pagebtnnum,"margin-left":"100%"}).animate({ marginLeft: "0px" }, 500);
@@ -804,7 +807,7 @@ body {
 			
 			pagebtnnum++;
 
-		});
+		}); */
 		
 		
 
@@ -842,7 +845,7 @@ body {
 		
 		
 		/* 스타일 리스트 로드 */		
-		$.getJSON('../json/style/list.do?gender=Female&styleLength=All&styleSort=All', 
+		$.getJSON('../json/style/list.do?people=normal&gender=woman&styleLength=All&styleSort=All', 
 			    function(data){
 								console.log(data);						
 
@@ -1035,7 +1038,7 @@ body {
  				
  				/* 기장 분류 */
  				function styleLength(styleLength) {
- 					$.getJSON('../json/style/list.do?styleSort=All&gender=Female&styleLength='+styleLength, 
+ 					$.getJSON('../json/style/list.do?people=normal&styleSort=All&gender=woman&styleLength='+styleLength, 
  						    function(data){
  											console.log(data);						
  								      $.get('templates/style-table.html', function(source){

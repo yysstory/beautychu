@@ -842,7 +842,7 @@ body {
 		
 		
 		/* 스타일 리스트 로드 */		
-		$.getJSON('../json/style/list.do?gender=male&styleLength=All&styleSort=All', 
+		$.getJSON('../json/style/list.do?gender=man&styleLength=All&styleSort=All', 
 			    function(data){
 								console.log(data);						
 
@@ -1035,7 +1035,7 @@ body {
  				
  				/* 기장 분류 */
  				function styleLength(styleLength) {
- 					$.getJSON('../json/style/list.do?styleSort=All&gender=male&styleLength='+styleLength, 
+ 					$.getJSON('../json/style/list.do?styleSort=All&gender=man&styleLength='+styleLength, 
  						    function(data){
  											console.log(data);						
  								      $.get('templates/style-table.html', function(source){
